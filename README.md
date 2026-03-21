@@ -7,7 +7,7 @@
 
 A "DPDK-dock Development Environment" consisting of an interactive shell that can control DPDK thread operations and a DPDK thread execution environment (sd-plane)
 
-**Language:** **English** | [Japanese](doc/README.ja.md) | [French](doc/README.fr.md) | [Chinese](doc/README.zh.md) | [German](doc/README.de.md) | [Italian](doc/README.it.md) | [Korean](doc/README.ko.md) | [Thai](doc/README.th.md) | [Spanish](doc/README.es.md)
+**Language:** **English** | [日本語](doc/README.ja.md)
 
 ## Features
 

@@ -6,7 +6,7 @@
 
 DPDKスレッドの動作を対話的に制御できるShellと、DPDKスレッド実行環境（sd-plane）で構成された「DPDK-dock開発環境」
 
-**Language:** [English](../README.md) | **日本語** | [Français](README.fr.md) | [中文](README.zh.md) | [Deutsch](README.de.md) | [Italiano](README.it.md) | [한국어](README.ko.md) | [ไทย](README.th.md) | [Español](README.es.md)
+**Language:** [English](../README.md) | **日本語**
 
 ## 特徴
 
@@ -206,12 +206,14 @@ Network devices using kernel driver
 
 - [ユーザーガイド](manual/ja/README.md) - 全機能の概要とコマンド分類
 
-**アプリケーションガイド:**
-- [L2リピーターアプリケーション](manual/ja/l2-repeater-application.md) - MAC学習機能付きシンプルレイヤー2パケット転送
+**シナリオガイド:**
+- [L2リピーターアプリケーション](manual/ja/l2-repeater-application.md) - MACラーニングによるシンプルなL2パケット転送
 - [拡張リピーターアプリケーション](manual/ja/enhanced-repeater-application.md) - TAPインターフェース付きVLAN対応スイッチング
 - [パケットジェネレーターアプリケーション](manual/ja/packet-generator-application.md) - 高性能トラフィック生成とテスト
+- [スイッチを使う](manual/ja/scenario-switch.md) - VLANベースのL2スイッチングを構成する
+- [ルータを設定する：静的経路のみ](manual/ja/scenario-static-router.md) - 静的経路によるIPルーターを構成する
 
-**設定ガイド:**
+**管理・設定ガイド:**
 - [ポート管理・統計](manual/ja/port-management.md) - DPDKポートの管理と統計情報
 - [ワーカー・lcore管理・スレッド情報](manual/ja/worker-lcore-thread-management.md) - ワーカースレッド、lcore、スレッド情報の管理
 - [デバッグ・ログ](manual/ja/debug-logging.md) - デバッグとログ機能
