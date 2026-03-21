@@ -1,145 +1,147 @@
-
 <div align="center">
 <img src="sdplane-logo.png" alt="sdplane-oss Logo" width="160">
 </div>
 
-# sdplane-oss (Soft Data Plane)
+# sdplane-oss (ソフトデータプレーン)
 
-A "DPDK-dock Development Environment" consisting of an interactive shell that can control DPDK thread operations and a DPDK thread execution environment (sd-plane)
+DPDKスレッドの動作を対話的に制御できるShellと、DPDKスレッド実行環境（sd-plane）で構成された「DPDK-dock開発環境」
 
-**Language:** **English** | [日本語](doc/README.ja.md)
+**Language:** [English](doc/README.en.md) | **日本語**
 
-## Features
+## 特徴
 
-- **High-Performance Packet Processing**:
-  Leverages DPDK for zero-copy, user-space packet processing
-- **Layer 2/3 Forwarding**:
-  Integrated L2 and L3 forwarding with ACL, LPM, and FIB support
-- **Packet Generation**:
-  Built-in packet generator for testing and benchmarking
-- **Network Virtualization**:
-  TAP interface support and VLAN switching capabilities
-- **CLI Management**:
-  Interactive command-line interface for configuration and monitoring
-- **Multi-threading**:
-  Cooperative threading model with per-core workers
+- **高性能パケット処理**：
+  DPDKを活用したゼロコピー、ユーザー空間パケット処理
+- **レイヤー2/3フォワーディング**：
+  ACL、LPM、FIBサポートを統合したL2・L3フォワーディング
+- **パケット生成**：
+  テストとベンチマーク用の内蔵パケットジェネレーター
+- **ネットワーク仮想化**：
+  TAPインターフェースサポートとVLANスイッチング機能
+- **CLI管理**：
+  設定と監視のためのインタラクティブコマンドラインインターフェース
+- **マルチスレッド**：
+  コア別ワーカーによる協調スレッドモデル
 
-### Architecture
-- **Main Application**: Core router logic and initialization
-- **DPDK Modules**: L2/L3 forwarding and packet generation
-- **CLI System**: Command-line interface with completion and help
-- **Threading**: lthread-based cooperative multitasking
-- **Virtualization**: TAP interfaces and virtual switching
+### アーキテクチャ
+- **メインアプリケーション**：コアルーターロジックと初期化
+- **DPDKモジュール**：L2/L3フォワーディングとパケット生成
+- **CLIシステム**：補完とヘルプ機能付きコマンドラインインターフェース
+- **スレッド**：lthreadベースの協調マルチタスク
+- **仮想化**：TAPインターフェースと仮想スイッチング
 
-## Supported System
+## サポートシステム
 
-### Software Requirements
-- **OS**:
-  Ubuntu 24.04 LTS (currently supported)
-- **NICs**:
-  [Drivers](https://doc.dpdk.org/guides/nics/) | [Supported NICs](https://core.dpdk.org/supported/)
-- **Memory**:
-  Hugepage support required
-- **CPU**:
-  Multi-core processor recommended
+### ソフトウェア要件
+- **OS**：
+  Ubuntu 24.04 LTS（現在サポート中）
+- **NIC**：
+  [ドライバー](https://doc.dpdk.org/guides/nics/) | [サポートNIC](https://core.dpdk.org/supported/)
+- **メモリ**：
+  ヒュージページサポートが必要
+- **CPU**：
+  マルチコアプロセッサ推奨
 
-### Target Hardware Platforms
+### 対象ハードウェアプラットフォーム
 
-The project has been tested on:
-- **Topton (N305/N100)**: Mini-PC with 10G NICs (tested)
-- **Partaker (J3160)**: Mini-PC with 1G NICs (tested)
-- **Intel Generic PC**: With Intel x520 / Mellanox ConnectX5
-- **Other CPUs**: Should work with AMD, ARM processors, etc.
+本プロジェクトは以下でテスト済みです：
+- **Topton (N305/N100)**：10G NIC搭載ミニPC (tested)
+- **Partaker (J3160)**：1G NIC搭載ミニPC (tested)
+- **Intel汎用PC**：Intel x520 / Mellanox ConnectX5搭載
+- **その他のCPU**：AMD、ARM CPU等でも動作するはずです。
 
-## 1. Install Dependencies
+## 1. 依存関係のインストール
 
-See [Install Dependencies Guide](doc/manual/en/install-dependencies.md) for detailed instructions on installing all required dependencies including liburcu-qsbr, libpcap, lthread, and DPDK.
+liburcu-qsbr、libpcap、lthread、DPDKを含む全ての必要な依存関係のインストールについては、[依存関係インストールガイド](doc/manual/ja/install-dependencies.md)を参照してください。
 
-## 2. Install From Pre-compiled Debian Package
+## 2. プリコンパイルDebianパッケージからのインストール
 
-For Intel Core i3-n305/Celeron j3160, quick installation is possible with Debian packages.
+Intel Core i3-n305/Celelon j3160では、Debianパッケージによるクイックスタートが可能です。
 
-Download and install the pre-built Debian package:
+ビルド済みDebianパッケージをダウンロード・インストールします：
 
 ```bash
-# Download the latest package for n305
+# 最新パッケージのダウンロード (n305用)
 wget https://www.yasuhironet.net/download/n305/sdplane_0.1.4-36_amd64.deb
 wget https://www.yasuhironet.net/download/n305/sdplane-dbgsym_0.1.4-36_amd64.ddeb
 
-# or for j3160
+# もしくは (j3160用)
 wget https://www.yasuhironet.net/download/j3160/sdplane_0.1.4-35_amd64.deb
 wget https://www.yasuhironet.net/download/j3160/sdplane-dbgsym_0.1.4-35_amd64.ddeb
 
-# Install the package
+# パッケージのインストール
 sudo apt install ./sdplane_0.1.4-*_amd64.deb
 sudo apt install ./sdplane-dbgsym_0.1.4-*_amd64.ddeb
 ```
 
-**Note**: Check [yasuhironet.net downloads](https://www.yasuhironet.net/download/) for the latest package version.
+**注意**: 最新パッケージバージョンについては [yasuhironet.net ダウンロード](https://www.yasuhironet.net/download/)を確認してください。
 
-**Note**: Use of this pre-compiled binary on other CPUs may cause SIGILL (Illegal Instruction). In that case you have to compile by yourself.
+**注意**: 他のCPUでこのプリコンパイル済みバイナリを使用するとSIGILL（不正命令）が発生する可能性があります。その場合は自分でコンパイルする必要があります。
 
-Jump to 5. System Configuration.
+5. システム設定へジャンプしてください。
 
-## 3. Build and Install From Source
+## 3. ソースからのビルド・インストール
 
-See [Build and Install from Source Guide](doc/manual/en/build-install-source.md) for detailed instructions on building sdplane-oss from source code.
+sdplane-ossをソースコードからビルドする詳細な手順については、[ソースからのビルド・インストールガイド](doc/manual/ja/build-install-source.md)を参照してください。
 
-You can jump to 5. System Configuration.
+5. システム設定へジャンプできます。
 
-## 4. Build Debian Package and Install
+## 4. Debianパッケージのビルド・インストール
 
-See [Build Debian Package Guide](doc/manual/en/build-debian-package.md) for instructions on creating and installing a Debian package from source.
+ソースからDebianパッケージを作成・インストールする手順については、[Debianパッケージビルドガイド](doc/manual/ja/build-debian-package.md)を参照してください。
 
-## 5. System Configuration
+## 5. システム設定
 
-See [System Configuration Guide](doc/manual/en/system-configuration.md) for instructions on configuring hugepages, network interfaces, and optional kernel modules.
+ヒュージページ、ネットワークインターフェース、オプションカーネルモジュールの設定手順については、[システム設定ガイド](doc/manual/ja/system-configuration.md)を参照してください。
 
-## 6. Sdplane Configuration
+## 6. sdplane設定
 
-### Configuration Files
+### 設定ファイル
 
-When installed from Debian Package, `/etc/sdplane/sdplane.conf.sample` and systemd service files are automatically generated.
+Debian Packageからインストールした場合、`/etc/sdplane/sdplane.conf.sample`やsystemd service fileが自動的に生成されます。
 
-Create `/etc/sdplane/sdplane.conf` referring to the samples.
+サンプルを参考に `/etc/sdplane/sdplane.conf`を作成してください。
 
-#### OS Configuration Examples (`etc/`)
-- [`etc/sdplane.conf.sample`](etc/sdplane.conf.sample): Main configuration template
-- [`etc/sdplane.service`](etc/sdplane.service): systemd service file
-- [`etc/modules-load.d/`](etc/modules-load.d/): Kernel module loading configuration
+#### OS設定例（`etc/`）
 
-#### Application Configuration Examples (`example-config/`)
-- [`example-config/sdplane-pktgen.conf`](example-config/sdplane-pktgen.conf): Packet generator configuration
-- [`example-config/sdplane-topton.conf`](example-config/sdplane-topton.conf): Topton hardware configuration
-- [`example-config/sdplane_l2_repeater.conf`](example-config/sdplane_l2_repeater.conf): L2 repeater configuration
-- [`example-config/sdplane_enhanced_repeater.conf`](example-config/sdplane_enhanced_repeater.conf): Enhanced repeater configuration with VLAN switching, router interfaces, and capture interfaces
+- [`etc/sdplane.conf.sample`](etc/sdplane.conf.sample)：メイン設定テンプレート
+- [`etc/sdplane.service`](etc/sdplane.service)：systemdサービスファイル
+- [`etc/modules-load.d/`](etc/modules-load.d/)：カーネルモジュール読み込み設定
 
-## 7. Run the Sdplane Application
+#### アプリケーション設定例（`example-config/`）
+
+- [`example-config/sdplane-pktgen.conf`](example-config/sdplane-pktgen.conf)：パケットジェネレーター設定
+- [`example-config/sdplane-topton.conf`](example-config/sdplane-topton.conf)：Toptonハードウェア設定
+- [`example-config/sdplane_l2_repeater.conf`](example-config/sdplane_l2_repeater.conf)：L2リピーター設定
+- [`example-config/sdplane_enhanced_repeater.conf`](example-config/sdplane_enhanced_repeater.conf)：拡張リピーター設定（VLANスイッチング、ルーターインターフェース、キャプチャインターフェース）
+
+## 7. sdplaneアプリケーションの実行
 
 ```bash
-# Run in foreground
+# フォアグラウンドで実行
 sudo sdplane
 
-# Run with config file
+# 設定ファイル指定で実行
 sudo sdplane -f /etc/sdplane/sdplane_enhanced_repeater.conf
 
-# When installed via apt, run via systemd
+# aptでインストールした場合、systemd経由で実行
 sudo systemctl enable sdplane
 sudo systemctl start sdplane
 
-# Connect to CLI
+# CLIに接続
 telnet localhost 9882
 ```
 
+
 ## Tips
 
-### IOMMU is required when using vfio-pci as NIC driver
+### vfio-pciをNICドライバーに使用する場合はIOMMUが必須
 
-- Intel: Intel VT-d
-- AMD: AMD IOMMU / AMD-V
+- Intel：Intel VT-d
+- AMD：AMD IOMMU / AMD-V
 
-These need to be enabled in BIOS settings.
-GRUB configuration may also need to be changed:
+上記をBIOSで有効にする必要があります。  
+また、GRUBの設定変更が必要な場合があります。
 
 ```conf
 # /etc/default/grub
@@ -151,35 +153,35 @@ sudo update-grub
 sudo reboot
 ```
 
-### Configuration to permanently load vfio-pci Linux kernel module
+### vfio-pci Linux Kernel Moduleを永続的にロードする設定
 
 ```conf
 #/etc/modules-load.d/vfio-pci.conf
 vfio-pci
 ```
 
-### For Mellanox ConnectX Series
+### Mellanox ConnectXシリーズの場合
 
-Driver installation is required from the following link:
+以下のリンクからドライバーのインストールが必要です。
 
 https://network.nvidia.com/products/ethernet-drivers/linux/mlnx_en/
 
-During installation, run `./install --dpdk`.
-**The option `--dpdk` is mandatory.**
+インストール時には、`./install --dpdk` を実行してください。  
+**オプション `--dpdk` が必須です。**
 
-Comment out the following settings in sdplane.conf as they are not needed:
+以下の設定はsdplane.confでは不要なため、コメントアウトしてください。
 
 ```conf
 #set device {pcie-id} driver unbound
-#set device {pcie-id} driver {driver-name} driver_override
-#set device {pcie-id} driver {driver-name} bind
+#set device {pcie-id} driver {driver名} driver_override
+#set device {pcie-id} driver {driver名} bind
 ```
 
-For Mellanox NICs, you need to run the `update port status` command to refresh port information.
+メラノックスNICの場合は、ポート情報を更新するために、`update port status` コマンドを実行する必要があります。
 
-### How to check PCIe bus numbers
+### PCIeバス番号の確認方法
 
-You can use the dpdk-devbind.py command in DPDK to check the PCIe bus numbers of NICs:
+DPDKでは、dpdk-devbind.pyコマンドを使用してNICのPCIeバス番号を確認できます。
 
 ```bash
 > dpdk-devbind.py -s     
@@ -190,79 +192,77 @@ Network devices using kernel driver
 0000:b1:00.0 'MT27800 Family [ConnectX-5] 1017' numa_node=1 if=enp177s0np0 drv=mlx5_core unused= *Active*
 ```
 
-### Worker thread ordering in configuration file
+### 設定ファイル中のワーカースレッドの順序
 
-If configuring `rib-manager`, `neigh-manager`, and `netlink-thread` workers, they must be configured in this order if they are used.
+`rib-manager`、`neigh-manager`、`netlink-thread` のワーカーを設定する場合、もし使用されるのであれば、この順序で設定されなければいけません。
 
-### DPDK initialization
+### DPDK初期化に関して
 
-Only one command that calls `rte_eal_init()` should be invoked from the configuration file. The `rte_eal_init()` function is called by commands such as `rte_eal_init`, `pktgen init`, `l2fwd init`, and `l3fwd init`.
+`rte_eal_init()` を呼ぶコマンドは、設定ファイルからはどれか一つのみ呼び出すのが正しいです。`rte_eal_init()` 関数は、`rte_eal_init`、`pktgen init`、`l2fwd init`、`l3fwd init` などのコマンドから呼ばれます。
 
-## User's Guide (Manual)
+## ユーザーガイド（マニュアル）
 
-Comprehensive user guides and command references are available:
+詳細なユーザーガイドとコマンドリファレンスは以下をご覧ください：
 
-- [User Guide](doc/manual/en/README.md) - Complete overview and command classification
+- [ユーザーガイド](doc/manual/ja/README.md) - 全機能の概要とコマンド分類
 
-**Scenario Guides:**
-- [L2 Repeater Application](doc/manual/en/l2-repeater-application.md) - Simple Layer 2 packet forwarding with MAC learning
-- [Enhanced Repeater Application](doc/manual/en/enhanced-repeater-application.md) - VLAN-aware switching with TAP interfaces
-- [Packet Generator Application](doc/manual/en/packet-generator-application.md) - High-performance traffic generation and testing
-- [Using a Switch](doc/manual/ja/scenario-switch.md) - Configure VLAN-based L2 switching
-- [Static Router Setup](doc/manual/ja/scenario-static-router.md) - Configure an IP router with static routes
+**シナリオガイド:**
+- [L2リピーターアプリケーション](doc/manual/ja/l2-repeater-application.md) - MACラーニングによるシンプルなL2パケット転送
+- [拡張リピーターアプリケーション](doc/manual/ja/enhanced-repeater-application.md) - TAPインターフェース付きVLAN対応スイッチング
+- [パケットジェネレーターアプリケーション](doc/manual/ja/packet-generator-application.md) - 高性能トラフィック生成とテスト
+- [スイッチを使う](doc/manual/ja/scenario-switch.md) - VLANベースのL2スイッチングを構成する
+- [ルータを設定する：静的経路のみ](doc/manual/ja/scenario-static-router.md) - 静的経路によるIPルーターを構成する
 
-**Configuration Guides:**
-- [Port Management & Statistics](doc/manual/en/port-management.md) - DPDK port management and statistics
-- [Worker & lcore Management & Thread Information](doc/manual/en/worker-lcore-thread-management.md) - Worker threads, lcore, and thread information management
-- [Debug & Logging](doc/manual/en/debug-logging.md) - Debug and logging functions
-- [VTY & Shell Management](doc/manual/en/vty-shell.md) - VTY and shell management
-- [System Information & Monitoring](doc/manual/en/system-monitoring.md) - System information and monitoring
-- [RIB & Routing](doc/manual/en/routing.md) - RIB and routing functions
-- [Queue Configuration](doc/manual/en/queue-configuration.md) - Queue configuration and management
-- [Packet Generation](doc/manual/en/packet-generation.md) - Packet generation using PKTGEN
-- [TAP Interface](doc/manual/en/tap-interface.md) - TAP interface management
-- [lthread Management](doc/manual/en/lthread-management.md) - lthread management
-- [Device Management](doc/manual/en/device-management.md) - Device and driver management
-- [Enhanced Repeater](doc/manual/en/enhanced-repeater.md) - Virtual switching, VLAN processing, and TAP interfaces
+**管理・設定ガイド:**
+- [ポート管理・統計](doc/manual/ja/port-management.md) - DPDKポートの管理と統計情報
+- [ワーカー・lcore管理・スレッド情報](doc/manual/ja/worker-lcore-thread-management.md) - ワーカースレッド、lcore、スレッド情報の管理
+- [デバッグ・ログ](doc/manual/ja/debug-logging.md) - デバッグとログ機能
+- [VTY・シェル管理](doc/manual/ja/vty-shell.md) - VTYとシェルの管理
+- [システム情報・監視](doc/manual/ja/system-monitoring.md) - システム情報と監視機能
+- [RIB・ルーティング](doc/manual/ja/routing.md) - RIBとルーティング機能
+- [キュー設定](doc/manual/ja/queue-configuration.md) - キューの設定と管理
+- [パケット生成](doc/manual/ja/packet-generation.md) - PKTGENを使用したパケット生成
+- [TAPインターフェース](doc/manual/ja/tap-interface.md) - TAPインターフェースの管理
+- [lthread管理](doc/manual/ja/lthread-management.md) - lthreadの管理
+- [デバイス管理](doc/manual/ja/device-management.md) - デバイスとドライバーの管理
+- [拡張リピーター](doc/manual/ja/enhanced-repeater.md) - 仮想スイッチング、VLAN処理、TAPインターフェース
 
-## Developer's Guide
+## 開発者ガイド
 
-### Integration Guide
+### 統合ガイド
 
-- [DPDK Application Integration Guide](doc/manual/en/dpdk-integration-guide.md) - How to integrate DPDK applications into sdplane using DPDK-dock approach
+- [DPDKアプリケーション統合ガイド](doc/manual/ja/dpdk-integration-guide.md) - DPDK-dock方式でDPDKアプリケーションをsdplaneに統合する方法
 
-### Documentation
+### ドキュメント
 
-- [Technical Presentation/2024-11-22-sdn-onsen-yasu.pdf](https://enog.jp/wordpress/wp-content/uploads/2024/11/2024-11-22-sdn-onsen-yasu.pdf) (Japanese)
-- [Technical Presentation/20250822_ENOG87_ohara.pdf](https://enog.jp/wordpress/wp-content/uploads/2025/08/20250822_ENOG87_ohara.pdf) (Japanese)
+- [技術プレゼンテーション/2024-11-22-sdn-onsen-yasu.pdf)](https://enog.jp/wordpress/wp-content/uploads/2024/11/2024-11-22-sdn-onsen-yasu.pdf)（日本語）
+- [技術プレゼンテーション/20250822_ENOG87_ohara.pdf](https://enog.jp/wordpress/wp-content/uploads/2025/08/20250822_ENOG87_ohara.pdf)（日本語）
 
-### Code Style
-The project follows GNU coding standards. Use the provided scripts to check and format code:
+### コードスタイル
+本プロジェクトはGNU コーディング標準に従います。提供されたスクリプトを使用してコードの確認とフォーマットを行ってください：
 
 ```bash
-# Check formatting
+# フォーマットの確認
 ./style/check_gnu_style.sh check
 
-# Show formatting differences
+# フォーマットの差分表示
 ./style/check_gnu_style.sh diff
 
-# Auto-format code
+# コードの自動フォーマット
 ./style/check_gnu_style.sh update
 ```
 
-## License
+## ライセンス
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for license details.
+本プロジェクトはMITライセンスの下でライセンスされています。詳細については[LICENSE](LICENSE)ファイルをご覧ください。
 
-## Contact
+## お問い合わせ
 
-For questions, issues, or contributions, please contact: **sdplane [at] nwlab.org**
+ご質問、問題、貢献については、こちらまでご連絡ください：**sdplane [at] nwlab.org**
 
-## Evaluation Equipment Purchase
+## 評価用機器の購入
 
-Evaluation equipment with additional features and software modifications may be available. Please visit our sales page for more information:
+評価用機器には追加機能やソフトウェアの修正が含まれる場合があります。詳細については販売ページをご覧ください：
 
 **[https://www.rca.co.jp/sdplane/](https://www.rca.co.jp/sdplane/)**
-
-*Note: The sales page is currently available in Japanese only.*
 

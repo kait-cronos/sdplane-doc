@@ -6,7 +6,7 @@
 
 DPDKスレッドの動作を対話的に制御できるShellと、DPDKスレッド実行環境（sd-plane）で構成された「DPDK-dock開発環境」
 
-**Language:** [English](../README.md) | **日本語**
+**Language:** [English](README.en.md) | **日本語**
 
 ## 特徴
 
@@ -104,16 +104,16 @@ Debian Packageからインストールした場合、`/etc/sdplane/sdplane.conf.
 
 #### OS設定例（`etc/`）
 
-- [`etc/sdplane.conf.sample`](etc/sdplane.conf.sample)：メイン設定テンプレート
-- [`etc/sdplane.service`](etc/sdplane.service)：systemdサービスファイル
-- [`etc/modules-load.d/`](etc/modules-load.d/)：カーネルモジュール読み込み設定
+- [`etc/sdplane.conf.sample`](../etc/sdplane.conf.sample)：メイン設定テンプレート
+- [`etc/sdplane.service`](../etc/sdplane.service)：systemdサービスファイル
+- [`etc/modules-load.d/`](../etc/modules-load.d/)：カーネルモジュール読み込み設定
 
 #### アプリケーション設定例（`example-config/`）
 
-- [`example-config/sdplane-pktgen.conf`](example-config/sdplane-pktgen.conf)：パケットジェネレーター設定
-- [`example-config/sdplane-topton.conf`](example-config/sdplane-topton.conf)：Toptonハードウェア設定
-- [`example-config/sdplane_l2_repeater.conf`](example-config/sdplane_l2_repeater.conf)：L2リピーター設定
-- [`example-config/sdplane_enhanced_repeater.conf`](example-config/sdplane_enhanced_repeater.conf)：拡張リピーター設定（VLANスイッチング、ルーターインターフェース、キャプチャインターフェース）
+- [`example-config/sdplane-pktgen.conf`](../example-config/sdplane-pktgen.conf)：パケットジェネレーター設定
+- [`example-config/sdplane-topton.conf`](../example-config/sdplane-topton.conf)：Toptonハードウェア設定
+- [`example-config/sdplane_l2_repeater.conf`](../example-config/sdplane_l2_repeater.conf)：L2リピーター設定
+- [`example-config/sdplane_enhanced_repeater.conf`](../example-config/sdplane_enhanced_repeater.conf)：拡張リピーター設定（VLANスイッチング、ルーターインターフェース、キャプチャインターフェース）
 
 ## 7. sdplaneアプリケーションの実行
 
