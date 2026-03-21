@@ -25,6 +25,134 @@ show rib
 - lcore-to-portキュー割り当て
 - L2/L3転送用のネイバーテーブル
 
+### show_rib_route - ルーティングテーブル表示
+```
+show rib (ipv4|ipv6) route
+```
+
+IPv4またはIPv6のルーティングテーブルを表示します。
+
+**パラメータ：**
+- `ipv4` - IPv4ルーティングテーブルを表示
+- `ipv6` - IPv6ルーティングテーブルを表示
+
+**使用例：**
+```bash
+show rib ipv4 route
+show rib ipv6 route
+```
+
+### show_fib_route - FIBテーブル表示
+```
+show fib (ipv4|ipv6) route
+```
+
+IPv4またはIPv6のFIB（Forwarding Information Base）テーブルを表示します。FIBはRIBから選択された最適経路が格納される、実際の転送に使用されるテーブルです。
+
+**パラメータ：**
+- `ipv4` - IPv4 FIBテーブルを表示
+- `ipv6` - IPv6 FIBテーブルを表示
+
+**使用例：**
+```bash
+show fib ipv4 route
+show fib ipv6 route
+```
+
+### show_rib_nexthop_group - ネクストホップグループ表示
+```
+show rib nexthop-group
+```
+
+ネクストホップグループのテーブルを表示します。
+
+**使用例：**
+```bash
+show rib nexthop-group
+```
+
+### show_rib_nexthop_pool - ネクストホップ情報プール表示
+```
+show rib nexthop-pool
+```
+
+ネクストホップ情報プールを表示します。
+
+**使用例：**
+```bash
+show rib nexthop-pool
+```
+
+### show_neighbor - ネイバーテーブル表示
+```
+show neighbor (|ipv4|ipv6) (|<WORD>)
+```
+
+ネイバーテーブル（ARPテーブル / NDテーブル）を表示します。
+
+**パラメータ：**
+- `ipv4` - IPv4のARPテーブルを表示
+- `ipv6` - IPv6のNDテーブルを表示
+- `<WORD>` - 特定のインターフェース名でフィルタ
+- パラメータなし - 全てのネイバーエントリを表示
+
+**使用例：**
+```bash
+show neighbor
+show neighbor ipv4
+show neighbor ipv6
+show neighbor ipv4 tap0
+```
+
+### show_rib_vswitch - 仮想スイッチ情報表示
+```
+show rib vswitch
+```
+
+RIBに格納されている仮想スイッチの構成情報を表示します。`show vswitch` はこのコマンドのエイリアスです。
+
+**使用例：**
+```bash
+show rib vswitch
+show vswitch
+```
+
+### show_rib_vswitch_link - 仮想スイッチリンク情報表示
+```
+show rib vswitch-link
+```
+
+仮想スイッチのポートリンク情報（ポートとVLANの関連付け）を表示します。
+
+**使用例：**
+```bash
+show rib vswitch-link
+```
+
+### show_rib_router_if - ルーターインターフェース情報表示
+```
+show rib router-if
+```
+
+RIBに登録されているルーターインターフェース（TAPインターフェース）の情報を表示します。
+
+**使用例：**
+```bash
+show rib router-if
+```
+
+### show_rib_capture_if - キャプチャインターフェース情報表示
+```
+show rib capture-if
+```
+
+RIBに登録されているキャプチャインターフェースの情報を表示します。
+
+**使用例：**
+```bash
+show rib capture-if
+```
+
 ## RIBの概要
 
 ### RIBとは
