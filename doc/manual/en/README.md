@@ -6,25 +6,25 @@
 
 sdplane-oss is a high-performance DPDK-based software router. This user guide describes all commands and features of sdplane.
 
-## Table of Contents
+## Configuration Guides
 
-1. [Port Management & Statistics](port-management.md) - DPDK port management and statistics
-2. [Worker & lcore Management & Thread Information](worker-lcore-thread-management.md) - Worker threads, lcore, and thread information management
+1. [Port Management & Statistics](port-management.md) (10 commands) - DPDK port management and statistics
+2. [Worker & lcore Management & Thread Information](worker-lcore-thread-management.md) (6 commands) - Worker threads, lcore, and thread information management
 
-3. [Debug & Logging](debug-logging.md) - Debug and logging functions
-4. [VTY & Shell Management](vty-shell.md) - VTY and shell management
-5. [System Information & Monitoring](system-monitoring.md) - System information and monitoring
-6. [RIB & Routing](routing.md) - RIB and routing functions
-   - [Virtual Switch (vswitch)](vswitch.md) - Virtual switch configuration and management (16 commands)
-   - [Neighbor Table (ARP/ND)](neighbor.md) - Neighbor table display
-   - [FDB (Forwarding Database)](fdb.md) - FDB display
-   - [SRv6](srv6.md) - SRv6 Local SID configuration and display
-7. [Queue Configuration](queue-configuration.md) - Queue configuration and management
-8. [Packet Generation](packet-generation.md) - Packet generation using PKTGEN
+3. [Debug & Logging](debug-logging.md) (2 commands) - Debug and logging functions
+4. [VTY & Shell Management](vty-shell.md) (4 commands) - VTY and shell management
+5. [System Information & Monitoring](system-monitoring.md) (10 commands) - System information and monitoring
+6. [RIB & Routing](routing.md) (1 command) - RIB and routing functions
+   - [Virtual Switch (vswitch)](vswitch.md) (16 commands) - Virtual switch configuration and management
+   - [Neighbor Table (ARP/ND)](neighbor.md) (1 command) - Neighbor table display
+   - [FDB (Forwarding Database)](fdb.md) (1 command) - FDB display
+   - [SRv6](srv6.md) (2 commands) - SRv6 Local SID configuration and display
+7. [Queue Configuration](queue-configuration.md) (3 commands) - Queue configuration and management
+8. [Packet Generation](packet-generation.md) (3 commands) - Packet generation using PKTGEN
 
-9. [TAP Interface](tap-interface.md) - TAP interface management
-10. [lthread Management](lthread-management.md) - lthread management
-11. [Device Management](device-management.md) - Device and driver management
+9. [TAP Interface](tap-interface.md) (2 commands) - TAP interface management
+10. [lthread Management](lthread-management.md) (3 commands) - lthread management
+11. [Device Management](device-management.md) (2 commands) - Device and driver management
 
 ## Basic Usage
 
@@ -56,23 +56,6 @@ sdplane# set ?
 - `show port` - Display port information
 - `show worker` - Display worker information
 - `exit` - Exit from CLI
-
-## Command Classification
-
-sdplane has 79 commands defined, classified into the following 13 functional categories:
-
-1. **Port Management & Statistics** (10 commands) - DPDK port control and statistics
-2. **Worker & lcore Management** (6 commands) - Worker threads and lcore management
-3. **Debug & Logging** (2 commands) - Debug and logging functions
-4. **VTY & Shell Management** (4 commands) - VTY and shell control
-5. **System Information & Monitoring** (10 commands) - System information and monitoring
-6. **RIB & Routing** (1 command) - Routing information management
-7. **Queue Configuration** (3 commands) - Queue configuration
-8. **Packet Generation** (3 commands) - Packet generation using PKTGEN
-
-9. **TAP Interface** (2 commands) - TAP interface management
-10. **lthread Management** (3 commands) - lthread management
-11. **Device Management** (2 commands) - Device and driver management
 
 ## License
 
