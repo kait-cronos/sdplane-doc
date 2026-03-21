@@ -14,17 +14,19 @@ sdplane-oss is a high-performance DPDK-based software router. This user guide de
 3. [Debug & Logging](debug-logging.md) (2 commands) - Debug and logging functions
 4. [VTY & Shell Management](vty-shell.md) (4 commands) - VTY and shell management
 5. [System Information & Monitoring](system-monitoring.md) (10 commands) - System information and monitoring
-6. [RIB & Routing](routing.md) (7 commands) - RIB and routing functions
-   - [Virtual Switch (vswitch)](vswitch.md) (16 commands) - Virtual switch configuration and management
-   - [Neighbor Table (ARP/ND)](neighbor.md) (1 command) - Neighbor table display
-   - [FDB (Forwarding Database)](fdb.md) (1 command) - FDB display
-   - [SRv6](srv6.md) (2 commands) - SRv6 Local SID configuration and display
-7. [Queue Configuration](queue-configuration.md) (3 commands) - Queue configuration and management
-8. [Packet Generation](packet-generation.md) (3 commands) - Packet generation using PKTGEN
 
-9. [TAP Interface](tap-interface.md) (2 commands) - TAP interface management
-10. [lthread Management](lthread-management.md) (3 commands) - lthread management
-11. [Device Management](device-management.md) (2 commands) - Device and driver management
+6. [Virtual Switch (vswitch)](vswitch.md) (16 commands) - Virtual switch configuration and management
+7. [Neighbor Table (ARP/ND)](neighbor.md) (1 command) - Neighbor table display
+8. [FDB (Forwarding Database)](fdb.md) (2 commands) - FDB display
+9. [RIB & Routing](routing.md) (6 commands) - RIB and routing functions
+10. [SRv6](srv6.md) (2 commands) - SRv6 Local SID configuration and display
+
+11. [Queue Configuration](queue-configuration.md) (3 commands) - Queue configuration and management
+12. [Packet Generation](packet-generation.md) (3 commands) - Packet generation using PKTGEN
+
+13. [TAP Interface](tap-interface.md) (2 commands) - TAP interface management
+14. [lthread Management](lthread-management.md) (3 commands) - lthread management
+15. [Device Management](device-management.md) (2 commands) - Device and driver management
 
 ## Basic Usage
 

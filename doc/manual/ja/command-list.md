@@ -74,7 +74,7 @@
 - [`show_devices`](device-management.md#show_devices) - デバイス情報表示 （[デバイス管理](device-management.md)）
 - [`show_fdb`](system-monitoring.md#show_fdb) - FDB情報表示 （[システム情報・監視](system-monitoring.md)）
 - [`show_fdb`](fdb.md#show_fdb) - FDB（転送データベース）表示 （[FDB](fdb.md)）
-- [`show_fib_route`](routing.md#show_fib_route) - FIBテーブル表示 （[RIB・ルーティング](routing.md)）
+- [`show_fib_route`](fdb.md#show_fib_route) - FIBテーブル表示 （[FDB](fdb.md)）
 - [`show_mempool`](system-monitoring.md#show_mempool) - メモリプール情報表示 （[システム情報・監視](system-monitoring.md)）
 - [`show_neighbor`](neighbor.md#show_neighbor) - ネイバーテーブル表示 （[ネイバーテーブル](neighbor.md)）
 - [`show_netlink_hook`](routing.md#show_netlink_hook) - Netlinkフック表示 （[RIB・ルーティング](routing.md)）

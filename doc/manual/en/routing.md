@@ -10,17 +10,10 @@ Commands for managing RIB (Routing Information Base) and system resource informa
 
 - [`show_rib`](#show_rib) - Display RIB information
 - [`show_rib_route`](#show_rib_route) - Display routing table
-- [`show_fib_route`](#show_fib_route) - Display FIB table
 - [`show_rib_nexthop_group`](#show_rib_nexthop_group) - Display nexthop group
 - [`show_rib_nexthop_pool`](#show_rib_nexthop_pool) - Display nexthop information pool
 - [`set_netlink_hook`](#set_netlink_hook) - Set netlink hook
 - [`show_netlink_hook`](#show_netlink_hook) - Display netlink hook
-
-**Related Pages (separate documents):**
-- [Virtual Switch (vswitch)](vswitch.md) - vswitch configuration and display commands (16 commands)
-- [Neighbor Table (ARP/ND)](neighbor.md) - show neighbor
-- [FDB (Forwarding Database)](fdb.md) - show fdb
-- [SRv6](srv6.md) - SRv6 Local SID configuration and display
 
 ## Command Details
 
@@ -62,25 +55,6 @@ Display IPv4 or IPv6 routing table.
 ```bash
 show rib ipv4 route
 show rib ipv6 route
-```
-
-### show_fib_route
-
-Display FIB Table
-```
-show fib (ipv4|ipv6) route
-```
-
-Display IPv4 or IPv6 FIB (Forwarding Information Base) table. The FIB contains the best routes selected from the RIB and is used for actual packet forwarding.
-
-**Parameters:**
-- `ipv4` - Display IPv4 FIB table
-- `ipv6` - Display IPv6 FIB table
-
-**Examples:**
-```bash
-show fib ipv4 route
-show fib ipv6 route
 ```
 
 ### show_rib_nexthop_group
@@ -163,7 +137,7 @@ IDX    RefCnt  Family  Type     Gateway         Interface
 
 For virtual switch related configuration commands, see [Virtual Switch (vswitch)](vswitch.md).
 
-For FDB command details, see [FDB (Forwarding Database)](fdb.md).
+For FDB and FIB command details, see [FDB (Forwarding Database)](fdb.md).
 
 ### set_netlink_hook
 

@@ -9,6 +9,7 @@ The FDB (Forwarding Database) is an L2 forwarding table built through MAC addres
 ## Command List
 
 - [`show_fdb`](#show_fdb) - Display FDB entries
+- [`show_fib_route`](#show_fib_route) - Display FIB table
 
 ## Command Details
 
@@ -34,6 +35,25 @@ show fdb
 ```
 
 The FDB holds up to 1024 entries with a default aging time of 7200 seconds (2 hours).
+
+### show_fib_route
+
+Display FIB Table
+```
+show fib (ipv4|ipv6) route
+```
+
+Display IPv4 or IPv6 FIB (Forwarding Information Base) table. The FIB contains the best routes selected from the RIB and is used for actual packet forwarding.
+
+**Parameters:**
+- `ipv4` - Display IPv4 FIB table
+- `ipv6` - Display IPv6 FIB table
+
+**Examples:**
+```bash
+show fib ipv4 route
+show fib ipv6 route
+```
 
 ## How FDB Works
 
