@@ -97,7 +97,7 @@ start port all
 ## 設定例
 
 ### 完全なPKTGENセットアップ
-[`example-config/sdplane-pktgen.conf`](../../example-config/sdplane-pktgen.conf)をご覧ください：
+[`example-config/sdplane-pktgen.conf`](../../../example-config/sdplane-pktgen.conf)をご覧ください：
 
 ```bash
 # ログ設定

@@ -95,7 +95,7 @@ start port all
 ## Example Configuration
 
 ### Complete PKTGEN Setup
-See [`example-config/sdplane-pktgen.conf`](../../example-config/sdplane-pktgen.conf):
+See [`example-config/sdplane-pktgen.conf`](../../../example-config/sdplane-pktgen.conf):
 
 ```bash
 # Logging configuration

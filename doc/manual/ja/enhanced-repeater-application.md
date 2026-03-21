@@ -106,7 +106,7 @@ set thread 1 port 0 queue 0
 ## 設定例
 
 ### 完全なセットアップ
-[`example-config/sdplane_enhanced_repeater.conf`](../../example-config/sdplane_enhanced_repeater.conf)をご覧ください：
+[`example-config/sdplane_enhanced_repeater.conf`](../../../example-config/sdplane_enhanced_repeater.conf)をご覧ください：
 
 ```bash
 # デバイスセットアップ

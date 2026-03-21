@@ -104,7 +104,7 @@ set thread 1 port 0 queue 0
 ## Example Configuration
 
 ### Complete Setup
-See [`example-config/sdplane_enhanced_repeater.conf`](../../example-config/sdplane_enhanced_repeater.conf):
+See [`example-config/sdplane_enhanced_repeater.conf`](../../../example-config/sdplane_enhanced_repeater.conf):
 
 ```bash
 # Device setup

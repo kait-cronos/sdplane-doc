@@ -46,7 +46,7 @@ set port all promiscuous enable
 ```
 
 ### 設定ファイル例
-完全な設定例については、[`example-config/sdplane_l2_repeater.conf`](../../example-config/sdplane_l2_repeater.conf)をご覧ください：
+完全な設定例については、[`example-config/sdplane_l2_repeater.conf`](../../../example-config/sdplane_l2_repeater.conf)をご覧ください：
 
 ```bash
 # デバイスバインディング

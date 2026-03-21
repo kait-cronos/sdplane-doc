@@ -44,7 +44,7 @@ set port all promiscuous enable
 ```
 
 ### Example Configuration File
-See [`example-config/sdplane_l2_repeater.conf`](../../example-config/sdplane_l2_repeater.conf) for a complete configuration example:
+See [`example-config/sdplane_l2_repeater.conf`](../../../example-config/sdplane_l2_repeater.conf) for a complete configuration example:
 
 ```bash
 # Device binding
