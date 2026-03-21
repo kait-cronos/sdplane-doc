@@ -8,10 +8,10 @@
 - [`log_file`](debug-logging.md#log_file) - ログファイル出力設定 （[デバッグ・ログ](debug-logging.md)）
 - [`log_stdout`](debug-logging.md#log_stdout) - 標準出力ログ設定 （[デバッグ・ログ](debug-logging.md)）
 - [`no debug`](debug-logging.md#no-debug) - デバッグ無効化 （[デバッグ・ログ](debug-logging.md)）
-- [`no_set_capture_if`](routing.md#no_set_capture_if) - キャプチャインターフェース削除 （[RIB・ルーティング](routing.md)）
-- [`no_set_router_if`](routing.md#no_set_router_if) - ルーターインターフェース削除 （[RIB・ルーティング](routing.md)）
-- [`no_set_vswitch`](routing.md#no_set_vswitch) - 仮想スイッチ削除 （[RIB・ルーティング](routing.md)）
-- [`no_set_vswitch_port`](routing.md#no_set_vswitch_port) - 仮想スイッチからポート削除 （[RIB・ルーティング](routing.md)）
+- [`no_set_capture_if`](vswitch.md#no_set_capture_if) - キャプチャインターフェース削除 （[仮想スイッチ](vswitch.md)）
+- [`no_set_router_if`](vswitch.md#no_set_router_if) - ルーターインターフェース削除 （[仮想スイッチ](vswitch.md)）
+- [`no_set_vswitch`](vswitch.md#no_set_vswitch) - 仮想スイッチ削除 （[仮想スイッチ](vswitch.md)）
+- [`no_set_vswitch_port`](vswitch.md#no_set_vswitch_port) - 仮想スイッチからポート削除 （[仮想スイッチ](vswitch.md)）
 - [`no_tap_capture_persistent`](tap-interface.md#no_tap_capture_persistent) - TAPキャプチャ永続化無効化 （[TAPインターフェース](tap-interface.md)）
 - [`pktgen_do_start`](packet-generation.md#pktgen_do_start) - PKTGEN開始 （[パケット生成](packet-generation.md)）
 - [`pktgen_do_stop`](packet-generation.md#pktgen_do_stop) - PKTGEN停止 （[パケット生成](packet-generation.md)）
@@ -24,7 +24,7 @@
 - [`rte_eal_init`](worker-lcore-thread-management.md#rte_eal_init) - RTE EAL初期化 （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
 - [`rte_eal_init_argv_list`](worker-lcore-thread-management.md#rte_eal_init_argv_list) - argv-listを使用したRTE EAL初期化 （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
 - [`set_argv_list_1`](system-monitoring.md#set_argv_list_1) - argv-list設定 （[システム情報・監視](system-monitoring.md)）
-- [`set_capture_if`](routing.md#set_capture_if) - キャプチャインターフェース作成 （[RIB・ルーティング](routing.md)）
+- [`set_capture_if`](vswitch.md#set_capture_if) - キャプチャインターフェース作成 （[仮想スイッチ](vswitch.md)）
 - [`set_device_driver`](device-management.md#set_device_driver) - デバイスドライバー設定 （[デバイス管理](device-management.md)）
 - [`set_locale`](system-monitoring.md#set_locale) - ロケール設定 （[システム情報・監視](system-monitoring.md)）
 - [`set_mempool`](worker-lcore-thread-management.md#set_mempool) - メモリプールの設定 （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
@@ -47,20 +47,20 @@
 - [`set port all ntxdesc \<0-16384\>`](port-management.md#set-port-all-ntxdesc-0-16384) （[ポート管理・統計](port-management.md)）
 - [`set port all promiscuous disable`](port-management.md#set-port-all-promiscuous-disable) （[ポート管理・統計](port-management.md)）
 - [`set port all promiscuous enable`](port-management.md#set-port-all-promiscuous-enable) （[ポート管理・統計](port-management.md)）
-- [`set_router_if`](routing.md#set_router_if) - ルーターインターフェース作成 （[RIB・ルーティング](routing.md)）
-- [`set_router_if_hwaddr`](routing.md#set_router_if_hwaddr) - ルーターインターフェースMACアドレス設定 （[RIB・ルーティング](routing.md)）
-- [`set_router_if_vlan`](routing.md#set_router_if_vlan) - ルーターインターフェースVLAN設定 （[RIB・ルーティング](routing.md)）
+- [`set_router_if`](vswitch.md#set_router_if) - ルーターインターフェース作成 （[仮想スイッチ](vswitch.md)）
+- [`set_router_if_hwaddr`](vswitch.md#set_router_if_hwaddr) - ルーターインターフェースMACアドレス設定 （[仮想スイッチ](vswitch.md)）
+- [`set_router_if_vlan`](vswitch.md#set_router_if_vlan) - ルーターインターフェースVLAN設定 （[仮想スイッチ](vswitch.md)）
 - [`set_rte_eal_argv`](worker-lcore-thread-management.md#set_rte_eal_argv) - RTE EALコマンドライン引数設定 （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
 - [`set_rte_flow_action`](rte-flow.md#set_rte_flow_action) - フローアクションの定義 （[rte-flow](rte-flow.md)）
 - [`set_rte_flow`](rte-flow.md#set_rte_flow) - フロールールの適用 （[rte-flow](rte-flow.md)）
 - [`set_rte_flow_pattern`](rte-flow.md#set_rte_flow_pattern) - フローパターンの定義 （[rte-flow](rte-flow.md)）
-- [`set_srv6_local_sid`](routing.md#set_srv6_local_sid) - SRv6 Local SID設定 （[RIB・ルーティング](routing.md)）
+- [`set_srv6_local_sid`](srv6.md#set_srv6_local_sid) - SRv6 Local SID設定 （[SRv6](srv6.md)）
 - [`set_tap_capture_ifname`](tap-interface.md#set_tap_capture_ifname) - TAPキャプチャインターフェース名設定 （[TAPインターフェース](tap-interface.md)）
 - [`set_tap_capture_persistent`](tap-interface.md#set_tap_capture_persistent) - TAPキャプチャ永続化有効化 （[TAPインターフェース](tap-interface.md)）
 - [`set_thread_lcore_port_queue`](queue-configuration.md#set_thread_lcore_port_queue) - スレッドキュー設定 （[キュー設定](queue-configuration.md)）
-- [`set_vswitch`](routing.md#set_vswitch) - 仮想スイッチ作成 （[RIB・ルーティング](routing.md)）
-- [`set_vswitch_port`](routing.md#set_vswitch_port) - 仮想スイッチへポート追加 （[RIB・ルーティング](routing.md)）
-- [`set_vswitch_port_tag_swap`](routing.md#set_vswitch_port_tag_swap) - VLANタグ変換 （[RIB・ルーティング](routing.md)）
+- [`set_vswitch`](vswitch.md#set_vswitch) - 仮想スイッチ作成 （[仮想スイッチ](vswitch.md)）
+- [`set_vswitch_port`](vswitch.md#set_vswitch_port) - 仮想スイッチへポート追加 （[仮想スイッチ](vswitch.md)）
+- [`set_vswitch_port_tag_swap`](vswitch.md#set_vswitch_port_tag_swap) - VLANタグ変換 （[仮想スイッチ](vswitch.md)）
 - [`set_worker`](worker-lcore-thread-management.md#set_worker) - ワーカータイプ設定 （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
 - [`set_worker_lthread_dhcp_server`](lthread-management.md#set_worker_lthread_dhcp_server) - lthread DHCPサーバー設定 （[lthread管理](lthread-management.md)）
 - [`set_worker_lthread_l3_tap_handler`](lthread-management.md#set_worker_lthread_l3_tap_handler) - lthread L3 TAPハンドラー設定 （[lthread管理](lthread-management.md)）
@@ -73,10 +73,10 @@
 - [`show_debug_sdplane`](debug-logging.md#show_debug_sdplane) - sdplaneデバッグ情報表示 （[デバッグ・ログ](debug-logging.md)）
 - [`show_devices`](device-management.md#show_devices) - デバイス情報表示 （[デバイス管理](device-management.md)）
 - [`show_fdb`](system-monitoring.md#show_fdb) - FDB情報表示 （[システム情報・監視](system-monitoring.md)）
-- [`show_fdb`](routing.md#show_fdb) - FDB（転送データベース）表示 （[RIB・ルーティング](routing.md)）
+- [`show_fdb`](fdb.md#show_fdb) - FDB（転送データベース）表示 （[FDB](fdb.md)）
 - [`show_fib_route`](routing.md#show_fib_route) - FIBテーブル表示 （[RIB・ルーティング](routing.md)）
 - [`show_mempool`](system-monitoring.md#show_mempool) - メモリプール情報表示 （[システム情報・監視](system-monitoring.md)）
-- [`show_neighbor`](routing.md#show_neighbor) - ネイバーテーブル表示 （[RIB・ルーティング](routing.md)）
+- [`show_neighbor`](neighbor.md#show_neighbor) - ネイバーテーブル表示 （[ネイバーテーブル](neighbor.md)）
 - [`show_netlink_hook`](routing.md#show_netlink_hook) - Netlinkフック表示 （[RIB・ルーティング](routing.md)）
 - [`show_pktgen`](packet-generation.md#show_pktgen) - PKTGEN情報表示 （[パケット生成](packet-generation.md)）
 - [`show port`](port-management.md#show-port) （[ポート管理・統計](port-management.md)）
@@ -96,14 +96,14 @@
 - [`show_rte_flow_action`](rte-flow.md#show_rte_flow_action) - フローアクション表示 （[rte-flow](rte-flow.md)）
 - [`show_rte_flow_pattern`](rte-flow.md#show_rte_flow_pattern) - フローパターン表示 （[rte-flow](rte-flow.md)）
 - [`show_rib`](routing.md#show_rib) - RIB情報表示 （[RIB・ルーティング](routing.md)）
-- [`show_rib_capture_if`](routing.md#show_rib_capture_if) - キャプチャインターフェース情報表示 （[RIB・ルーティング](routing.md)）
+- [`show_rib_capture_if`](vswitch.md#show_rib_capture_if) - キャプチャインターフェース情報表示 （[仮想スイッチ](vswitch.md)）
 - [`show_rib_nexthop_group`](routing.md#show_rib_nexthop_group) - ネクストホップグループ表示 （[RIB・ルーティング](routing.md)）
 - [`show_rib_nexthop_pool`](routing.md#show_rib_nexthop_pool) - ネクストホップ情報プール表示 （[RIB・ルーティング](routing.md)）
 - [`show_rib_route`](routing.md#show_rib_route) - ルーティングテーブル表示 （[RIB・ルーティング](routing.md)）
-- [`show_rib_router_if`](routing.md#show_rib_router_if) - ルーターインターフェース情報表示 （[RIB・ルーティング](routing.md)）
-- [`show_rib_vswitch`](routing.md#show_rib_vswitch) - 仮想スイッチ情報表示 （[RIB・ルーティング](routing.md)）
-- [`show_rib_vswitch_link`](routing.md#show_rib_vswitch_link) - 仮想スイッチリンク情報表示 （[RIB・ルーティング](routing.md)）
-- [`show_srv6_local_sid`](routing.md#show_srv6_local_sid) - SRv6 Local SID表示 （[RIB・ルーティング](routing.md)）
+- [`show_rib_router_if`](vswitch.md#show_rib_router_if) - ルーターインターフェース情報表示 （[仮想スイッチ](vswitch.md)）
+- [`show_rib_vswitch`](vswitch.md#show_rib_vswitch) - 仮想スイッチ情報表示 （[仮想スイッチ](vswitch.md)）
+- [`show_rib_vswitch_link`](vswitch.md#show_rib_vswitch_link) - 仮想スイッチリンク情報表示 （[仮想スイッチ](vswitch.md)）
+- [`show_srv6_local_sid`](srv6.md#show_srv6_local_sid) - SRv6 Local SID表示 （[SRv6](srv6.md)）
 - [`show_thread`](worker-lcore-thread-management.md#show_thread) - スレッド情報表示 （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
 - [`show_thread_counter`](worker-lcore-thread-management.md#show_thread_counter) - スレッドカウンター表示 （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
 - [`show_thread_qconf`](queue-configuration.md#show_thread_qconf) - スレッドキュー設定表示 （[キュー設定](queue-configuration.md)）

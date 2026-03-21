@@ -141,7 +141,7 @@ Display FDB Information
 show fdb
 ```
 
-Display FDB (Forwarding Database) information.
+Display FDB (Forwarding Database) information. For details, see [FDB (Forwarding Database)](fdb.md).
 
 **Examples:**
 ```bash
@@ -155,7 +155,7 @@ Display vswitch Information
 show vswitch
 ```
 
-Display virtual switch information.
+Display virtual switch information. For details, see [Virtual Switch (vswitch)](vswitch.md).
 
 **Examples:**
 ```bash

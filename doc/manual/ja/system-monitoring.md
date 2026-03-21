@@ -127,7 +127,7 @@ FDB情報表示
 show fdb
 ```
 
-FDB（Forwarding Database）の情報を表示します。
+FDB（Forwarding Database）の情報を表示します。詳細は [FDB（転送データベース）](fdb.md) を参照してください。
 
 **使用例：**
 ```bash
@@ -141,7 +141,7 @@ vswitch情報表示
 show vswitch
 ```
 
-仮想スイッチの情報を表示します。
+仮想スイッチの情報を表示します。詳細は [仮想スイッチ（vswitch）](vswitch.md) を参照してください。
 
 **使用例：**
 ```bash

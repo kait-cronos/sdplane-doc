@@ -8,6 +8,14 @@ Commands for managing RIB (Routing Information Base) and system resource informa
 
 ## Command List
 
+- [`show_rib`](#show_rib) - Display RIB information
+
+**Related Pages (separate documents):**
+- [Virtual Switch (vswitch)](vswitch.md) - vswitch configuration and display commands (16 commands)
+- [Neighbor Table (ARP/ND)](neighbor.md) - show neighbor
+- [FDB (Forwarding Database)](fdb.md) - show fdb
+- [SRv6](srv6.md) - SRv6 Local SID configuration and display
+
 ### show_rib
 
 Display RIB Information
@@ -199,16 +207,7 @@ RIB uses RCU (Read-Copy-Update) for thread-safe access:
 
 ## Additional RIB Commands
 
-### Virtual Switch Information
-```bash
-# Show virtual switch configurations
-show vswitch_rib
-show vswitch-link
-
-# Show router and capture interfaces
-show rib vswitch router-if
-show rib vswitch capture-if
-```
+For virtual switch configuration and display commands, see [Virtual Switch (vswitch)](vswitch.md).
 
 ## Definition Location
 
@@ -219,7 +218,11 @@ This command is defined in the following files:
 
 ## Related Topics
 
+- [Virtual Switch (vswitch)](vswitch.md) - Virtual switch configuration and display commands
+- [Neighbor Table (ARP/ND)](neighbor.md) - Neighbor table display
+- [FDB (Forwarding Database)](fdb.md) - FDB display
+- [SRv6](srv6.md) - SRv6 Local SID configuration and display
 - [Enhanced Repeater](enhanced-repeater.md) - Virtual switch configuration
-- [Port Management & Statistics](port-management.md) - DPDK port management  
+- [Port Management & Statistics](port-management.md) - DPDK port management
 - [Worker & lcore Management](worker-lcore-thread-management.md) - Worker thread assignments
 - [System Information & Monitoring](system-monitoring.md) - System monitoring commands
