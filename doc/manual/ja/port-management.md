@@ -46,6 +46,8 @@ DPDKポートの管理と統計情報を扱うコマンドです。
 - [`set port \<0-16\> link down`](#set-port-0-16-link-down)
 - [`set port all link up`](#set-port-all-link-up)
 - [`set port all link down`](#set-port-all-link-down)
+- [`set port \<0-16\> mtu \<0-16384\>`](#set-port-0-16-mtu-0-16384)
+- [`set port all mtu \<0-16384\>`](#set-port-all-mtu-0-16384)
 
 ## コマンド一覧
 
@@ -572,6 +574,33 @@ set port all link up
 ```bash
 # 全ポートのリンクをダウン
 set port all link down
+```
+
+---
+
+### **set port \<0-16\> mtu \<0-16384\>**
+
+指定されたポートのMTU（Maximum Transmission Unit）を設定します。
+
+**使用例：**
+```bash
+# ポート0のMTUを1500に設定
+set port 0 mtu 1500
+
+# ポート0のMTUを9000に設定（ジャンボフレーム）
+set port 0 mtu 9000
+```
+
+---
+
+### **set port all mtu \<0-16384\>**
+
+全ポートのMTUを設定します。
+
+**使用例：**
+```bash
+# 全ポートのMTUを1500に設定
+set port all mtu 1500
 ```
 
 ## 定義場所

@@ -22,6 +22,7 @@
 - [`reset_worker`](worker-lcore-thread-management.md#reset_worker) - ワーカーリセット （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
 - [`restart_worker`](worker-lcore-thread-management.md#restart_worker) - ワーカー再開始 （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
 - [`rte_eal_init`](worker-lcore-thread-management.md#rte_eal_init) - RTE EAL初期化 （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
+- [`rte_eal_init_argv_list`](worker-lcore-thread-management.md#rte_eal_init_argv_list) - argv-listを使用したRTE EAL初期化 （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
 - [`set_argv_list_1`](system-monitoring.md#set_argv_list_1) - argv-list設定 （[システム情報・監視](system-monitoring.md)）
 - [`set_capture_if`](routing.md#set_capture_if) - キャプチャインターフェース作成 （[RIB・ルーティング](routing.md)）
 - [`set_device_driver`](device-management.md#set_device_driver) - デバイスドライバー設定 （[デバイス管理](device-management.md)）
@@ -32,6 +33,7 @@
 - [`set port \<0-16\> flowcontrol (rx\|tx\|autoneg\|send-xon\|fwd-mac-ctrl) (on\|off)`](port-management.md#set-port-0-16-flowcontrol-rxtxautonegsend-xonfwd-mac-ctrl-onoff) （[ポート管理・統計](port-management.md)）
 - [`set port \<0-16\> link down`](port-management.md#set-port-0-16-link-down) （[ポート管理・統計](port-management.md)）
 - [`set port \<0-16\> link up`](port-management.md#set-port-0-16-link-up) （[ポート管理・統計](port-management.md)）
+- [`set port \<0-16\> mtu \<0-16384\>`](port-management.md#set-port-0-16-mtu-0-16384) （[ポート管理・統計](port-management.md)）
 - [`set port \<0-16\> nrxdesc \<0-16384\>`](port-management.md#set-port-0-16-nrxdesc-0-16384) （[ポート管理・統計](port-management.md)）
 - [`set port \<0-16\> ntxdesc \<0-16384\>`](port-management.md#set-port-0-16-ntxdesc-0-16384) （[ポート管理・統計](port-management.md)）
 - [`set port \<0-16\> promiscuous disable`](port-management.md#set-port-0-16-promiscuous-disable) （[ポート管理・統計](port-management.md)）
@@ -40,6 +42,7 @@
 - [`set port all flowcontrol (rx\|tx\|autoneg\|send-xon\|fwd-mac-ctrl) (on\|off)`](port-management.md#set-port-all-flowcontrol-rxtxautonegsend-xonfwd-mac-ctrl-onoff) （[ポート管理・統計](port-management.md)）
 - [`set port all link down`](port-management.md#set-port-all-link-down) （[ポート管理・統計](port-management.md)）
 - [`set port all link up`](port-management.md#set-port-all-link-up) （[ポート管理・統計](port-management.md)）
+- [`set port all mtu \<0-16384\>`](port-management.md#set-port-all-mtu-0-16384) （[ポート管理・統計](port-management.md)）
 - [`set port all nrxdesc \<0-16384\>`](port-management.md#set-port-all-nrxdesc-0-16384) （[ポート管理・統計](port-management.md)）
 - [`set port all ntxdesc \<0-16384\>`](port-management.md#set-port-all-ntxdesc-0-16384) （[ポート管理・統計](port-management.md)）
 - [`set port all promiscuous disable`](port-management.md#set-port-all-promiscuous-disable) （[ポート管理・統計](port-management.md)）
@@ -48,6 +51,10 @@
 - [`set_router_if_hwaddr`](routing.md#set_router_if_hwaddr) - ルーターインターフェースMACアドレス設定 （[RIB・ルーティング](routing.md)）
 - [`set_router_if_vlan`](routing.md#set_router_if_vlan) - ルーターインターフェースVLAN設定 （[RIB・ルーティング](routing.md)）
 - [`set_rte_eal_argv`](worker-lcore-thread-management.md#set_rte_eal_argv) - RTE EALコマンドライン引数設定 （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
+- [`set_rte_flow_action`](rte-flow.md#set_rte_flow_action) - フローアクションの定義 （[rte-flow](rte-flow.md)）
+- [`set_rte_flow`](rte-flow.md#set_rte_flow) - フロールールの適用 （[rte-flow](rte-flow.md)）
+- [`set_rte_flow_pattern`](rte-flow.md#set_rte_flow_pattern) - フローパターンの定義 （[rte-flow](rte-flow.md)）
+- [`set_srv6_local_sid`](routing.md#set_srv6_local_sid) - SRv6 Local SID設定 （[RIB・ルーティング](routing.md)）
 - [`set_tap_capture_ifname`](tap-interface.md#set_tap_capture_ifname) - TAPキャプチャインターフェース名設定 （[TAPインターフェース](tap-interface.md)）
 - [`set_tap_capture_persistent`](tap-interface.md#set_tap_capture_persistent) - TAPキャプチャ永続化有効化 （[TAPインターフェース](tap-interface.md)）
 - [`set_thread_lcore_port_queue`](queue-configuration.md#set_thread_lcore_port_queue) - スレッドキュー設定 （[キュー設定](queue-configuration.md)）
@@ -68,7 +75,6 @@
 - [`show_fdb`](system-monitoring.md#show_fdb) - FDB情報表示 （[システム情報・監視](system-monitoring.md)）
 - [`show_fdb`](routing.md#show_fdb) - FDB（転送データベース）表示 （[RIB・ルーティング](routing.md)）
 - [`show_fib_route`](routing.md#show_fib_route) - FIBテーブル表示 （[RIB・ルーティング](routing.md)）
-- [`show_loop_count`](system-monitoring.md#show_loop_count) - ループカウンター表示 （[システム情報・監視](system-monitoring.md)）
 - [`show_mempool`](system-monitoring.md#show_mempool) - メモリプール情報表示 （[システム情報・監視](system-monitoring.md)）
 - [`show_neighbor`](routing.md#show_neighbor) - ネイバーテーブル表示 （[RIB・ルーティング](routing.md)）
 - [`show_netlink_hook`](routing.md#show_netlink_hook) - Netlinkフック表示 （[RIB・ルーティング](routing.md)）
@@ -87,6 +93,8 @@
 - [`show port statistics total`](port-management.md#show-port-statistics-total) （[ポート管理・統計](port-management.md)）
 - [`show port statistics total-bytes`](port-management.md#show-port-statistics-total-bytes) （[ポート管理・統計](port-management.md)）
 - [`show_rcu`](system-monitoring.md#show_rcu) - RCU情報表示 （[システム情報・監視](system-monitoring.md)）
+- [`show_rte_flow_action`](rte-flow.md#show_rte_flow_action) - フローアクション表示 （[rte-flow](rte-flow.md)）
+- [`show_rte_flow_pattern`](rte-flow.md#show_rte_flow_pattern) - フローパターン表示 （[rte-flow](rte-flow.md)）
 - [`show_rib`](routing.md#show_rib) - RIB情報表示 （[RIB・ルーティング](routing.md)）
 - [`show_rib_capture_if`](routing.md#show_rib_capture_if) - キャプチャインターフェース情報表示 （[RIB・ルーティング](routing.md)）
 - [`show_rib_nexthop_group`](routing.md#show_rib_nexthop_group) - ネクストホップグループ表示 （[RIB・ルーティング](routing.md)）
@@ -95,6 +103,7 @@
 - [`show_rib_router_if`](routing.md#show_rib_router_if) - ルーターインターフェース情報表示 （[RIB・ルーティング](routing.md)）
 - [`show_rib_vswitch`](routing.md#show_rib_vswitch) - 仮想スイッチ情報表示 （[RIB・ルーティング](routing.md)）
 - [`show_rib_vswitch_link`](routing.md#show_rib_vswitch_link) - 仮想スイッチリンク情報表示 （[RIB・ルーティング](routing.md)）
+- [`show_srv6_local_sid`](routing.md#show_srv6_local_sid) - SRv6 Local SID表示 （[RIB・ルーティング](routing.md)）
 - [`show_thread`](worker-lcore-thread-management.md#show_thread) - スレッド情報表示 （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
 - [`show_thread_counter`](worker-lcore-thread-management.md#show_thread_counter) - スレッドカウンター表示 （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
 - [`show_thread_qconf`](queue-configuration.md#show_thread_qconf) - スレッドキュー設定表示 （[キュー設定](queue-configuration.md)）

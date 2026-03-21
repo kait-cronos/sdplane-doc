@@ -13,7 +13,6 @@ sdplaneのシステム情報と監視機能を提供するコマンドです。
 - [`set_argv_list_1`](#set_argv_list_1) - argv-list設定
 - [`show argv-list`](#show-argv-list)
 - [`show argv-list \<0-7\>`](#show-argv-list-0-7)
-- [`show_loop_count`](#show_loop_count) - ループカウンター表示
 - [`show_rcu`](#show_rcu) - RCU情報表示
 - [`show_fdb`](#show_fdb) - FDB情報表示
 - [`show_vswitch`](#show_vswitch) - vswitch情報表示
@@ -107,33 +106,6 @@ show argv-list 0
 show argv-list 3
 ```
 
-### show_loop_count
-
-ループカウンター表示
-```
-show loop-count (console|vty-shell|l2fwd) (pps|total)
-```
-
-各コンポーネントのループカウンターを表示します。
-
-**コンポーネント：**
-- `console` - コンソール
-- `vty-shell` - VTYシェル
-- `l2fwd` - L2フォワーディング
-
-**統計タイプ：**
-- `pps` - 1秒あたりのループ数
-- `total` - 総ループ数
-
-**使用例：**
-```bash
-# コンソールのPPSを表示
-show loop-count console pps
-
-# L2フォワーディングの総ループ数を表示
-show loop-count l2fwd total
-```
-
 ### show_rcu
 
 RCU情報表示
@@ -218,11 +190,6 @@ show mempool
 - ビルド情報
 - 依存ライブラリのバージョン
 
-### ループカウンター
-- 各コンポーネントの処理ループ回数
-- パフォーマンス監視に使用
-- PPS（Packets Per Second）の計算に使用
-
 ### RCU情報
 - Read-Copy-Update機構の状態
 - 同期処理の状況
@@ -256,9 +223,8 @@ show rcu
 
 ### パフォーマンス監視
 ```bash
-# ループカウンターによるパフォーマンス監視
-show loop-count console pps
-show loop-count l2fwd pps
+# スレッドカウンターによるパフォーマンス監視
+show thread counter
 ```
 
 ### トラブルシューティング

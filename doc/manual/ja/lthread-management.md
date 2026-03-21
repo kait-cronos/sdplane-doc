@@ -305,7 +305,6 @@ show thread
 
 # 特定の統計情報確認
 show thread counter
-show loop-count console pps
 ```
 
 ### パフォーマンス監視
