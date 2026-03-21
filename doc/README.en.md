@@ -85,6 +85,7 @@ Comprehensive user guides and command references are available:
 - [lthread Management](manual/en/lthread-management.md) - lthread management
 - [Device Management](manual/en/device-management.md) - Device and driver management
 - [Enhanced Repeater](manual/en/enhanced-repeater.md) - Virtual switching, VLAN processing, and TAP interfaces
+- [rte-flow](manual/ja/rte-flow.md) - Hardware flow classification (Japanese only)
 
 **Command List:**
 - [All Commands (Alphabetical)](manual/ja/command-list.md) - Index of all 112 commands

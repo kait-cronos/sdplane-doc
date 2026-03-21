@@ -123,12 +123,59 @@ sudo ip link set rif2 up
 
 directly connected な経路はIPアドレスの設定で自動的にRIBに登録されます。追加の経路が必要な場合は、Linux側で設定します。
 
+#### 非分離型（従来方式）
+
 ```bash
-# 例: 10.0.0.0/8 への経路を 192.168.1.254 経由で追加
-sudo ip route add 10.0.0.0/8 via 192.168.1.254
+# シングルパス
+sudo ip route add 10.10.10.0/24 via 192.168.1.254 dev rif1
+
+# マルチパス（ECMP）
+sudo ip route add 10.20.20.0/24 \
+  nexthop via 192.168.1.254 dev rif1 \
+  nexthop via 192.168.2.254 dev rif2
 ```
 
-### 5. 対向ホスト側のデフォルトゲートウェイ設定
+#### 分離型（Nexthop Object方式）
+
+Route ObjectとNexthop Objectを分離して設定する方式です。sdplaneはLinuxカーネルのnhidを内部IDへマッピングして管理します。
+
+```bash
+# シングルパス
+sudo ip nexthop add id 10 via 192.168.1.254 dev rif1
+sudo ip route add 10.30.30.0/24 nhid 10
+
+# マルチパス（Nexthop Group）
+sudo ip nexthop add id 10 via 192.168.1.254 dev rif1
+sudo ip nexthop add id 11 via 192.168.2.254 dev rif2
+sudo ip nexthop add id 100 group 10/11
+sudo ip route add 10.40.40.0/24 nhid 100
+```
+
+### 5. FRRoutingによる経路設定（任意）
+
+FRRoutingを使用して静的経路を設定することもできます。FRRのvtyshで設定すると、staticd → zebra経由でカーネルへ投入され、sdplaneがnetlinkで取り込みます。
+
+**動作確認済みバージョン:** FRR 10.5.2
+
+```bash
+sudo vtysh
+router# configure terminal
+
+# シングルパス
+router(config)# ip route 10.10.10.0/24 192.168.1.254
+
+# マルチパス
+router(config)# ip route 10.20.20.0/24 192.168.1.254
+router(config)# ip route 10.20.20.0/24 192.168.2.254
+```
+
+FRR側での経路確認：
+```bash
+router# show ip route static
+router# show nexthop-group rib
+```
+
+### 6. 対向ホスト側のデフォルトゲートウェイ設定
 
 各サブネットのホストにsdplaneのルーターインターフェースをデフォルトゲートウェイとして設定します。
 
@@ -194,6 +241,27 @@ ping 192.168.2.100
 ```bash
 show rib nexthop-group
 show rib nexthop-pool
+```
+
+`show rib nexthop-group` はネクストホップの論理構造（グループ構成、参照関係）を、`show rib nexthop-pool` は実際のネクストホップ情報（IPアドレス・インターフェース）を表示します。
+
+分離型でマルチパスを設定した場合の出力例：
+```
+console> show rib nexthop-group
+ID: 13
+KernelID: 10
+RefCnt: 2
+Nexthop Count: 1
+Dependents: (15)
+via 192.168.1.254, rif1 (14), IPv4, weight 0
+
+ID: 15
+KernelID: 100
+RefCnt: 1
+Nexthop Count: 2
+Depends: (13) (14)
+via 192.168.1.254, rif1 (14), IPv4, weight 1
+via 192.168.2.254, rif2 (16), IPv4, weight 1
 ```
 
 ## ワーカー構成の解説
