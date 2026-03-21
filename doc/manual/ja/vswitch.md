@@ -6,11 +6,23 @@
 
 仮想スイッチ（vswitch）は、DPDKポート間でVLANベースのL2スイッチングを行うための機能です。複数のVLANドメインを独立した転送テーブルで管理し、ルーターインターフェースやキャプチャインターフェースを通じてLinuxカーネルスタックと統合できます。
 
+## vswitch関連の構造体
+
+![vswitch関連の構造体](images/vswitch-structures.png)
+
+## vswitch構成図
+
+![vswitch構成図](images/vswitch-configuration.png)
+
+## vswitch_link削除処理
+
+![vswitch_link削除処理](images/vswitch-link-deletion.png)
+
 ## vswitch転送処理
 
 ![vswitch転送処理](images/vswitch-forwarding.png)
 
-## 構成図
+## 拡張リピーター構成図
 
 ![拡張リピーター構成図](images/enhanced-repeater-vswitch.png)
 

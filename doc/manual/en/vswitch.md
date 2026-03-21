@@ -6,11 +6,23 @@
 
 The virtual switch (vswitch) provides VLAN-based L2 switching between DPDK ports. It manages multiple VLAN domains with independent forwarding tables and integrates with the Linux kernel stack through router interfaces and capture interfaces.
 
+## vswitch Data Structures
+
+![vswitch Data Structures](../ja/images/vswitch-structures.png)
+
+## vswitch Configuration Diagram
+
+![vswitch Configuration Diagram](../ja/images/vswitch-configuration.png)
+
+## vswitch_link Deletion Process
+
+![vswitch_link Deletion Process](../ja/images/vswitch-link-deletion.png)
+
 ## vswitch Forwarding
 
 ![vswitch Forwarding](../ja/images/vswitch-forwarding.png)
 
-## Architecture Diagram
+## Enhanced Repeater Architecture
 
 ![Enhanced Repeater Architecture](../ja/images/enhanced-repeater-vswitch.png)
 
