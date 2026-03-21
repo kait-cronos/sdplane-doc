@@ -1,3 +1,5 @@
+[ユーザーガイド](README.md) > コマンドリファレンス > ポート管理・統計
+
 # ポート管理・統計
 
 **Language:** [English](../en/port-management.md) | **日本語** | [Français](../fr/port-management.md) | [中文](../zh/port-management.md) | [Deutsch](../de/port-management.md) | [Italiano](../it/port-management.md) | [한국어](../ko/port-management.md) | [ไทย](../th/port-management.md) | [Español](../es/port-management.md)

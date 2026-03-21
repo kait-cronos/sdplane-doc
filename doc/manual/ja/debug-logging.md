@@ -1,3 +1,5 @@
+[ユーザーガイド](README.md) > コマンドリファレンス > デバッグ・ログ
+
 # デバッグ・ログ
 
 **Language:** [English](../en/debug-logging.md) | **日本語** | [Français](../fr/debug-logging.md) | [中文](../zh/debug-logging.md) | [Deutsch](../de/debug-logging.md) | [Italiano](../it/debug-logging.md) | [한국어](../ko/debug-logging.md) | [ไทย](../th/debug-logging.md) | [Español](../es/debug-logging.md)

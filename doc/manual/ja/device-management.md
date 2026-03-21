@@ -1,3 +1,5 @@
+[ユーザーガイド](README.md) > コマンドリファレンス > デバイス管理
+
 # デバイス管理
 
 **Language:** [English](../en/device-management.md) | **日本語** | [Français](../fr/device-management.md) | [中文](../zh/device-management.md) | [Deutsch](../de/device-management.md) | [Italiano](../it/device-management.md) | [한국어](../ko/device-management.md) | [ไทย](../th/device-management.md) | [Español](../es/device-management.md)

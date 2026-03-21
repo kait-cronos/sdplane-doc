@@ -1,3 +1,5 @@
+[ユーザーガイド](README.md) > コマンドリファレンス > キュー設定
+
 # キュー設定
 
 **Language:** [English](../en/queue-configuration.md) | **日本語** | [Français](../fr/queue-configuration.md) | [中文](../zh/queue-configuration.md) | [Deutsch](../de/queue-configuration.md) | [Italiano](../it/queue-configuration.md) | [한국어](../ko/queue-configuration.md) | [ไทย](../th/queue-configuration.md) | [Español](../es/queue-configuration.md)
