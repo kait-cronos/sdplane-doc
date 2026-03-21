@@ -1,8 +1,6 @@
-[ユーザーガイド](README.md) > Tips
-
 # Tips
 
-**Language:** [English](../en/tips.md) | **日本語**
+**Language:** [English](tips.en.md) | **日本語**
 
 sdplane-ossの設定・運用に関するヒント集です。
 

@@ -1,14 +1,12 @@
-[ユーザーガイド](README.md) > はじめに
+# 始めるには
 
-# はじめに
-
-**Language:** [English](../en/getting-started.md) | **日本語**
+**Language:** [English](getting-started.en.md) | **日本語**
 
 sdplane-ossのインストールから実行までの手順を説明します。
 
 ## 1. 依存関係のインストール
 
-liburcu-qsbr、libpcap、lthread、DPDKを含む全ての必要な依存関係のインストールについては、[依存関係インストールガイド](install-dependencies.md)を参照してください。
+liburcu-qsbr、libpcap、lthread、DPDKを含む全ての必要な依存関係のインストールについては、[依存関係インストールガイド](manual/ja/install-dependencies.md)を参照してください。
 
 ## 2. プリコンパイルDebianパッケージからのインストール
 
@@ -38,17 +36,17 @@ sudo apt install ./sdplane-dbgsym_0.1.4-*_amd64.ddeb
 
 ## 3. ソースからのビルド・インストール
 
-sdplane-ossをソースコードからビルドする詳細な手順については、[ソースからのビルド・インストールガイド](build-install-source.md)を参照してください。
+sdplane-ossをソースコードからビルドする詳細な手順については、[ソースからのビルド・インストールガイド](manual/ja/build-install-source.md)を参照してください。
 
 5. システム設定へジャンプできます。
 
 ## 4. Debianパッケージのビルド・インストール
 
-ソースからDebianパッケージを作成・インストールする手順については、[Debianパッケージビルドガイド](build-debian-package.md)を参照してください。
+ソースからDebianパッケージを作成・インストールする手順については、[Debianパッケージビルドガイド](manual/ja/build-debian-package.md)を参照してください。
 
 ## 5. システム設定
 
-ヒュージページ、ネットワークインターフェース、オプションカーネルモジュールの設定手順については、[システム設定ガイド](system-configuration.md)を参照してください。
+ヒュージページ、ネットワークインターフェース、オプションカーネルモジュールの設定手順については、[システム設定ガイド](manual/ja/system-configuration.md)を参照してください。
 
 ## 6. sdplane設定
 
@@ -60,16 +58,16 @@ Debian Packageからインストールした場合、`/etc/sdplane/sdplane.conf.
 
 #### OS設定例（`etc/`）
 
-- [`etc/sdplane.conf.sample`](../../../etc/sdplane.conf.sample)：メイン設定テンプレート
-- [`etc/sdplane.service`](../../../etc/sdplane.service)：systemdサービスファイル
-- [`etc/modules-load.d/`](../../../etc/modules-load.d/)：カーネルモジュール読み込み設定
+- [`etc/sdplane.conf.sample`](../etc/sdplane.conf.sample)：メイン設定テンプレート
+- [`etc/sdplane.service`](../etc/sdplane.service)：systemdサービスファイル
+- [`etc/modules-load.d/`](../etc/modules-load.d/)：カーネルモジュール読み込み設定
 
 #### アプリケーション設定例（`example-config/`）
 
-- [`example-config/sdplane-pktgen.conf`](../../../example-config/sdplane-pktgen.conf)：パケットジェネレーター設定
-- [`example-config/sdplane-topton.conf`](../../../example-config/sdplane-topton.conf)：Toptonハードウェア設定
-- [`example-config/sdplane_l2_repeater.conf`](../../../example-config/sdplane_l2_repeater.conf)：L2リピーター設定
-- [`example-config/sdplane_enhanced_repeater.conf`](../../../example-config/sdplane_enhanced_repeater.conf)：拡張リピーター設定（VLANスイッチング、ルーターインターフェース、キャプチャインターフェース）
+- [`example-config/sdplane-pktgen.conf`](../example-config/sdplane-pktgen.conf)：パケットジェネレーター設定
+- [`example-config/sdplane-topton.conf`](../example-config/sdplane-topton.conf)：Toptonハードウェア設定
+- [`example-config/sdplane_l2_repeater.conf`](../example-config/sdplane_l2_repeater.conf)：L2リピーター設定
+- [`example-config/sdplane_enhanced_repeater.conf`](../example-config/sdplane_enhanced_repeater.conf)：拡張リピーター設定（VLANスイッチング、ルーターインターフェース、キャプチャインターフェース）
 
 ## 7. sdplaneアプリケーションの実行
 

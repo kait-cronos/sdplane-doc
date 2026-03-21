@@ -53,11 +53,11 @@ The project has been tested on:
 
 ## Getting Started
 
-See [Getting Started](manual/en/getting-started.md) for installation, configuration, and running instructions.
+See [Getting Started](getting-started.en.md) for installation, configuration, and running instructions.
 
 ## Tips
 
-See [Tips](manual/en/tips.md) for configuration and operation hints.
+See [Tips](tips.en.md) for configuration and operation hints.
 
 ## User's Guide (Manual)
 
