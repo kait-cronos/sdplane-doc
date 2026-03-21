@@ -33,15 +33,19 @@ set rte-flow-pattern <ID> index <INDEX> (ether|vlan|ipv4|end) ...
 
 パケットマッチ条件（パターン）を定義します。各パターンは複数のindexで構成され、レイヤーごとにマッチ条件を指定します。最後は `end` で終端する必要があります。
 
+**重要:** `src`、`dst`、`proto`、`type`、`id` などの個別フィールド設定コマンドは、spec/mask構造体のゼロ初期化を行いません。同一indexに対して個別フィールドを設定する前に、必ず `any` または `zero` で初期化してください。初期化せずに使用すると、マスクの他フィールドに不定値が残り、意図しないマッチ条件になる可能性があります。
+
 **Ethernetレイヤー：**
 ```bash
-# 全Ethernetフレームにマッチ
+# 全Ethernetフレームにマッチ（spec/maskをゼロ初期化）
 set rte-flow-pattern 1 index 0 ether any
 
-# 送信元MACアドレスでマッチ
+# 送信元MACアドレスでマッチ（先にanyで初期化が必要）
+set rte-flow-pattern 1 index 0 ether any
 set rte-flow-pattern 1 index 0 ether src 5e:3d:bb:8d:fe:52
 
-# EtherTypeでマッチ（例: IPv6 = 0x86dd）
+# EtherTypeでマッチ（先にanyで初期化が必要）
+set rte-flow-pattern 1 index 0 ether any
 set rte-flow-pattern 1 index 0 ether type 0x86dd
 ```
 
@@ -50,7 +54,8 @@ set rte-flow-pattern 1 index 0 ether type 0x86dd
 # VLANフィールドをゼロ初期化（ワイルドカード）
 set rte-flow-pattern 1 index 1 vlan zero
 
-# 特定のVLAN IDでマッチ
+# 特定のVLAN IDでマッチ（先にzeroで初期化が必要）
+set rte-flow-pattern 1 index 1 vlan zero
 set rte-flow-pattern 1 index 1 vlan id 100
 ```
 
@@ -59,13 +64,16 @@ set rte-flow-pattern 1 index 1 vlan id 100
 # IPv4フィールドをゼロ初期化（ワイルドカード）
 set rte-flow-pattern 1 index 2 ipv4 zero
 
-# 送信元IPアドレスでマッチ
+# 送信元IPアドレスでマッチ（先にzeroで初期化が必要）
+set rte-flow-pattern 1 index 2 ipv4 zero
 set rte-flow-pattern 1 index 2 ipv4 src 100.100.100.100
 
-# 宛先IPアドレスでマッチ
+# 宛先IPアドレスでマッチ（先にzeroで初期化が必要）
+set rte-flow-pattern 1 index 2 ipv4 zero
 set rte-flow-pattern 1 index 2 ipv4 dst 200.200.200.200
 
-# プロトコル番号でマッチ（例: OSPF = 89）
+# プロトコル番号でマッチ（先にzeroで初期化が必要）
+set rte-flow-pattern 1 index 2 ipv4 zero
 set rte-flow-pattern 1 index 2 ipv4 proto 89
 ```
 
@@ -151,6 +159,7 @@ show rte-flow action
 ```bash
 # パターン: Ethernet → IPv4 → プロトコル89（OSPF）
 set rte-flow-pattern 1 index 0 ether any
+set rte-flow-pattern 1 index 1 ipv4 zero
 set rte-flow-pattern 1 index 1 ipv4 proto 89
 set rte-flow-pattern 1 index 2 end
 
@@ -167,6 +176,7 @@ set rte-flow port 0 pattern 1 action 1
 ```bash
 # パターン: Ethernet → VLAN 100
 set rte-flow-pattern 2 index 0 ether any
+set rte-flow-pattern 2 index 1 vlan zero
 set rte-flow-pattern 2 index 1 vlan id 100
 set rte-flow-pattern 2 index 2 end
 
@@ -182,6 +192,7 @@ set rte-flow port 0 pattern 2 action 2
 
 - rte-flowはNICのハードウェア機能に依存します。使用するNICがrte_flow APIをサポートしている必要があります。
 - パターンとアクションのindex番号は0から順に指定し、`end` で終端してください。
+- **フィールド設定前の初期化が必須です。** `src`、`dst`、`proto`、`type`、`id` などの個別フィールド設定コマンドは、内部のspec/mask構造体を初期化しません。同一indexに対して `any` または `zero` で初期化してから個別フィールドを設定してください。初期化を省略すると、マスクに不定値が残り、意図しないマッチ条件が適用される場合があります。
 
 ## 関連項目
 
