@@ -9,16 +9,16 @@ DPDKポートの管理と統計情報を扱うコマンドです。
 ## コマンド一覧
 
 - [`start port`](#start-port)
-- [`start port \<0-16\>`](#start-port-0-16)
+- [`start port <0-16>`](#start-port-0-16)
 - [`start port all`](#start-port-all)
 - [`stop port`](#stop-port)
-- [`stop port \<0-16\>`](#stop-port-0-16)
+- [`stop port <0-16>`](#stop-port-0-16)
 - [`stop port all`](#stop-port-all)
 - [`reset port`](#reset-port)
-- [`reset port \<0-16\>`](#reset-port-0-16)
+- [`reset port <0-16>`](#reset-port-0-16)
 - [`reset port all`](#reset-port-all)
 - [`show port`](#show-port)
-- [`show port \<0-16\>`](#show-port-0-16)
+- [`show port <0-16>`](#show-port-0-16)
 - [`show port all`](#show-port-all)
 - [`show port statistics`](#show-port-statistics)
 - [`show port statistics pps`](#show-port-statistics-pps)
@@ -26,30 +26,31 @@ DPDKポートの管理と統計情報を扱うコマンドです。
 - [`show port statistics bps`](#show-port-statistics-bps)
 - [`show port statistics Bps`](#show-port-statistics-bps)
 - [`show port statistics total-bytes`](#show-port-statistics-total-bytes)
-- [`show port \<0-16\> promiscuous`](#show-port-0-16-promiscuous)
+- [`show port <0-16> promiscuous`](#show-port-0-16-promiscuous)
 - [`show port all promiscuous`](#show-port-all-promiscuous)
-- [`show port \<0-16\> flowcontrol`](#show-port-0-16-flowcontrol)
+- [`show port <0-16> flowcontrol`](#show-port-0-16-flowcontrol)
 - [`show port all flowcontrol`](#show-port-all-flowcontrol)
-- [`set port \<0-16\> promiscuous enable`](#set-port-0-16-promiscuous-enable)
-- [`set port \<0-16\> promiscuous disable`](#set-port-0-16-promiscuous-disable)
+- [`set port <0-16> promiscuous enable`](#set-port-0-16-promiscuous-enable)
+- [`set port <0-16> promiscuous disable`](#set-port-0-16-promiscuous-disable)
 - [`set port all promiscuous enable`](#set-port-all-promiscuous-enable)
 - [`set port all promiscuous disable`](#set-port-all-promiscuous-disable)
-- [`set port \<0-16\> flowcontrol (rx|tx|autoneg|send-xon|fwd-mac-ctrl) (on|off)`](#set-port-0-16-flowcontrol-rxtxautonegsend-xonfwd-mac-ctrl-onoff)
+- [`set port <0-16> flowcontrol (rx|tx|autoneg|send-xon|fwd-mac-ctrl) (on|off)`](#set-port-0-16-flowcontrol-rxtxautonegsend-xonfwd-mac-ctrl-onoff)
 - [`set port all flowcontrol (rx|tx|autoneg|send-xon|fwd-mac-ctrl) (on|off)`](#set-port-all-flowcontrol-rxtxautonegsend-xonfwd-mac-ctrl-onoff)
-- [`set port \<0-16\> dev-configure \<0-64\> \<0-64\>`](#set-port-0-16-dev-configure-0-64-0-64)
-- [`set port all dev-configure \<0-64\> \<0-64\>`](#set-port-all-dev-configure-0-64-0-64)
-- [`set port \<0-16\> nrxdesc \<0-16384\>`](#set-port-0-16-nrxdesc-0-16384)
-- [`set port all nrxdesc \<0-16384\>`](#set-port-all-nrxdesc-0-16384)
-- [`set port \<0-16\> ntxdesc \<0-16384\>`](#set-port-0-16-ntxdesc-0-16384)
-- [`set port all ntxdesc \<0-16384\>`](#set-port-all-ntxdesc-0-16384)
-- [`set port \<0-16\> link up`](#set-port-0-16-link-up)
-- [`set port \<0-16\> link down`](#set-port-0-16-link-down)
+- [`set port <0-16> dev-configure <0-64> <0-64>`](#set-port-0-16-dev-configure-0-64-0-64)
+- [`set port all dev-configure <0-64> <0-64>`](#set-port-all-dev-configure-0-64-0-64)
+- [`set port <0-16> nrxdesc <0-16384>`](#set-port-0-16-nrxdesc-0-16384)
+- [`set port all nrxdesc <0-16384>`](#set-port-all-nrxdesc-0-16384)
+- [`set port <0-16> ntxdesc <0-16384>`](#set-port-0-16-ntxdesc-0-16384)
+- [`set port all ntxdesc <0-16384>`](#set-port-all-ntxdesc-0-16384)
+- [`set port <0-16> link up`](#set-port-0-16-link-up)
+- [`set port <0-16> link down`](#set-port-0-16-link-down)
 - [`set port all link up`](#set-port-all-link-up)
 - [`set port all link down`](#set-port-all-link-down)
-- [`set port \<0-16\> mtu \<0-16384\>`](#set-port-0-16-mtu-0-16384)
-- [`set port all mtu \<0-16384\>`](#set-port-all-mtu-0-16384)
+- [`set port <0-16> mtu <0-16384>`](#set-port-0-16-mtu-0-16384)
+- [`set port all mtu <0-16384>`](#set-port-all-mtu-0-16384)
+- [`update_port_status`](#update_port_status) - ポートステータス更新
 
-## コマンド一覧
+## コマンド詳細
 
 ### **start port**
 
@@ -63,7 +64,7 @@ start port
 
 ---
 
-### **start port \<0-16\>**
+### **start port <0-16>**
 
 特定のDPDKポートを開始します。
 
@@ -102,7 +103,7 @@ stop port
 
 ---
 
-### **stop port \<0-16\>**
+### **stop port <0-16>**
 
 特定のDPDKポートを停止します。
 
@@ -141,7 +142,7 @@ reset port
 
 ---
 
-### **reset port \<0-16\>**
+### **reset port <0-16>**
 
 特定のDPDKポートをリセットします。
 
@@ -180,7 +181,7 @@ show port
 
 ---
 
-### **show port \<0-16\>**
+### **show port <0-16>**
 
 特定のポートの基本情報を表示します。
 
@@ -279,7 +280,7 @@ show port statistics total-bytes
 
 ---
 
-### **show port \<0-16\> promiscuous**
+### **show port <0-16> promiscuous**
 
 指定されたポートのプロミスキャスモードの状態を表示します。
 
@@ -306,7 +307,7 @@ show port all promiscuous
 
 ---
 
-### **show port \<0-16\> flowcontrol**
+### **show port <0-16> flowcontrol**
 
 指定されたポートのフロー制御設定を表示します。
 
@@ -333,7 +334,7 @@ show port all flowcontrol
 
 ---
 
-### **set port \<0-16\> promiscuous enable**
+### **set port <0-16> promiscuous enable**
 
 指定されたポートのプロミスキャスモードを有効化します。
 
@@ -348,7 +349,7 @@ set port 1 promiscuous enable
 
 ---
 
-### **set port \<0-16\> promiscuous disable**
+### **set port <0-16> promiscuous disable**
 
 指定されたポートのプロミスキャスモードを無効化します。
 
@@ -387,7 +388,7 @@ set port all promiscuous disable
 
 ---
 
-### **set port \<0-16\> flowcontrol (rx|tx|autoneg|send-xon|fwd-mac-ctrl) (on|off)**
+### **set port <0-16> flowcontrol (rx|tx|autoneg|send-xon|fwd-mac-ctrl) (on|off)**
 
 指定されたポートのフロー制御設定を変更します。
 
@@ -431,7 +432,7 @@ set port all flowcontrol tx on
 
 ---
 
-### **set port \<0-16\> dev-configure \<0-64\> \<0-64\>**
+### **set port <0-16> dev-configure <0-64> <0-64>**
 
 
 指定されたポートのDPDKデバイス設定を行います。
@@ -451,7 +452,7 @@ set port 1 dev-configure 2 2
 
 ---
 
-### **set port all dev-configure \<0-64\> \<0-64\>**
+### **set port all dev-configure <0-64> <0-64>**
 
 全ポートのDPDKデバイス設定を行います。
 
@@ -467,7 +468,7 @@ set port all dev-configure 1 1
 
 ---
 
-### **set port \<0-16\> nrxdesc \<0-16384\>**
+### **set port <0-16> nrxdesc <0-16384>**
 
 
 指定したポートの受信ディスクリプタ数を設定します。
@@ -483,7 +484,7 @@ set port 1 nrxdesc 512
 
 ---
 
-### **set port all nrxdesc \<0-16384\>**
+### **set port all nrxdesc <0-16384>**
 
 全ポートの受信ディスクリプタ数を設定します。
 
@@ -495,7 +496,7 @@ set port all nrxdesc 512
 
 ---
 
-### **set port \<0-16\> ntxdesc \<0-16384\>**
+### **set port <0-16> ntxdesc <0-16384>**
 
 
 指定したポートの送信ディスクリプタ数を設定します。
@@ -511,7 +512,7 @@ set port 1 ntxdesc 512
 
 ---
 
-### **set port all ntxdesc \<0-16384\>**
+### **set port all ntxdesc <0-16384>**
 
 全ポートの送信ディスクリプタ数を設定します。
 
@@ -523,7 +524,7 @@ set port all ntxdesc 512
 
 ---
 
-### **set port \<0-16\> link up**
+### **set port <0-16> link up**
 
 
 指定されたポートのリンクをアップします。
@@ -539,7 +540,7 @@ set port 1 link up
 
 ---
 
-### **set port \<0-16\> link down**
+### **set port <0-16> link down**
 
 指定されたポートのリンクをダウンします。
 
@@ -578,7 +579,7 @@ set port all link down
 
 ---
 
-### **set port \<0-16\> mtu \<0-16384\>**
+### **set port <0-16> mtu <0-16384>**
 
 指定されたポートのMTU（Maximum Transmission Unit）を設定します。
 
@@ -593,7 +594,7 @@ set port 0 mtu 9000
 
 ---
 
-### **set port all mtu \<0-16384\>**
+### **set port all mtu <0-16384>**
 
 全ポートのMTUを設定します。
 
@@ -602,6 +603,27 @@ set port 0 mtu 9000
 # 全ポートのMTUを1500に設定
 set port all mtu 1500
 ```
+
+---
+
+### update_port_status
+
+ポートステータス更新
+```
+update port status
+```
+
+全ポートのステータスを更新します。
+
+**使用例：**
+```bash
+update port status
+```
+
+このコマンドは以下を実行します：
+- 各ポートのリンク状態を確認
+- キュー設定を更新
+- ポートの統計情報を更新
 
 ## 定義場所
 

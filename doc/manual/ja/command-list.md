@@ -17,7 +17,7 @@
 - [`pktgen_do_stop`](packet-generation.md#pktgen_do_stop) - PKTGEN停止 （[パケット生成](packet-generation.md)）
 - [`pktgen_init`](packet-generation.md#pktgen_init) - PKTGEN初期化 （[パケット生成](packet-generation.md)）
 - [`reset port`](port-management.md#reset-port) （[ポート管理・統計](port-management.md)）
-- [`reset port \<0-16\>`](port-management.md#reset-port-0-16) （[ポート管理・統計](port-management.md)）
+- [`reset port <0-16>`](port-management.md#reset-port-0-16) （[ポート管理・統計](port-management.md)）
 - [`reset port all`](port-management.md#reset-port-all) （[ポート管理・統計](port-management.md)）
 - [`reset_worker`](worker-lcore-thread-management.md#reset_worker) - ワーカーリセット （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
 - [`restart_worker`](worker-lcore-thread-management.md#restart_worker) - ワーカー再開始 （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
@@ -29,22 +29,22 @@
 - [`set_locale`](system-monitoring.md#set_locale) - ロケール設定 （[システム情報・監視](system-monitoring.md)）
 - [`set_mempool`](worker-lcore-thread-management.md#set_mempool) - メモリプールの設定 （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
 - [`set_netlink_hook`](routing.md#set_netlink_hook) - Netlinkフック設定 （[RIB・ルーティング](routing.md)）
-- [`set port \<0-16\> dev-configure \<0-64\> \<0-64\>`](port-management.md#set-port-0-16-dev-configure-0-64-0-64) （[ポート管理・統計](port-management.md)）
-- [`set port \<0-16\> flowcontrol (rx\|tx\|autoneg\|send-xon\|fwd-mac-ctrl) (on\|off)`](port-management.md#set-port-0-16-flowcontrol-rxtxautonegsend-xonfwd-mac-ctrl-onoff) （[ポート管理・統計](port-management.md)）
-- [`set port \<0-16\> link down`](port-management.md#set-port-0-16-link-down) （[ポート管理・統計](port-management.md)）
-- [`set port \<0-16\> link up`](port-management.md#set-port-0-16-link-up) （[ポート管理・統計](port-management.md)）
-- [`set port \<0-16\> mtu \<0-16384\>`](port-management.md#set-port-0-16-mtu-0-16384) （[ポート管理・統計](port-management.md)）
-- [`set port \<0-16\> nrxdesc \<0-16384\>`](port-management.md#set-port-0-16-nrxdesc-0-16384) （[ポート管理・統計](port-management.md)）
-- [`set port \<0-16\> ntxdesc \<0-16384\>`](port-management.md#set-port-0-16-ntxdesc-0-16384) （[ポート管理・統計](port-management.md)）
-- [`set port \<0-16\> promiscuous disable`](port-management.md#set-port-0-16-promiscuous-disable) （[ポート管理・統計](port-management.md)）
-- [`set port \<0-16\> promiscuous enable`](port-management.md#set-port-0-16-promiscuous-enable) （[ポート管理・統計](port-management.md)）
-- [`set port all dev-configure \<0-64\> \<0-64\>`](port-management.md#set-port-all-dev-configure-0-64-0-64) （[ポート管理・統計](port-management.md)）
+- [`set port <0-16> dev-configure <0-64> <0-64>`](port-management.md#set-port-0-16-dev-configure-0-64-0-64) （[ポート管理・統計](port-management.md)）
+- [`set port <0-16> flowcontrol (rx\|tx\|autoneg\|send-xon\|fwd-mac-ctrl) (on\|off)`](port-management.md#set-port-0-16-flowcontrol-rxtxautonegsend-xonfwd-mac-ctrl-onoff) （[ポート管理・統計](port-management.md)）
+- [`set port <0-16> link down`](port-management.md#set-port-0-16-link-down) （[ポート管理・統計](port-management.md)）
+- [`set port <0-16> link up`](port-management.md#set-port-0-16-link-up) （[ポート管理・統計](port-management.md)）
+- [`set port <0-16> mtu <0-16384>`](port-management.md#set-port-0-16-mtu-0-16384) （[ポート管理・統計](port-management.md)）
+- [`set port <0-16> nrxdesc <0-16384>`](port-management.md#set-port-0-16-nrxdesc-0-16384) （[ポート管理・統計](port-management.md)）
+- [`set port <0-16> ntxdesc <0-16384>`](port-management.md#set-port-0-16-ntxdesc-0-16384) （[ポート管理・統計](port-management.md)）
+- [`set port <0-16> promiscuous disable`](port-management.md#set-port-0-16-promiscuous-disable) （[ポート管理・統計](port-management.md)）
+- [`set port <0-16> promiscuous enable`](port-management.md#set-port-0-16-promiscuous-enable) （[ポート管理・統計](port-management.md)）
+- [`set port all dev-configure <0-64> <0-64>`](port-management.md#set-port-all-dev-configure-0-64-0-64) （[ポート管理・統計](port-management.md)）
 - [`set port all flowcontrol (rx\|tx\|autoneg\|send-xon\|fwd-mac-ctrl) (on\|off)`](port-management.md#set-port-all-flowcontrol-rxtxautonegsend-xonfwd-mac-ctrl-onoff) （[ポート管理・統計](port-management.md)）
 - [`set port all link down`](port-management.md#set-port-all-link-down) （[ポート管理・統計](port-management.md)）
 - [`set port all link up`](port-management.md#set-port-all-link-up) （[ポート管理・統計](port-management.md)）
-- [`set port all mtu \<0-16384\>`](port-management.md#set-port-all-mtu-0-16384) （[ポート管理・統計](port-management.md)）
-- [`set port all nrxdesc \<0-16384\>`](port-management.md#set-port-all-nrxdesc-0-16384) （[ポート管理・統計](port-management.md)）
-- [`set port all ntxdesc \<0-16384\>`](port-management.md#set-port-all-ntxdesc-0-16384) （[ポート管理・統計](port-management.md)）
+- [`set port all mtu <0-16384>`](port-management.md#set-port-all-mtu-0-16384) （[ポート管理・統計](port-management.md)）
+- [`set port all nrxdesc <0-16384>`](port-management.md#set-port-all-nrxdesc-0-16384) （[ポート管理・統計](port-management.md)）
+- [`set port all ntxdesc <0-16384>`](port-management.md#set-port-all-ntxdesc-0-16384) （[ポート管理・統計](port-management.md)）
 - [`set port all promiscuous disable`](port-management.md#set-port-all-promiscuous-disable) （[ポート管理・統計](port-management.md)）
 - [`set port all promiscuous enable`](port-management.md#set-port-all-promiscuous-enable) （[ポート管理・統計](port-management.md)）
 - [`set_router_if`](vswitch.md#set_router_if) - ルーターインターフェース作成 （[仮想スイッチ](vswitch.md)）
@@ -69,7 +69,7 @@
 - [`set_worker_lthread_rib_manager`](lthread-management.md#set_worker_lthread_rib_manager) - lthread RIBマネージャー設定 （[lthread管理](lthread-management.md)）
 - [`set_worker_lthread_stat_collector`](lthread-management.md#set_worker_lthread_stat_collector) - lthread統計コレクター設定 （[lthread管理](lthread-management.md)）
 - [`show argv-list`](system-monitoring.md#show-argv-list) （[システム情報・監視](system-monitoring.md)）
-- [`show argv-list \<0-7\>`](system-monitoring.md#show-argv-list-0-7) （[システム情報・監視](system-monitoring.md)）
+- [`show argv-list <0-7>`](system-monitoring.md#show-argv-list-0-7) （[システム情報・監視](system-monitoring.md)）
 - [`show_debug_sdplane`](debug-logging.md#show_debug_sdplane) - sdplaneデバッグ情報表示 （[デバッグ・ログ](debug-logging.md)）
 - [`show_devices`](device-management.md#show_devices) - デバイス情報表示 （[デバイス管理](device-management.md)）
 - [`show_fdb`](system-monitoring.md#show_fdb) - FDB情報表示 （[システム情報・監視](system-monitoring.md)）
@@ -80,9 +80,9 @@
 - [`show_netlink_hook`](routing.md#show_netlink_hook) - Netlinkフック表示 （[RIB・ルーティング](routing.md)）
 - [`show_pktgen`](packet-generation.md#show_pktgen) - PKTGEN情報表示 （[パケット生成](packet-generation.md)）
 - [`show port`](port-management.md#show-port) （[ポート管理・統計](port-management.md)）
-- [`show port \<0-16\>`](port-management.md#show-port-0-16) （[ポート管理・統計](port-management.md)）
-- [`show port \<0-16\> flowcontrol`](port-management.md#show-port-0-16-flowcontrol) （[ポート管理・統計](port-management.md)）
-- [`show port \<0-16\> promiscuous`](port-management.md#show-port-0-16-promiscuous) （[ポート管理・統計](port-management.md)）
+- [`show port <0-16>`](port-management.md#show-port-0-16) （[ポート管理・統計](port-management.md)）
+- [`show port <0-16> flowcontrol`](port-management.md#show-port-0-16-flowcontrol) （[ポート管理・統計](port-management.md)）
+- [`show port <0-16> promiscuous`](port-management.md#show-port-0-16-promiscuous) （[ポート管理・統計](port-management.md)）
 - [`show port all`](port-management.md#show-port-all) （[ポート管理・統計](port-management.md)）
 - [`show port all flowcontrol`](port-management.md#show-port-all-flowcontrol) （[ポート管理・統計](port-management.md)）
 - [`show port all promiscuous`](port-management.md#show-port-all-promiscuous) （[ポート管理・統計](port-management.md)）
@@ -113,13 +113,13 @@
 - [`shutdown_cmd`](vty-shell.md#shutdown_cmd) - システムシャットダウン （[VTY・シェル管理](vty-shell.md)）
 - [`sleep_cmd`](system-monitoring.md#sleep_cmd) - スリープコマンド （[システム情報・監視](system-monitoring.md)）
 - [`start port`](port-management.md#start-port) （[ポート管理・統計](port-management.md)）
-- [`start port \<0-16\>`](port-management.md#start-port-0-16) （[ポート管理・統計](port-management.md)）
+- [`start port <0-16>`](port-management.md#start-port-0-16) （[ポート管理・統計](port-management.md)）
 - [`start port all`](port-management.md#start-port-all) （[ポート管理・統計](port-management.md)）
 - [`start_worker`](worker-lcore-thread-management.md#start_worker) - ワーカー開始 （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
 - [`stop port`](port-management.md#stop-port) （[ポート管理・統計](port-management.md)）
-- [`stop port \<0-16\>`](port-management.md#stop-port-0-16) （[ポート管理・統計](port-management.md)）
+- [`stop port <0-16>`](port-management.md#stop-port-0-16) （[ポート管理・統計](port-management.md)）
 - [`stop port all`](port-management.md#stop-port-all) （[ポート管理・統計](port-management.md)）
 - [`stop_worker`](worker-lcore-thread-management.md#stop_worker) - ワーカー停止 （[ワーカー・lcore管理](worker-lcore-thread-management.md)）
 - [`unset_tap_capture_persistent`](tap-interface.md#unset_tap_capture_persistent) - TAPキャプチャ永続化設定削除 （[TAPインターフェース](tap-interface.md)）
-- [`update_port_status`](queue-configuration.md#update_port_status) - ポートステータス更新 （[キュー設定](queue-configuration.md)）
+- [`update_port_status`](port-management.md#update_port_status) - ポートステータス更新 （[ポート管理・統計](port-management.md)）
 - [`vty_exit_cmd`](vty-shell.md#vty_exit_cmd) - VTY終了 （[VTY・シェル管理](vty-shell.md)）

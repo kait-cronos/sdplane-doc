@@ -72,7 +72,7 @@ show argv-list
 
 ---
 
-### **show argv-list \<0-7\>**
+### **show argv-list <0-7>**
 
 แสดง argv-list ของดัชนีที่ระบุ
 

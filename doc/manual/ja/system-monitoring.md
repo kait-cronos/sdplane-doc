@@ -12,7 +12,7 @@ sdplaneのシステム情報と監視機能を提供するコマンドです。
 - [`set_locale`](#set_locale) - ロケール設定
 - [`set_argv_list_1`](#set_argv_list_1) - argv-list設定
 - [`show argv-list`](#show-argv-list)
-- [`show argv-list \<0-7\>`](#show-argv-list-0-7)
+- [`show argv-list <0-7>`](#show-argv-list-0-7)
 - [`show_rcu`](#show_rcu) - RCU情報表示
 - [`show_fdb`](#show_fdb) - FDB情報表示
 - [`show_vswitch`](#show_vswitch) - vswitch情報表示
@@ -93,7 +93,7 @@ show argv-list
 
 ---
 
-### **show argv-list \<0-7\>**
+### **show argv-list <0-7>**
 
 特定のインデックスのargv-listを表示します。
 

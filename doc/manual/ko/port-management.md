@@ -18,7 +18,7 @@ start port
 
 ---
 
-### **start port \<0-16\>**
+### **start port <0-16>**
 
 특정 DPDK 포트를 시작합니다.
 
@@ -57,7 +57,7 @@ stop port
 
 ---
 
-### **stop port \<0-16\>**
+### **stop port <0-16>**
 
 특정 DPDK 포트를 중지합니다.
 
@@ -96,7 +96,7 @@ reset port
 
 ---
 
-### **reset port \<0-16\>**
+### **reset port <0-16>**
 
 특정 DPDK 포트를 재설정합니다.
 
@@ -135,7 +135,7 @@ show port
 
 ---
 
-### **show port \<0-16\>**
+### **show port <0-16>**
 
 특정 포트의 기본 정보를 표시합니다.
 
@@ -234,7 +234,7 @@ show port statistics total-bytes
 
 ---
 
-### **show port \<0-16\> promiscuous**
+### **show port <0-16> promiscuous**
 
 지정된 포트의 프로미스큐어스 모드 상태를 표시합니다.
 
@@ -261,7 +261,7 @@ show port all promiscuous
 
 ---
 
-### **show port \<0-16\> flowcontrol**
+### **show port <0-16> flowcontrol**
 
 지정된 포트의 흐름 제어 설정을 표시합니다.
 
@@ -288,7 +288,7 @@ show port all flowcontrol
 
 ---
 
-### **set port \<0-16\> promiscuous enable**
+### **set port <0-16> promiscuous enable**
 
 지정된 포트의 프로미스큐어스 모드를 활성화합니다.
 
@@ -303,7 +303,7 @@ set port 1 promiscuous enable
 
 ---
 
-### **set port \<0-16\> promiscuous disable**
+### **set port <0-16> promiscuous disable**
 
 지정된 포트의 프로미스큐어스 모드를 비활성화합니다.
 
@@ -342,7 +342,7 @@ set port all promiscuous disable
 
 ---
 
-### **set port \<0-16\> flowcontrol (rx|tx|autoneg|send-xon|fwd-mac-ctrl) (on|off)**
+### **set port <0-16> flowcontrol (rx|tx|autoneg|send-xon|fwd-mac-ctrl) (on|off)**
 
 지정된 포트의 흐름 제어 설정을 변경합니다.
 
@@ -386,7 +386,7 @@ set port all flowcontrol tx on
 
 ---
 
-### **set port \<0-16\> dev-configure \<0-64\> \<0-64\>**
+### **set port <0-16> dev-configure <0-64> <0-64>**
 
 지정된 포트의 DPDK 장치 설정을 수행합니다.
 
@@ -405,7 +405,7 @@ set port 1 dev-configure 2 2
 
 ---
 
-### **set port all dev-configure \<0-64\> \<0-64\>**
+### **set port all dev-configure <0-64> <0-64>**
 
 모든 포트의 DPDK 장치 설정을 수행합니다.
 
@@ -421,7 +421,7 @@ set port all dev-configure 1 1
 
 ---
 
-### **set port \<0-16\> nrxdesc \<0-16384\>**
+### **set port <0-16> nrxdesc <0-16384>**
 
 지정한 포트의 수신 디스크립터 수를 설정합니다.
 
@@ -436,7 +436,7 @@ set port 1 nrxdesc 512
 
 ---
 
-### **set port all nrxdesc \<0-16384\>**
+### **set port all nrxdesc <0-16384>**
 
 모든 포트의 수신 디스크립터 수를 설정합니다.
 
@@ -448,7 +448,7 @@ set port all nrxdesc 512
 
 ---
 
-### **set port \<0-16\> ntxdesc \<0-16384\>**
+### **set port <0-16> ntxdesc <0-16384>**
 
 지정한 포트의 송신 디스크립터 수를 설정합니다.
 
@@ -463,7 +463,7 @@ set port 1 ntxdesc 512
 
 ---
 
-### **set port all ntxdesc \<0-16384\>**
+### **set port all ntxdesc <0-16384>**
 
 모든 포트의 송신 디스크립터 수를 설정합니다.
 
@@ -475,7 +475,7 @@ set port all ntxdesc 512
 
 ---
 
-### **set port \<0-16\> link up**
+### **set port <0-16> link up**
 
 지정된 포트의 링크를 활성화합니다.
 
@@ -490,7 +490,7 @@ set port 1 link up
 
 ---
 
-### **set port \<0-16\> link down**
+### **set port <0-16> link down**
 
 지정된 포트의 링크를 비활성화합니다.
 

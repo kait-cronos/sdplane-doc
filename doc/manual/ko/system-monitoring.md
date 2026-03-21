@@ -72,7 +72,7 @@ show argv-list
 
 ---
 
-### **show argv-list \<0-7\>**
+### **show argv-list <0-7>**
 
 특정 인덱스의 argv-list를 표시합니다.
 

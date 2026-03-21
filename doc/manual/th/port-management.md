@@ -18,7 +18,7 @@ start port
 
 ---
 
-### **start port \<0-16\>**
+### **start port <0-16>**
 
 เริ่มต้นพอร์ต DPDK ที่ระบุ
 
@@ -57,7 +57,7 @@ stop port
 
 ---
 
-### **stop port \<0-16\>**
+### **stop port <0-16>**
 
 หยุดพอร์ต DPDK ที่ระบุ
 
@@ -96,7 +96,7 @@ reset port
 
 ---
 
-### **reset port \<0-16\>**
+### **reset port <0-16>**
 
 รีเซ็ตพอร์ต DPDK ที่ระบุ
 
@@ -135,7 +135,7 @@ show port
 
 ---
 
-### **show port \<0-16\>**
+### **show port <0-16>**
 
 แสดงข้อมูลพื้นฐานของพอร์ตที่ระบุ
 
@@ -234,7 +234,7 @@ show port statistics total-bytes
 
 ---
 
-### **show port \<0-16\> promiscuous**
+### **show port <0-16> promiscuous**
 
 แสดงสถานะโมด promiscuous ของพอร์ตที่ระบุ
 
@@ -261,7 +261,7 @@ show port all promiscuous
 
 ---
 
-### **show port \<0-16\> flowcontrol**
+### **show port <0-16> flowcontrol**
 
 แสดงการตั้งค่าการควบคุมการไหลของพอร์ตที่ระบุ
 
@@ -288,7 +288,7 @@ show port all flowcontrol
 
 ---
 
-### **set port \<0-16\> promiscuous enable**
+### **set port <0-16> promiscuous enable**
 
 เปิดใช้งานโมด promiscuous ของพอร์ตที่ระบุ
 
@@ -303,7 +303,7 @@ set port 1 promiscuous enable
 
 ---
 
-### **set port \<0-16\> promiscuous disable**
+### **set port <0-16> promiscuous disable**
 
 ปิดใช้งานโมด promiscuous ของพอร์ตที่ระบุ
 
@@ -342,7 +342,7 @@ set port all promiscuous disable
 
 ---
 
-### **set port \<0-16\> flowcontrol (rx|tx|autoneg|send-xon|fwd-mac-ctrl) (on|off)**
+### **set port <0-16> flowcontrol (rx|tx|autoneg|send-xon|fwd-mac-ctrl) (on|off)**
 
 เปลี่ยนการตั้งค่าการควบคุมการไหลของพอร์ตที่ระบุ
 
@@ -386,7 +386,7 @@ set port all flowcontrol tx on
 
 ---
 
-### **set port \<0-16\> dev-configure \<0-64\> \<0-64\>**
+### **set port <0-16> dev-configure <0-64> <0-64>**
 
 ตั้งค่าอุปกรณ์ DPDK ของพอร์ตที่ระบุ
 
@@ -405,7 +405,7 @@ set port 1 dev-configure 2 2
 
 ---
 
-### **set port all dev-configure \<0-64\> \<0-64\>**
+### **set port all dev-configure <0-64> <0-64>**
 
 ตั้งค่าอุปกรณ์ DPDK ของทุกพอร์ต
 
@@ -421,7 +421,7 @@ set port all dev-configure 1 1
 
 ---
 
-### **set port \<0-16\> nrxdesc \<0-16384\>**
+### **set port <0-16> nrxdesc <0-16384>**
 
 ตั้งค่าจำนวน descriptor การรับของพอร์ตที่ระบุ
 
@@ -436,7 +436,7 @@ set port 1 nrxdesc 512
 
 ---
 
-### **set port all nrxdesc \<0-16384\>**
+### **set port all nrxdesc <0-16384>**
 
 ตั้งค่าจำนวน descriptor การรับของทุกพอร์ต
 
@@ -448,7 +448,7 @@ set port all nrxdesc 512
 
 ---
 
-### **set port \<0-16\> ntxdesc \<0-16384\>**
+### **set port <0-16> ntxdesc <0-16384>**
 
 ตั้งค่าจำนวน descriptor การส่งของพอร์ตที่ระบุ
 
@@ -463,7 +463,7 @@ set port 1 ntxdesc 512
 
 ---
 
-### **set port all ntxdesc \<0-16384\>**
+### **set port all ntxdesc <0-16384>**
 
 ตั้งค่าจำนวน descriptor การส่งของทุกพอร์ต
 
@@ -475,7 +475,7 @@ set port all ntxdesc 512
 
 ---
 
-### **set port \<0-16\> link up**
+### **set port <0-16> link up**
 
 เปิดลิงก์ของพอร์ตที่ระบุ
 
@@ -490,7 +490,7 @@ set port 1 link up
 
 ---
 
-### **set port \<0-16\> link down**
+### **set port <0-16> link down**
 
 ปิดลิงก์ของพอร์ตที่ระบุ
 

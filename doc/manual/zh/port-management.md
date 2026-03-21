@@ -18,7 +18,7 @@ start port
 
 ---
 
-### **start port \<0-16\>**
+### **start port <0-16>**
 
 启动特定的DPDK端口。
 
@@ -57,7 +57,7 @@ stop port
 
 ---
 
-### **stop port \<0-16\>**
+### **stop port <0-16>**
 
 停止特定的DPDK端口。
 
@@ -96,7 +96,7 @@ reset port
 
 ---
 
-### **reset port \<0-16\>**
+### **reset port <0-16>**
 
 重置特定的DPDK端口。
 
@@ -135,7 +135,7 @@ show port
 
 ---
 
-### **show port \<0-16\>**
+### **show port <0-16>**
 
 显示特定端口的基本信息。
 
@@ -234,7 +234,7 @@ show port statistics total-bytes
 
 ---
 
-### **show port \<0-16\> promiscuous**
+### **show port <0-16> promiscuous**
 
 显示指定端口的混杂模式状态。
 
@@ -261,7 +261,7 @@ show port all promiscuous
 
 ---
 
-### **show port \<0-16\> flowcontrol**
+### **show port <0-16> flowcontrol**
 
 显示指定端口的流量控制设置。
 
@@ -288,7 +288,7 @@ show port all flowcontrol
 
 ---
 
-### **set port \<0-16\> promiscuous enable**
+### **set port <0-16> promiscuous enable**
 
 启用指定端口的混杂模式。
 
@@ -303,7 +303,7 @@ set port 1 promiscuous enable
 
 ---
 
-### **set port \<0-16\> promiscuous disable**
+### **set port <0-16> promiscuous disable**
 
 禁用指定端口的混杂模式。
 
@@ -342,7 +342,7 @@ set port all promiscuous disable
 
 ---
 
-### **set port \<0-16\> flowcontrol (rx|tx|autoneg|send-xon|fwd-mac-ctrl) (on|off)**
+### **set port <0-16> flowcontrol (rx|tx|autoneg|send-xon|fwd-mac-ctrl) (on|off)**
 
 更改指定端口的流量控制设置。
 
@@ -386,7 +386,7 @@ set port all flowcontrol tx on
 
 ---
 
-### **set port \<0-16\> dev-configure \<0-64\> \<0-64\>**
+### **set port <0-16> dev-configure <0-64> <0-64>**
 
 
 对指定端口进行DPDK设备配置。
@@ -406,7 +406,7 @@ set port 1 dev-configure 2 2
 
 ---
 
-### **set port all dev-configure \<0-64\> \<0-64\>**
+### **set port all dev-configure <0-64> <0-64>**
 
 对所有端口进行DPDK设备配置。
 
@@ -422,7 +422,7 @@ set port all dev-configure 1 1
 
 ---
 
-### **set port \<0-16\> nrxdesc \<0-16384\>**
+### **set port <0-16> nrxdesc <0-16384>**
 
 
 设置指定端口的接收描述符数量。
@@ -438,7 +438,7 @@ set port 1 nrxdesc 512
 
 ---
 
-### **set port all nrxdesc \<0-16384\>**
+### **set port all nrxdesc <0-16384>**
 
 设置所有端口的接收描述符数量。
 
@@ -450,7 +450,7 @@ set port all nrxdesc 512
 
 ---
 
-### **set port \<0-16\> ntxdesc \<0-16384\>**
+### **set port <0-16> ntxdesc <0-16384>**
 
 
 设置指定端口的发送描述符数量。
@@ -466,7 +466,7 @@ set port 1 ntxdesc 512
 
 ---
 
-### **set port all ntxdesc \<0-16384\>**
+### **set port all ntxdesc <0-16384>**
 
 设置所有端口的发送描述符数量。
 
@@ -478,7 +478,7 @@ set port all ntxdesc 512
 
 ---
 
-### **set port \<0-16\> link up**
+### **set port <0-16> link up**
 
 
 使指定端口的链路上线。
@@ -494,7 +494,7 @@ set port 1 link up
 
 ---
 
-### **set port \<0-16\> link down**
+### **set port <0-16> link down**
 
 使指定端口的链路下线。
 

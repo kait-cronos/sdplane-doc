@@ -72,7 +72,7 @@ show argv-list
 
 ---
 
-### **show argv-list \<0-7\>**
+### **show argv-list <0-7>**
 
 显示特定索引的argv-list。
 

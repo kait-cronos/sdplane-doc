@@ -8,7 +8,7 @@ sdplane-oss is a high-performance DPDK-based software router. This user guide de
 
 ## Configuration Guides
 
-1. [Port Management & Statistics](port-management.md) (10 commands) - DPDK port management and statistics
+1. [Port Management & Statistics](port-management.md) (11 commands) - DPDK port management and statistics
 2. [Worker & lcore Management & Thread Information](worker-lcore-thread-management.md) (6 commands) - Worker threads, lcore, and thread information management
 
 3. [Debug & Logging](debug-logging.md) (2 commands) - Debug and logging functions
@@ -21,7 +21,7 @@ sdplane-oss is a high-performance DPDK-based software router. This user guide de
 9. [RIB & Routing](routing.md) (6 commands) - RIB and routing functions
 10. [SRv6](srv6.md) (2 commands) - SRv6 Local SID configuration and display
 
-11. [Queue Configuration](queue-configuration.md) (3 commands) - Queue configuration and management
+11. [Queue Configuration](queue-configuration.md) (2 commands) - Queue configuration and management
 12. [Packet Generation](packet-generation.md) (3 commands) - Packet generation using PKTGEN
 
 13. [TAP Interface](tap-interface.md) (2 commands) - TAP interface management

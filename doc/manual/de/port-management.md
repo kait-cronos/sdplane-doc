@@ -18,7 +18,7 @@ start port
 
 ---
 
-### **start port \<0-16\>**
+### **start port <0-16>**
 
 Startet einen spezifischen DPDK-Port.
 
@@ -57,7 +57,7 @@ stop port
 
 ---
 
-### **stop port \<0-16\>**
+### **stop port <0-16>**
 
 Stoppt einen spezifischen DPDK-Port.
 
@@ -96,7 +96,7 @@ reset port
 
 ---
 
-### **reset port \<0-16\>**
+### **reset port <0-16>**
 
 Setzt einen spezifischen DPDK-Port zurück.
 
@@ -135,7 +135,7 @@ show port
 
 ---
 
-### **show port \<0-16\>**
+### **show port <0-16>**
 
 Zeigt die Grundinformationen eines spezifischen Ports an.
 
@@ -234,7 +234,7 @@ show port statistics total-bytes
 
 ---
 
-### **show port \<0-16\> promiscuous**
+### **show port <0-16> promiscuous**
 
 Zeigt den Status des Promiskuitätsmodus für den angegebenen Port an.
 
@@ -261,7 +261,7 @@ show port all promiscuous
 
 ---
 
-### **show port \<0-16\> flowcontrol**
+### **show port <0-16> flowcontrol**
 
 Zeigt die Flusskontrolleinstellungen für den angegebenen Port an.
 
@@ -288,7 +288,7 @@ show port all flowcontrol
 
 ---
 
-### **set port \<0-16\> promiscuous enable**
+### **set port <0-16> promiscuous enable**
 
 Aktiviert den Promiskuitätsmodus für den angegebenen Port.
 
@@ -303,7 +303,7 @@ set port 1 promiscuous enable
 
 ---
 
-### **set port \<0-16\> promiscuous disable**
+### **set port <0-16> promiscuous disable**
 
 Deaktiviert den Promiskuitätsmodus für den angegebenen Port.
 
@@ -342,7 +342,7 @@ set port all promiscuous disable
 
 ---
 
-### **set port \<0-16\> flowcontrol (rx|tx|autoneg|send-xon|fwd-mac-ctrl) (on|off)**
+### **set port <0-16> flowcontrol (rx|tx|autoneg|send-xon|fwd-mac-ctrl) (on|off)**
 
 Ändert die Flusskontrolleinstellungen für den angegebenen Port.
 
@@ -386,7 +386,7 @@ set port all flowcontrol tx on
 
 ---
 
-### **set port \<0-16\> dev-configure \<0-64\> \<0-64\>**
+### **set port <0-16> dev-configure <0-64> <0-64>**
 
 
 Konfiguriert das DPDK-Gerät für den angegebenen Port.
@@ -406,7 +406,7 @@ set port 1 dev-configure 2 2
 
 ---
 
-### **set port all dev-configure \<0-64\> \<0-64\>**
+### **set port all dev-configure <0-64> <0-64>**
 
 Konfiguriert das DPDK-Gerät für alle Ports.
 
@@ -422,7 +422,7 @@ set port all dev-configure 1 1
 
 ---
 
-### **set port \<0-16\> nrxdesc \<0-16384\>**
+### **set port <0-16> nrxdesc <0-16384>**
 
 
 Legt die Anzahl der Empfangsdeskriptoren für den angegebenen Port fest.
@@ -438,7 +438,7 @@ set port 1 nrxdesc 512
 
 ---
 
-### **set port all nrxdesc \<0-16384\>**
+### **set port all nrxdesc <0-16384>**
 
 Legt die Anzahl der Empfangsdeskriptoren für alle Ports fest.
 
@@ -450,7 +450,7 @@ set port all nrxdesc 512
 
 ---
 
-### **set port \<0-16\> ntxdesc \<0-16384\>**
+### **set port <0-16> ntxdesc <0-16384>**
 
 
 Legt die Anzahl der Sendedeskriptoren für den angegebenen Port fest.
@@ -466,7 +466,7 @@ set port 1 ntxdesc 512
 
 ---
 
-### **set port all ntxdesc \<0-16384\>**
+### **set port all ntxdesc <0-16384>**
 
 Legt die Anzahl der Sendedeskriptoren für alle Ports fest.
 
@@ -478,7 +478,7 @@ set port all ntxdesc 512
 
 ---
 
-### **set port \<0-16\> link up**
+### **set port <0-16> link up**
 
 
 Aktiviert die Verbindung für den angegebenen Port.
@@ -494,7 +494,7 @@ set port 1 link up
 
 ---
 
-### **set port \<0-16\> link down**
+### **set port <0-16> link down**
 
 Deaktiviert die Verbindung für den angegebenen Port.
 

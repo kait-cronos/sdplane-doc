@@ -20,7 +20,7 @@ start port
 
 ---
 
-### **start port \<0-16\>**
+### **start port <0-16>**
 
 Start a specific DPDK port.
 
@@ -59,7 +59,7 @@ stop port
 
 ---
 
-### **stop port \<0-16\>**
+### **stop port <0-16>**
 
 Stop a specific DPDK port.
 
@@ -98,7 +98,7 @@ reset port
 
 ---
 
-### **reset port \<0-16\>**
+### **reset port <0-16>**
 
 Reset a specific DPDK port.
 
@@ -137,7 +137,7 @@ show port
 
 ---
 
-### **show port \<0-16\>**
+### **show port <0-16>**
 
 Display basic information for a specific port.
 
@@ -236,7 +236,7 @@ show port statistics total-bytes
 
 ---
 
-### **show port \<0-16\> promiscuous**
+### **show port <0-16> promiscuous**
 
 Display the promiscuous mode status for specified port.
 
@@ -263,7 +263,7 @@ show port all promiscuous
 
 ---
 
-### **show port \<0-16\> flowcontrol**
+### **show port <0-16> flowcontrol**
 
 Display flow control settings for specified port.
 
@@ -290,7 +290,7 @@ show port all flowcontrol
 
 ---
 
-### **set port \<0-16\> promiscuous enable**
+### **set port <0-16> promiscuous enable**
 
 Enable promiscuous mode for specified port.
 
@@ -305,7 +305,7 @@ set port 1 promiscuous enable
 
 ---
 
-### **set port \<0-16\> promiscuous disable**
+### **set port <0-16> promiscuous disable**
 
 Disable promiscuous mode for specified port.
 
@@ -344,7 +344,7 @@ set port all promiscuous disable
 
 ---
 
-### **set port \<0-16\> flowcontrol (rx|tx|autoneg|send-xon|fwd-mac-ctrl) (on|off)**
+### **set port <0-16> flowcontrol (rx|tx|autoneg|send-xon|fwd-mac-ctrl) (on|off)**
 
 Configure flow control settings for specified port.
 
@@ -388,7 +388,7 @@ set port all flowcontrol tx on
 
 ---
 
-### **set port \<0-16\> dev-configure \<0-64\> \<0-64\>**
+### **set port <0-16> dev-configure <0-64> <0-64>**
 
 Configure DPDK port device settings for specified port.
 
@@ -407,7 +407,7 @@ set port 1 dev-configure 2 2
 
 ---
 
-### **set port all dev-configure \<0-64\> \<0-64\>**
+### **set port all dev-configure <0-64> <0-64>**
 
 Configure DPDK port device settings for all ports.
 
@@ -423,7 +423,7 @@ set port all dev-configure 1 1
 
 ---
 
-### **set port \<0-16\> nrxdesc \<0-16384\>**
+### **set port <0-16> nrxdesc <0-16384>**
 
 Set the number of receive descriptors for specified port.
 
@@ -438,7 +438,7 @@ set port 1 nrxdesc 512
 
 ---
 
-### **set port all nrxdesc \<0-16384\>**
+### **set port all nrxdesc <0-16384>**
 
 Set the number of receive descriptors for all ports.
 
@@ -450,7 +450,7 @@ set port all nrxdesc 512
 
 ---
 
-### **set port \<0-16\> ntxdesc \<0-16384\>**
+### **set port <0-16> ntxdesc <0-16384>**
 
 Set the number of transmit descriptors for specified port.
 
@@ -465,7 +465,7 @@ set port 1 ntxdesc 512
 
 ---
 
-### **set port all ntxdesc \<0-16384\>**
+### **set port all ntxdesc <0-16384>**
 
 Set the number of transmit descriptors for all ports.
 
@@ -477,7 +477,7 @@ set port all ntxdesc 512
 
 ---
 
-### **set port \<0-16\> link up**
+### **set port <0-16> link up**
 
 Bring the link up for specified port.
 
@@ -492,7 +492,7 @@ set port 1 link up
 
 ---
 
-### **set port \<0-16\> link down**
+### **set port <0-16> link down**
 
 Bring the link down for specified port.
 
@@ -528,6 +528,27 @@ Bring the link down for all ports.
 # Bring all ports link down
 set port all link down
 ```
+
+---
+
+### update_port_status
+
+Update Port Status
+```
+update port status
+```
+
+Update the status of all ports.
+
+**Examples:**
+```bash
+update port status
+```
+
+This command performs the following:
+- Check link status of each port
+- Update queue configuration
+- Update port statistics
 
 ## Definition Location
 

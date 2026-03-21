@@ -6,26 +6,7 @@
 
 Commands for configuring and managing DPDK queues.
 
-## Command List
-
-### update_port_status
-
-Update Port Status
-```
-update port status
-```
-
-Update the status of all ports.
-
-**Examples:**
-```bash
-update port status
-```
-
-This command performs the following:
-- Check link status of each port
-- Update queue configuration
-- Update port statistics
+## Command Details
 
 ### set_thread_lcore_port_queue
 

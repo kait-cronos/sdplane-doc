@@ -80,7 +80,7 @@ show argv-list
 
 ---
 
-### **show argv-list \<0-7\>**
+### **show argv-list <0-7>**
 
 Display specific index argv-list.
 
