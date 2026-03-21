@@ -6,7 +6,9 @@ Commands for managing RIB (Routing Information Base) and system resource informa
 
 ## Command List
 
-### show_rib - Display RIB Information
+### show_rib
+
+Display RIB Information
 ```
 show rib
 ```

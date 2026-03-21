@@ -6,7 +6,9 @@ Commands for controlling sdplane debug and logging functions.
 
 ## Command List
 
-### log_file - Log File Output Configuration
+### log_file
+
+Log File Output Configuration
 ```
 log file <file-path>
 ```
@@ -25,7 +27,9 @@ log file /var/log/sdplane.log
 log file /tmp/sdplane-debug.log
 ```
 
-### log_stdout - Standard Output Log Configuration
+### log_stdout
+
+Standard Output Log Configuration
 ```
 log stdout
 ```
@@ -40,7 +44,9 @@ log stdout
 
 **Note:** `log file` and `log stdout` can be configured simultaneously, and logs will be output to both destinations.
 
-### debug - Debug Configuration
+### debug
+
+Debug Configuration
 ```
 debug <category> <target>
 ```
@@ -107,7 +113,9 @@ no debug sdplane all
 no debug zcmdsh all
 ```
 
-### show_debug_sdplane - Display sdplane Debug Information
+### show_debug_sdplane
+
+Display sdplane Debug Information
 ```
 show debugging sdplane
 ```

@@ -225,6 +225,9 @@ Comprehensive user guides and command references are available:
 - [Device Management](manual/en/device-management.md) - Device and driver management
 - [Enhanced Repeater](manual/en/enhanced-repeater.md) - Virtual switching, VLAN processing, and TAP interfaces
 
+**Command List:**
+- [All Commands (Alphabetical)](manual/ja/command-list.md) - Index of all 112 commands
+
 ## Developer's Guide
 
 ### Integration Guide

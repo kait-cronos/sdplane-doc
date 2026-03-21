@@ -8,15 +8,17 @@ sdplaneのデバッグとログ機能を制御するコマンドです。
 
 ## コマンド一覧
 
-- [`log_file`](#log_file-ログファイル出力設定) - ログファイル出力設定
-- [`log_stdout`](#log_stdout-標準出力ログ設定) - 標準出力ログ設定
-- [`debug`](#debug-デバッグ設定) - デバッグ設定
-- [`no debug`](#no-debug-デバッグ無効化) - デバッグ無効化
-- [`show_debug_sdplane`](#show_debug_sdplane-sdplaneデバッグ情報表示) - sdplaneデバッグ情報表示
+- [`log_file`](#log_file) - ログファイル出力設定
+- [`log_stdout`](#log_stdout) - 標準出力ログ設定
+- [`debug`](#debug) - デバッグ設定
+- [`no debug`](#no-debug) - デバッグ無効化
+- [`show_debug_sdplane`](#show_debug_sdplane) - sdplaneデバッグ情報表示
 
 ## コマンド一覧
 
-### log_file - ログファイル出力設定
+### log_file
+
+ログファイル出力設定
 ```
 log file <ファイルパス>
 ```
@@ -35,7 +37,9 @@ log file /var/log/sdplane.log
 log file /tmp/sdplane-debug.log
 ```
 
-### log_stdout - 標準出力ログ設定
+### log_stdout
+
+標準出力ログ設定
 ```
 log stdout
 ```
@@ -50,7 +54,9 @@ log stdout
 
 **注意：** `log file`と`log stdout`は同時に設定可能で、両方にログが出力されます。
 
-### debug - デバッグ設定
+### debug
+
+デバッグ設定
 ```
 debug <カテゴリ> <ターゲット>
 ```
@@ -117,7 +123,9 @@ no debug sdplane all
 no debug zcmdsh all
 ```
 
-### show_debug_sdplane - sdplaneデバッグ情報表示
+### show_debug_sdplane
+
+sdplaneデバッグ情報表示
 ```
 show debugging sdplane
 ```

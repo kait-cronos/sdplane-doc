@@ -6,7 +6,9 @@ Commands for managing VTY (Virtual Terminal) and shell.
 
 ## Command List
 
-### clear_cmd - Clear Screen
+### clear_cmd
+
+Clear Screen
 ```
 clear
 ```
@@ -18,7 +20,9 @@ Clear the VTY screen.
 clear
 ```
 
-### vty_exit_cmd - Exit VTY
+### vty_exit_cmd
+
+Exit VTY
 ```
 (exit|quit|logout)
 ```
@@ -34,7 +38,9 @@ quit
 logout
 ```
 
-### shutdown_cmd - System Shutdown
+### shutdown_cmd
+
+System Shutdown
 ```
 shutdown
 ```
@@ -48,7 +54,9 @@ shutdown
 
 **Note:** This command stops the entire system. Make sure to save configurations and terminate active sessions before execution.
 
-### exit_cmd - Exit Console
+### exit_cmd
+
+Exit Console
 ```
 (exit|quit)
 ```

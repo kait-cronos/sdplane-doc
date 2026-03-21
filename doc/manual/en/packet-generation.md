@@ -6,7 +6,9 @@ Commands for packet generation functions using PKTGEN (Packet Generator).
 
 ## Command List
 
-### show_pktgen - Display PKTGEN Information
+### show_pktgen
+
+Display PKTGEN Information
 ```
 show pktgen
 ```
@@ -24,7 +26,9 @@ This command displays the following information:
 - Running tasks
 - Statistics information
 
-### pktgen_init - PKTGEN Initialization
+### pktgen_init
+
+PKTGEN Initialization
 ```
 pktgen init argv-list <0-7>
 ```
@@ -43,7 +47,9 @@ pktgen init argv-list 0
 pktgen init argv-list 2
 ```
 
-### pktgen_do_start - Start PKTGEN
+### pktgen_do_start
+
+Start PKTGEN
 ```
 pktgen do start (<0-7>|all)
 ```
@@ -63,7 +69,9 @@ pktgen do start 0
 pktgen do start all
 ```
 
-### pktgen_do_stop - Stop PKTGEN
+### pktgen_do_stop
+
+Stop PKTGEN
 ```
 pktgen do stop (<0-7>|all)
 ```

@@ -6,7 +6,9 @@ Commands for managing lthread (lightweight threads).
 
 ## Command List
 
-### set_worker_lthread_stat_collector - Set lthread Statistics Collector
+### set_worker_lthread_stat_collector
+
+Set lthread Statistics Collector
 ```
 set worker lthread stat-collector
 ```
@@ -18,7 +20,9 @@ Configure lthread worker that collects statistics information.
 set worker lthread stat-collector
 ```
 
-### set_worker_lthread_rib_manager - Set lthread RIB Manager
+### set_worker_lthread_rib_manager
+
+Set lthread RIB Manager
 ```
 set worker lthread rib-manager
 ```
@@ -30,7 +34,9 @@ Configure lthread worker that manages RIB (Routing Information Base).
 set worker lthread rib-manager
 ```
 
-### set_worker_lthread_netlink_thread - Set lthread Netlink Thread
+### set_worker_lthread_netlink_thread
+
+Set lthread Netlink Thread
 ```
 set worker lthread netlink-thread
 ```

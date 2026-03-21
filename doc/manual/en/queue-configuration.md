@@ -6,7 +6,9 @@ Commands for configuring and managing DPDK queues.
 
 ## Command List
 
-### update_port_status - Update Port Status
+### update_port_status
+
+Update Port Status
 ```
 update port status
 ```
@@ -23,7 +25,9 @@ This command performs the following:
 - Update queue configuration
 - Update port statistics
 
-### set_thread_lcore_port_queue - Set Thread Queue Configuration
+### set_thread_lcore_port_queue
+
+Set Thread Queue Configuration
 ```
 set thread <0-128> port <0-128> queue <0-128>
 ```
@@ -47,7 +51,9 @@ set thread 1 port 1 queue 1
 set thread 2 port 0 queue 1
 ```
 
-### show_thread_qconf - Display Thread Queue Configuration
+### show_thread_qconf
+
+Display Thread Queue Configuration
 ```
 show thread qconf
 ```

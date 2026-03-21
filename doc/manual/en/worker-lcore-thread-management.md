@@ -6,7 +6,9 @@ Commands for managing and monitoring DPDK worker threads, lcores, and thread inf
 
 ## Worker Management Commands
 
-### set_worker - Worker Type Configuration
+### set_worker
+
+Worker Type Configuration
 ```
 set worker lcore <0-16> (|none|l2fwd|l3fwd|l3fwd-lpm|tap-handler|l2-repeater|enhanced-repeater|vlan-switch|pktgen|linkflap-generator)
 ```
@@ -37,28 +39,36 @@ set worker lcore 1 enhanced-repeater
 set worker lcore 2 none
 ```
 
-### reset_worker - Reset Worker
+### reset_worker
+
+Reset Worker
 ```
 reset worker lcore (<0-16>|all)
 ```
 
 Resets the worker for the specified lcore or all lcores.
 
-### start_worker - Start Worker
+### start_worker
+
+Start Worker
 ```
 start worker lcore (<0-16>|all)
 ```
 
 Starts the worker for the specified lcore or all lcores.
 
-### stop_worker - Stop Worker
+### stop_worker
+
+Stop Worker
 ```
 stop worker lcore (<0-16>|all)
 ```
 
 Stops the worker for the specified lcore or all lcores.
 
-### restart_worker - Restart Worker
+### restart_worker
+
+Restart Worker
 ```
 restart worker lcore (<0-16>|all)
 ```
@@ -77,7 +87,9 @@ stop worker lcore all
 restart worker lcore 3
 ```
 
-### show_worker - Display Worker Information
+### show_worker
+
+Display Worker Information
 ```
 show worker
 ```
@@ -86,7 +98,9 @@ Displays the current worker status and configuration.
 
 ## Thread Information Commands
 
-### show_thread - Display Thread Information
+### show_thread
+
+Display Thread Information
 ```
 show thread
 ```
@@ -100,7 +114,9 @@ This command displays the following information:
 - CPU usage
 - Memory usage
 
-### show_thread_counter - Display Thread Counter
+### show_thread_counter
+
+Display Thread Counter
 ```
 show thread counter
 ```
@@ -115,14 +131,18 @@ This command displays the following information:
 
 ## System Initialization Commands
 
-### set_mempool - Configure Memory Pool
+### set_mempool
+
+Configure Memory Pool
 ```
 set mempool
 ```
 
 Configures DPDK memory pool.
 
-### set_rte_eal_argv - Configure RTE EAL Command Line Arguments
+### set_rte_eal_argv
+
+Configure RTE EAL Command Line Arguments
 ```
 set rte_eal argv <WORD> <WORD> <WORD> <WORD> <WORD> <WORD>
 ```
@@ -135,7 +155,9 @@ Configures command line arguments used for RTE EAL (Environment Abstraction Laye
 set rte_eal argv -c 0x1 -n 4 --socket-mem 1024,1024 --huge-dir /mnt/huge
 ```
 
-### rte_eal_init - RTE EAL Initialization
+### rte_eal_init
+
+RTE EAL Initialization
 ```
 rte_eal_init
 ```

@@ -8,12 +8,14 @@ DPDKデバイスとドライバーの管理を行うコマンドです。
 
 ## コマンド一覧
 
-- [`show_devices`](#show_devices-デバイス情報表示) - デバイス情報表示
-- [`set_device_driver`](#set_device_driver-デバイスドライバー設定) - デバイスドライバー設定
+- [`show_devices`](#show_devices) - デバイス情報表示
+- [`set_device_driver`](#set_device_driver) - デバイスドライバー設定
 
 ## コマンド一覧
 
-### show_devices - デバイス情報表示
+### show_devices
+
+デバイス情報表示
 ```
 show devices
 ```
@@ -32,7 +34,9 @@ show devices
 - デバイスの状態
 - PCIアドレス
 
-### set_device_driver - デバイスドライバー設定
+### set_device_driver
+
+デバイスドライバー設定
 ```
 set device <WORD> driver (ixgbe|igb|igc|uio_pci_generic|igb_uio|vfio-pci|unbound) (|bind|driver_override)
 ```

@@ -6,7 +6,9 @@ Commands for providing system information and monitoring functions in sdplane.
 
 ## Command List
 
-### show_version - Display Version
+### show_version
+
+Display Version
 ```
 show version
 ```
@@ -18,7 +20,9 @@ Display sdplane version information.
 show version
 ```
 
-### set_locale - Set Locale
+### set_locale
+
+Set Locale
 ```
 set locale (C|C.utf8|en_US.utf8|POSIX)
 ```
@@ -40,7 +44,9 @@ set locale C.utf8
 set locale en_US.utf8
 ```
 
-### set_argv_list_1 - Set argv-list
+### set_argv_list_1
+
+Set argv-list
 ```
 set argv-list <0-7> <WORD>
 ```
@@ -85,7 +91,9 @@ show argv-list 0
 show argv-list 3
 ```
 
-### show_loop_count - Display Loop Counter
+### show_loop_count
+
+Display Loop Counter
 ```
 show loop-count (console|vty-shell|l2fwd) (pps|total)
 ```
@@ -110,7 +118,9 @@ show loop-count console pps
 show loop-count l2fwd total
 ```
 
-### show_rcu - Display RCU Information
+### show_rcu
+
+Display RCU Information
 ```
 show rcu
 ```
@@ -122,7 +132,9 @@ Display RCU (Read-Copy-Update) information.
 show rcu
 ```
 
-### show_fdb - Display FDB Information
+### show_fdb
+
+Display FDB Information
 ```
 show fdb
 ```
@@ -134,7 +146,9 @@ Display FDB (Forwarding Database) information.
 show fdb
 ```
 
-### show_vswitch - Display vswitch Information
+### show_vswitch
+
+Display vswitch Information
 ```
 show vswitch
 ```
@@ -146,7 +160,9 @@ Display virtual switch information.
 show vswitch
 ```
 
-### sleep_cmd - Sleep Command
+### sleep_cmd
+
+Sleep Command
 ```
 sleep <0-300>
 ```
@@ -165,7 +181,9 @@ sleep 5
 sleep 30
 ```
 
-### show_mempool - Display Memory Pool Information
+### show_mempool
+
+Display Memory Pool Information
 ```
 show mempool
 ```

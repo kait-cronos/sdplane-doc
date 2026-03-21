@@ -6,7 +6,9 @@ Commands for managing DPDK devices and drivers.
 
 ## Command List
 
-### show_devices - Display Device Information
+### show_devices
+
+Display Device Information
 ```
 show devices
 ```
@@ -25,7 +27,9 @@ This command displays the following information:
 - Device status
 - PCI address
 
-### set_device_driver - Set Device Driver
+### set_device_driver
+
+Set Device Driver
 ```
 set device <WORD> driver (ixgbe|igb|igc|uio_pci_generic|igb_uio|vfio-pci|unbound) (|bind|driver_override)
 ```

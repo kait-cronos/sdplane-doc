@@ -8,21 +8,23 @@ sdplaneのシステム情報と監視機能を提供するコマンドです。
 
 ## コマンド一覧
 
-- [`show_version`](#show_version-バージョン表示) - バージョン表示
-- [`set_locale`](#set_locale-ロケール設定) - ロケール設定
-- [`set_argv_list_1`](#set_argv_list_1-argv-list設定) - argv-list設定
+- [`show_version`](#show_version) - バージョン表示
+- [`set_locale`](#set_locale) - ロケール設定
+- [`set_argv_list_1`](#set_argv_list_1) - argv-list設定
 - [`show argv-list`](#show-argv-list)
 - [`show argv-list \<0-7\>`](#show-argv-list-0-7)
-- [`show_loop_count`](#show_loop_count-ループカウンター表示) - ループカウンター表示
-- [`show_rcu`](#show_rcu-rcu情報表示) - RCU情報表示
-- [`show_fdb`](#show_fdb-fdb情報表示) - FDB情報表示
-- [`show_vswitch`](#show_vswitch-vswitch情報表示) - vswitch情報表示
-- [`sleep_cmd`](#sleep_cmd-スリープコマンド) - スリープコマンド
-- [`show_mempool`](#show_mempool-メモリプール情報表示) - メモリプール情報表示
+- [`show_loop_count`](#show_loop_count) - ループカウンター表示
+- [`show_rcu`](#show_rcu) - RCU情報表示
+- [`show_fdb`](#show_fdb) - FDB情報表示
+- [`show_vswitch`](#show_vswitch) - vswitch情報表示
+- [`sleep_cmd`](#sleep_cmd) - スリープコマンド
+- [`show_mempool`](#show_mempool) - メモリプール情報表示
 
 ## コマンド一覧
 
-### show_version - バージョン表示
+### show_version
+
+バージョン表示
 ```
 show version
 ```
@@ -34,7 +36,9 @@ sdplaneのバージョン情報を表示します。
 show version
 ```
 
-### set_locale - ロケール設定
+### set_locale
+
+ロケール設定
 ```
 set locale (C|C.utf8|en_US.utf8|POSIX)
 ```
@@ -56,7 +60,9 @@ set locale C.utf8
 set locale en_US.utf8
 ```
 
-### set_argv_list_1 - argv-list設定
+### set_argv_list_1
+
+argv-list設定
 ```
 set argv-list <0-7> <WORD>
 ```
@@ -101,7 +107,9 @@ show argv-list 0
 show argv-list 3
 ```
 
-### show_loop_count - ループカウンター表示
+### show_loop_count
+
+ループカウンター表示
 ```
 show loop-count (console|vty-shell|l2fwd) (pps|total)
 ```
@@ -126,7 +134,9 @@ show loop-count console pps
 show loop-count l2fwd total
 ```
 
-### show_rcu - RCU情報表示
+### show_rcu
+
+RCU情報表示
 ```
 show rcu
 ```
@@ -138,7 +148,9 @@ RCU（Read-Copy-Update）の情報を表示します。
 show rcu
 ```
 
-### show_fdb - FDB情報表示
+### show_fdb
+
+FDB情報表示
 ```
 show fdb
 ```
@@ -150,7 +162,9 @@ FDB（Forwarding Database）の情報を表示します。
 show fdb
 ```
 
-### show_vswitch - vswitch情報表示
+### show_vswitch
+
+vswitch情報表示
 ```
 show vswitch
 ```
@@ -162,7 +176,9 @@ show vswitch
 show vswitch
 ```
 
-### sleep_cmd - スリープコマンド
+### sleep_cmd
+
+スリープコマンド
 ```
 sleep <0-300>
 ```
@@ -181,7 +197,9 @@ sleep 5
 sleep 30
 ```
 
-### show_mempool - メモリプール情報表示
+### show_mempool
+
+メモリプール情報表示
 ```
 show mempool
 ```
