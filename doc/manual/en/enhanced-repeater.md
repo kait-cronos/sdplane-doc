@@ -1,5 +1,7 @@
 # Enhanced Repeater Configuration
 
+**Language:** **English** | [日本語](../ja/enhanced-repeater.md)
+
 The enhanced repeater provides advanced VLAN switching capabilities with TAP interfaces for L3 routing and packet capture. It supports virtual switch creation, DPDK port linking with VLAN tagging, router interfaces for kernel integration, and capture interfaces for monitoring.
 
 ## Virtual Switch Commands

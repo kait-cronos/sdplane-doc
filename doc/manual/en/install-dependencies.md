@@ -1,6 +1,6 @@
 # Install Dependencies
 
-**Language:** **English** | [Japanese](../ja/install-dependencies.md) | [French](../fr/install-dependencies.md) | [Chinese](../zh/install-dependencies.md) | [German](../de/install-dependencies.md) | [Italian](../it/install-dependencies.md) | [Korean](../ko/install-dependencies.md) | [Thai](../th/install-dependencies.md) | [Spanish](../es/install-dependencies.md)
+**Language:** **English** | [日本語](../ja/install-dependencies.md)
 
 ## Dependencies
 - **liburcu-qsbr**: Userspace RCU library

@@ -2,7 +2,7 @@
 
 # パケット生成
 
-**Language:** [English](../en/packet-generation.md) | **日本語** | [Français](../fr/packet-generation.md) | [中文](../zh/packet-generation.md) | [Deutsch](../de/packet-generation.md) | [Italiano](../it/packet-generation.md) | [한국어](../ko/packet-generation.md) | [ไทย](../th/packet-generation.md) | [Español](../es/packet-generation.md)
+**Language:** [English](../en/packet-generation.md) | **日本語**
 
 PKTGEN（Packet Generator）を使用したパケット生成機能のコマンドです。
 

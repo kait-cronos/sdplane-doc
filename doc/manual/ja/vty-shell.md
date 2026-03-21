@@ -2,7 +2,7 @@
 
 # VTY・シェル管理
 
-**Language:** [English](../en/vty-shell.md) | **日本語** | [Français](../fr/vty-shell.md) | [中文](../zh/vty-shell.md) | [Deutsch](../de/vty-shell.md) | [Italiano](../it/vty-shell.md) | [한국어](../ko/vty-shell.md) | [ไทย](../th/vty-shell.md) | [Español](../es/vty-shell.md)
+**Language:** [English](../en/vty-shell.md) | **日本語**
 
 VTY（Virtual Terminal）とシェルの管理を行うコマンドです。
 
