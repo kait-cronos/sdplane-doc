@@ -14,7 +14,7 @@ sdplane-oss is a high-performance DPDK-based software router. This user guide de
 3. [Debug & Logging](debug-logging.md) (2 commands) - Debug and logging functions
 4. [VTY & Shell Management](vty-shell.md) (4 commands) - VTY and shell management
 5. [System Information & Monitoring](system-monitoring.md) (10 commands) - System information and monitoring
-6. [RIB & Routing](routing.md) (1 command) - RIB and routing functions
+6. [RIB & Routing](routing.md) (7 commands) - RIB and routing functions
    - [Virtual Switch (vswitch)](vswitch.md) (16 commands) - Virtual switch configuration and management
    - [Neighbor Table (ARP/ND)](neighbor.md) (1 command) - Neighbor table display
    - [FDB (Forwarding Database)](fdb.md) (1 command) - FDB display

@@ -9,12 +9,20 @@ Commands for managing RIB (Routing Information Base) and system resource informa
 ## Command List
 
 - [`show_rib`](#show_rib) - Display RIB information
+- [`show_rib_route`](#show_rib_route) - Display routing table
+- [`show_fib_route`](#show_fib_route) - Display FIB table
+- [`show_rib_nexthop_group`](#show_rib_nexthop_group) - Display nexthop group
+- [`show_rib_nexthop_pool`](#show_rib_nexthop_pool) - Display nexthop information pool
+- [`set_netlink_hook`](#set_netlink_hook) - Set netlink hook
+- [`show_netlink_hook`](#show_netlink_hook) - Display netlink hook
 
 **Related Pages (separate documents):**
 - [Virtual Switch (vswitch)](vswitch.md) - vswitch configuration and display commands (16 commands)
 - [Neighbor Table (ARP/ND)](neighbor.md) - show neighbor
 - [FDB (Forwarding Database)](fdb.md) - show fdb
 - [SRv6](srv6.md) - SRv6 Local SID configuration and display
+
+## Command Details
 
 ### show_rib
 
@@ -33,9 +41,277 @@ show rib
 This command displays the following information:
 - RIB version and memory pointer
 - Virtual switch configurations and VLAN assignments
-- DPDK port status and queue configurations  
+- DPDK port status and queue configurations
 - lcore-to-port queue assignments
 - Neighbor tables for L2/L3 forwarding
+
+### show_rib_route
+
+Display Routing Table
+```
+show rib (ipv4|ipv6) route
+```
+
+Display IPv4 or IPv6 routing table.
+
+**Parameters:**
+- `ipv4` - Display IPv4 routing table
+- `ipv6` - Display IPv6 routing table
+
+**Examples:**
+```bash
+show rib ipv4 route
+show rib ipv6 route
+```
+
+### show_fib_route
+
+Display FIB Table
+```
+show fib (ipv4|ipv6) route
+```
+
+Display IPv4 or IPv6 FIB (Forwarding Information Base) table. The FIB contains the best routes selected from the RIB and is used for actual packet forwarding.
+
+**Parameters:**
+- `ipv4` - Display IPv4 FIB table
+- `ipv6` - Display IPv6 FIB table
+
+**Examples:**
+```bash
+show fib ipv4 route
+show fib ipv6 route
+```
+
+### show_rib_nexthop_group
+
+Display Nexthop Group
+```
+show rib nexthop-group
+```
+
+Display the nexthop group table. `show rib nexthop-group` shows the logical structure of the groups.
+
+**Display Fields:**
+
+| Field | Description |
+|-------|-------------|
+| ID | sdplane internal nexthop group ID |
+| KernelID | Linux kernel nhid (shown only for separated type) |
+| RefCnt | Number of route entries or other groups referencing this group |
+| Nexthop Count | Number of member nexthops |
+| Depends | sdplane IDs of child groups referenced by this group |
+| Dependents | sdplane IDs of parent groups referencing this group |
+
+**Examples:**
+```bash
+show rib nexthop-group
+```
+
+**Output Example:**
+```
+ID: 13
+KernelID: 10
+RefCnt: 2
+Nexthop Count: 1
+Dependents: (15)
+via 172.15.0.10, rif1 (14), IPv4, weight 0
+
+ID: 15
+KernelID: 100
+RefCnt: 1
+Nexthop Count: 2
+Depends: (13) (14)
+via 172.15.0.10, rif1 (14), IPv4, weight 1
+via 172.16.0.10, rif2 (16), IPv4, weight 1
+```
+
+### show_rib_nexthop_pool
+
+Display Nexthop Information Pool
+```
+show rib nexthop-pool
+```
+
+Display the nexthop information pool. `show rib nexthop-pool` shows the actual nexthop information (IP addresses and interfaces).
+
+**Display Fields:**
+
+| Field | Description |
+|-------|-------------|
+| IDX | Index within the pool |
+| RefCnt | Number of nexthop group members referencing this entry |
+| Family | IPv4 / IPv6 |
+| Type | gateway (via gateway) or connected (directly connected) |
+| Gateway | Gateway IP address |
+| Interface | Output interface name and interface number |
+
+**Examples:**
+```bash
+show rib nexthop-pool
+```
+
+**Output Example:**
+```
+IDX    RefCnt  Family  Type     Gateway         Interface
+--------------------------------------------------------------------------------
+27     2       IPv4    gateway  172.15.0.10     rif1 (14)
+29     2       IPv4    gateway  172.16.0.10     rif2 (16)
+```
+
+## Configuration Commands
+
+For virtual switch related configuration commands, see [Virtual Switch (vswitch)](vswitch.md).
+
+For FDB command details, see [FDB (Forwarding Database)](fdb.md).
+
+### set_netlink_hook
+
+Set Netlink Hook
+```
+set netlink-hook <0-3> (ipv4|ipv6) ifaddr (new|del) ifname <WORD> argv-list <0-7>
+```
+
+Monitor Linux kernel network events (IP address additions/deletions) and configure hooks that execute command lists when events occur.
+
+**Parameters:**
+- `<0-3>` - Hook index (up to 4)
+- `ipv4|ipv6` - Address family
+- `new|del` - Event type (address addition / deletion)
+- `<WORD>` - Interface name to monitor
+- `<0-7>` - argv-list index to execute
+
+**Examples:**
+```bash
+# Execute argv-list 0 when an IPv4 address is added to rif1
+set netlink-hook 0 ipv4 ifaddr new ifname rif1 argv-list 0
+```
+
+### show_netlink_hook
+
+Display Netlink Hook
+```
+show netlink-hook (|<0-3>)
+```
+
+Display configured netlink hook information.
+
+**Parameters:**
+- `<0-3>` - Specify a particular hook index (omit to display all)
+
+**Examples:**
+```bash
+show netlink-hook
+show netlink-hook 0
+```
+
+## Static Route Configuration
+
+sdplane imports routes configured in the Linux kernel via netlink. Static routes set by iproute2 or FRRouting can be used.
+
+### Static Route Configuration with iproute2
+
+sdplane supports the **non-separated type** (traditional method) where Route Objects and Nexthop Objects are not separated, and the **separated type** where both are separated using the `ip nexthop` command. Multipath routes using Nexthop Groups are also supported.
+
+#### 1) Non-separated Type (Traditional Method)
+
+```bash
+# Single path
+ip route add 10.10.10.0/24 via 172.15.0.10 dev rif1
+
+# Multipath
+ip route add 10.20.20.0/24 \
+  nexthop via 172.15.0.10 dev rif1 \
+  nexthop via 172.16.0.10 dev rif2
+```
+
+#### 2) Separated Type (Route Object / Nexthop Object Separation)
+
+sdplane manages Linux kernel nhids by mapping them to internal IDs.
+
+```bash
+# Single path
+ip nexthop add id 10 via 172.15.0.10 dev rif1
+ip route add 10.30.30.0/24 nhid 10
+
+# Multipath (Nexthop Group)
+ip nexthop add id 10 via 172.15.0.10 dev rif1
+ip nexthop add id 11 via 172.16.0.10 dev rif2
+ip nexthop add id 100 group 10/11
+ip route add 10.40.40.0/24 nhid 100
+```
+
+#### Route Verification
+
+The following is an example output when single-path and multipath routes are configured using the separated type.
+
+```
+console> show rib ipv4 route
+Destination      Nexthop                       Interface
+[snip]
+[2] 10.30.30.0/24    172.15.0.10    13    rif1 (14)
+[3] 10.40.40.0/24    172.15.0.10    15    rif1 (14)
+                      172.16.0.10          rif2 (16)
+```
+
+### Static Route Configuration with FRRouting
+
+When static routes are configured via FRR's `vtysh`, they are injected into the kernel via staticd → zebra, and sdplane imports them via netlink.
+
+**Verified Version:** FRR 10.5.2
+
+```bash
+vtysh
+router# configure terminal
+
+# Single path
+router(config)# ip route 10.10.10.0/24 172.15.0.10
+
+# Multipath
+router(config)# ip route 10.20.20.0/24 172.15.0.10
+router(config)# ip route 10.20.20.0/24 172.16.0.10
+```
+
+#### Route Verification
+
+```bash
+# FRR side
+router# show ip route static
+router# show nexthop-group rib
+
+# sdplane side
+console> show rib ipv4 route
+console> show rib nexthop-group
+console> show rib nexthop-pool
+```
+
+## Dynamic Routing (FRRouting / Bird Integration)
+
+sdplane passes control packets (ARP/ND/OSPF, etc.) to router interfaces (TAP devices) and can perform dynamic routing in cooperation with FRRouting or Bird.
+
+### Control Packet Handling
+
+The router processing threads (`router` / `srv6-router`) classify the following as control packets and send them to router interfaces (TAP devices):
+
+- ARP
+- IPv6 NS/NA (Neighbor Solicitation / Neighbor Advertisement)
+- OSPF (IPv4/IPv6)
+- Packets whose destination matches the IP/MAC of the local router interface
+
+Neighbor resolution information (ARP/ND) is reflected in the neighbor table via internal messages.
+
+## SRv6
+
+sdplane implements SRv6 (Segment Routing over IPv6) Transit Node functionality.
+
+### Supported Features
+
+- Processes SRH type 4 (`RTE_IPV6_SRCRT_TYPE_4`)
+- End-equivalent basic operation (segments_left decrement + next SID reflection to IPv6 destination)
+- Up to 16 local-sids (0-15) configurable
+- Used with the `srv6-router` worker type
+
+For SRv6 command details, see [SRv6](srv6.md).
 
 ## RIB Overview
 
@@ -71,18 +347,18 @@ struct rib_info {
 ## Reading RIB Information
 
 ### Basic Display Items
-- **RIB Version** - Current RIB version number and memory pointer
-- **Virtual Switches** - VLAN configurations and port assignments
-- **DPDK Ports** - Link status, speed, duplex, queue configurations
-- **lcores** - CPU core assignments and packet processing queues
-- **Neighbor Tables** - L2/L3 forwarding database entries
+- **Destination** - Destination network address
+- **Netmask** - Netmask
+- **Gateway** - Gateway (next hop)
+- **Interface** - Output interface
+- **Metric** - Route metric value
+- **Status** - Route status
 
-### DPDK Port Status
-- **speed** - Link speed in Mbps
-- **duplex** - full/half duplex mode
-- **autoneg** - Auto-negotiation status (on/off)
-- **status** - Link status (up/down)
-- **nrxq/ntxq** - Number of RX/TX queues
+### Route Status
+- **Active** - Active route
+- **Inactive** - Inactive route
+- **Pending** - Route being configured
+- **Invalid** - Invalid route
 
 ## Usage Examples
 
@@ -95,21 +371,21 @@ show rib
 ### Output Example Interpretation
 ```
 rib information version: 21 (0x55555dd42010)
-vswitches: 
-dpdk ports: 
-  dpdk_port[0]: 
+vswitches:
+dpdk ports:
+  dpdk_port[0]:
     link: speed=1000Mbps duplex=full autoneg=on status=up
     nb_rxd=1024 nb_txd=1024
     queues: nrxq=1 ntxq=4
-  dpdk_port[1]: 
+  dpdk_port[1]:
     link: speed=0Mbps duplex=half autoneg=on status=down
     nb_rxd=1024 nb_txd=1024
     queues: nrxq=1 ntxq=4
-  dpdk_port[2]: 
+  dpdk_port[2]:
     link: speed=0Mbps duplex=half autoneg=off status=down
     nb_rxd=1024 nb_txd=1024
     queues: nrxq=1 ntxq=4
-lcores: 
+lcores:
   lcore[0]: nrxq=0
   lcore[1]: nrxq=1
     rxq[0]: dpdk_port[0], queue_id=0
@@ -135,94 +411,69 @@ In this example:
 
 ### Automatic Updates
 RIB is automatically updated at the following times:
-- DPDK port link status changes
-- Virtual switch configuration changes
-- lcore queue assignment modifications
-- Port start/stop operations
+- Interface status changes
+- Network configuration changes
+- Routing protocol information received
 
 ### Manual Updates
-To manually refresh and check RIB information:
+To manually check RIB information:
 ```bash
-# Display current RIB state
 show rib
-
-# Update port status (useful for Mellanox NICs)
-update port status
 ```
 
 ## Troubleshooting
 
-### When Packet Processing Is Not Working Properly
-1. Check RIB information for port and queue assignments
+### When Routing Is Not Working Properly
+1. Check RIB information
 ```bash
 show rib
 ```
 
-2. Check DPDK port status and link state
+2. Check interface status
 ```bash
-show port all
-show port statistics all
+show port
 ```
 
-3. Check worker and lcore assignments
+3. Check worker status
 ```bash
 show worker
-show thread
 ```
 
-### When Ports Are Not Shown in RIB
-- Verify DPDK port initialization with `rte_eal_init`
-- Check port configuration with `set port all dev-configure`
-- Ensure ports are started with `start port all`
-- For Mellanox NICs, run `update port status` command
+### When Routes Are Not Shown in RIB
+- Verify network configuration
+- Check interface status
+- Verify RIB manager operation
 
 ## Advanced Features
 
 ### RIB Manager
 The RIB manager operates as an independent thread and provides the following functions:
-- Automatic DPDK port status monitoring
-- Virtual switch configuration management
-- lcore queue assignment coordination
-- System resource state synchronization
-
-### RCU-based Thread Safety
-RIB uses RCU (Read-Copy-Update) for thread-safe access:
-```c
-// Access RIB from worker threads
-#if HAVE_LIBURCU_QSBR
-    urcu_qsbr_read_lock();
-    rib = (struct rib *) rcu_dereference(rcu_global_ptr_rib);
-#endif
-    // Use rib data...
-#if HAVE_LIBURCU_QSBR
-    urcu_qsbr_read_unlock();
-#endif
-```
+- Automatic routing information updates
+- Route validity checking
+- Network status monitoring
 
 ### Related Workers
 - **rib-manager** - Worker that manages RIB updates and synchronization
-- **enhanced-repeater** - Uses RIB for VLAN switching and port status
-- **l2-repeater** - Uses RIB for basic packet forwarding decisions
-- **l3-tap-handler** - Accesses RIB for TAP interface management
-
-## Additional RIB Commands
-
-For virtual switch configuration and display commands, see [Virtual Switch (vswitch)](vswitch.md).
+- **neigh-manager** - ARP/ND table management
+- **netlink-thread** - Netlink communication with the Linux kernel (route/address synchronization)
+- **router** - vswitch-based L3 router
+- **srv6-router** - SRv6 router
+- **l3-tap-handler** - Packet processing via router interfaces
 
 ## Definition Location
 
-This command is defined in the following files:
-- `sdplane/rib.c` - Main RIB display functions
-- `sdplane/rib.h` - RIB data structure definitions
-- `sdplane/rib_manager.h` - RIB manager interface
+These commands are defined in the following files:
+- `sdplane/rib.c` - RIB, virtual switch, FDB, and neighbor table related commands
+- `sdplane/netlink_hook.c` - Netlink hook related commands
 
 ## Related Topics
 
-- [Virtual Switch (vswitch)](vswitch.md) - Virtual switch configuration and display commands
-- [Neighbor Table (ARP/ND)](neighbor.md) - Neighbor table display
-- [FDB (Forwarding Database)](fdb.md) - FDB display
-- [SRv6](srv6.md) - SRv6 Local SID configuration and display
-- [Enhanced Repeater](enhanced-repeater.md) - Virtual switch configuration
-- [Port Management & Statistics](port-management.md) - DPDK port management
-- [Worker & lcore Management](worker-lcore-thread-management.md) - Worker thread assignments
-- [System Information & Monitoring](system-monitoring.md) - System monitoring commands
+- [Virtual Switch (vswitch)](vswitch.md) - Virtual switch configuration and management
+- [Neighbor Table (ARP/ND)](neighbor.md) - ARP/ND table management
+- [FDB (Forwarding Database)](fdb.md) - MAC address learning table
+- [SRv6](srv6.md) - Segment Routing over IPv6
+- [Using as a Switch](scenario-switch.md) - L2 switching scenario guide
+- [Setting Up a Router: Static Routes Only](scenario-static-router.md) - Static route router scenario guide
+- [Worker & lcore Management](worker-lcore-thread-management.md)
+- [lthread Management](lthread-management.md)
+- [System Information & Monitoring](system-monitoring.md)
