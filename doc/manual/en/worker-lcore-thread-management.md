@@ -1,3 +1,5 @@
+[Top](../../README.en.md) > [User Guide](README.md) > Configuration Guides > Worker & lcore Management
+
 # Worker & lcore Management & Thread Information
 
 **Language:** **English** | [日本語](../ja/worker-lcore-thread-management.md)

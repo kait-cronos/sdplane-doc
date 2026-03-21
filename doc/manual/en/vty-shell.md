@@ -1,3 +1,5 @@
+[Top](../../README.en.md) > [User Guide](README.md) > Configuration Guides > VTY & Shell Management
+
 # VTY & Shell Management
 
 **Language:** **English** | [日本語](../ja/vty-shell.md)

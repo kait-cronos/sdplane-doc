@@ -1,3 +1,5 @@
+[Top](../../README.en.md) > [User Guide](README.md) > Configuration Guides > Device Management
+
 # Device Management
 
 **Language:** **English** | [日本語](../ja/device-management.md)

@@ -1,3 +1,5 @@
+[Top](../../README.en.md) > [User Guide](README.md) > Configuration Guides > Queue Configuration
+
 # Queue Configuration
 
 **Language:** **English** | [日本語](../ja/queue-configuration.md)

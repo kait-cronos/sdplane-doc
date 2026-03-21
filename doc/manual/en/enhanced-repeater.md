@@ -1,3 +1,5 @@
+[Top](../../README.en.md) > [User Guide](README.md) > Configuration Guides > Enhanced Repeater
+
 # Enhanced Repeater Configuration
 
 **Language:** **English** | [日本語](../ja/enhanced-repeater.md)

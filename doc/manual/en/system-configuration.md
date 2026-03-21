@@ -1,3 +1,5 @@
+[Top](../../README.en.md) > [User Guide](README.md) > System Configuration
+
 # System Configuration
 
 **Language:** **English** | [日本語](../ja/system-configuration.md)

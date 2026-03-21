@@ -1,3 +1,5 @@
+[Top](../../README.en.md) > [User Guide](README.md) > Configuration Guides > Debug & Logging
+
 # Debug & Logging
 
 **Language:** **English** | [日本語](../ja/debug-logging.md)

@@ -1,3 +1,5 @@
+[Top](../../README.en.md) > [User Guide](README.md) > Configuration Guides > lthread Management
+
 # lthread Management
 
 **Language:** **English** | [日本語](../ja/lthread-management.md)

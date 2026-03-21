@@ -1,3 +1,5 @@
+[Top](../../README.en.md) > [User Guide](README.md) > Configuration Guides > System Information & Monitoring
+
 # System Information & Monitoring
 
 **Language:** **English** | [日本語](../ja/system-monitoring.md)

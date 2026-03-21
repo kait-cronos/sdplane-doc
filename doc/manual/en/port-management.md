@@ -1,3 +1,5 @@
+[Top](../../README.en.md) > [User Guide](README.md) > Configuration Guides > Port Management & Statistics
+
 # Port Management & Statistics
 
 **Language:** **English** | [日本語](../ja/port-management.md)
