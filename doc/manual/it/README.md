@@ -71,4 +71,4 @@ Per informazioni dettagliate sull'utilizzo, consultare la documentazione di ogni
 
 ## Licenza
 
-Questo progetto è concesso in licenza sotto la Licenza MIT. Vedere il file [LICENSE](../../../LICENSE) per i dettagli della licenza.
+Questo progetto è concesso in licenza sotto la GNU General Public License v3.0. Vedere il file [LICENSE](../../../LICENSE) per i dettagli della licenza.

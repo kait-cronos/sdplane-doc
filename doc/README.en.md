@@ -117,7 +117,7 @@ The project follows GNU coding standards. Use the provided scripts to check and 
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](../LICENSE) file for license details.
+This project is licensed under the GNU General Public License v3.0. See the [LICENSE](../LICENSE) file for license details.
 
 ## Contact
 

@@ -71,4 +71,4 @@ Für detaillierte Verwendungshinweise siehe die Dokumentation jeder Kategorie.
 
 ## Lizenz
 
-Dieses Projekt ist unter der MIT-Lizenz lizenziert. Siehe die [LICENSE](../../../LICENSE) Datei für Lizenzdetails.
+Dieses Projekt ist unter der GNU General Public License v3.0 lizenziert. Siehe die [LICENSE](../../../LICENSE) Datei für Lizenzdetails.

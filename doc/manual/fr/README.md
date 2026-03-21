@@ -227,4 +227,4 @@ Pour assistance technique ou questions spécifiques, consultez les guides détai
 
 ## Licence
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](../../../LICENSE) pour les détails de la licence.
+Ce projet est sous licence GNU General Public License v3.0. Voir le fichier [LICENSE](../../../LICENSE) pour les détails de la licence.

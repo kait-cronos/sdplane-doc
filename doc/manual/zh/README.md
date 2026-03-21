@@ -247,4 +247,4 @@ debug sdplane port
 
 ## 许可证
 
-该项目采用 MIT 许可证。有关许可证详细信息，请参阅 [LICENSE](../../../LICENSE) 文件。
+该项目采用 GNU General Public License v3.0。有关许可证详细信息，请参阅 [LICENSE](../../../LICENSE) 文件。
