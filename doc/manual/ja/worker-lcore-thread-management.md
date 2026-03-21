@@ -241,6 +241,8 @@ SRv6（Segment Routing over IPv6）によるルーティングを行うワーカ
 
 ### sdplaneのスレッドアーキテクチャ
 
+![sdplaneスレッドアーキテクチャ](images/thread-architecture.png)
+
 sdplaneでは以下のスレッドタイプが協調的マルチスレッドモデルで動作します：
 
 #### 1. ワーカースレッド（lcore上で実行）

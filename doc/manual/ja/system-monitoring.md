@@ -191,9 +191,20 @@ show mempool
 - 依存ライブラリのバージョン
 
 ### RCU情報
+
+![RCU利用例：sdplane](images/rcu-sdplane.png)
+
+![rcu-qsbrタイムライン](images/rcu-qsbr.png)
+
 - Read-Copy-Update機構の状態
 - 同期処理の状況
 - メモリ管理の状態
+
+#### ポート設定コンフリクトとRCUによる解消
+
+![ポート設定コンフリクト](images/port-config-conflict.png)
+
+![ポート設定コンフリクトの解消](images/port-config-conflict-resolution.png)
 
 ### FDB情報
 - MACアドレステーブルの状態

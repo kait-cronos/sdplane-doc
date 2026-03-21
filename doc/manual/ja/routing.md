@@ -6,6 +6,20 @@
 
 RIB（Routing Information Base）とシステムリソース情報を管理するコマンドです。
 
+### vswitch転送処理
+
+![vswitch転送処理](images/vswitch-forwarding.png)
+
+### neighborのデータ構造
+
+![neighborデータ構造](images/neighbor-structure.png)
+
+![neighborテーブル構造体](images/neighbor-table.png)
+
+### SRv6転送機能
+
+![SRv6転送機能](images/srv6-forwarding.png)
+
 ## コマンド一覧
 
 - [`show_rib`](#show_rib) - RIB情報表示
