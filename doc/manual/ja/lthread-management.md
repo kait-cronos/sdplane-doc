@@ -42,6 +42,42 @@ Netlink通信を処理するlthreadワーカーを設定します。
 set worker lthread netlink-thread
 ```
 
+### set_worker_lthread_neigh_manager - lthreadネイバーマネージャー設定
+```
+set worker lthread neigh-manager
+```
+
+ネイバーテーブル（ARP/NDテーブル）を管理するlthreadワーカーを設定します。
+
+**使用例：**
+```bash
+set worker lthread neigh-manager
+```
+
+### set_worker_lthread_l3_tap_handler - lthread L3 TAPハンドラー設定
+```
+set worker lthread l3-tap-handler
+```
+
+L3 TAPインターフェースのパケット処理を行うlthreadワーカーを設定します。ルーターインターフェース経由のパケット送受信を処理します。
+
+**使用例：**
+```bash
+set worker lthread l3-tap-handler
+```
+
+### set_worker_lthread_dhcp_server - lthread DHCPサーバー設定
+```
+set worker lthread dhcp-server
+```
+
+DHCPサーバー機能を提供するlthreadワーカーを設定します。
+
+**使用例：**
+```bash
+set worker lthread dhcp-server
+```
+
 ## lthreadの概要
 
 ### lthreadとは
@@ -116,6 +152,51 @@ show port
 show vswitch
 ```
 
+### ネイバーマネージャー (neigh-manager)
+ネイバーテーブル（ARP/NDテーブル）を管理するワーカーです。
+
+**機能：**
+- ARPテーブル（IPv4）の管理
+- NDテーブル（IPv6）の管理
+- ネイバーエントリの追加・削除・更新
+- ネイバー状態遷移の処理
+
+**使用例：**
+```bash
+# ネイバーマネージャーを設定
+set worker lthread neigh-manager
+
+# ネイバーテーブルを確認
+show neighbor
+show neighbor ipv4
+```
+
+### L3 TAPハンドラー (l3-tap-handler)
+L3 TAPインターフェースのパケット処理を行うワーカーです。
+
+**機能：**
+- ルーターインターフェース経由のパケット送受信
+- Linuxカーネルスタックとのパケット交換
+- TAPインターフェースのリングバッファ管理
+
+**使用例：**
+```bash
+# L3 TAPハンドラーを設定
+set worker lthread l3-tap-handler
+
+# ルーターインターフェースを確認
+show rib router-if
+```
+
+### DHCPサーバー (dhcp-server)
+DHCP（Dynamic Host Configuration Protocol）サーバー機能を提供するワーカーです。
+
+**使用例：**
+```bash
+# DHCPサーバーを設定
+set worker lthread dhcp-server
+```
+
 ## lthreadの設定
 
 ### 基本的な設定手順
@@ -147,6 +228,13 @@ show thread
 set worker lthread stat-collector
 set worker lthread rib-manager
 set worker lthread netlink-thread
+```
+
+ルーティング機能を使用する場合は、さらに以下を追加します：
+```bash
+# ルーティング用lthreadワーカー設定
+set worker lthread neigh-manager
+set worker lthread l3-tap-handler
 ```
 
 ## 使用例
