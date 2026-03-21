@@ -6,6 +6,11 @@
 
 Commands for configuring and managing DPDK queues.
 
+## Command List
+
+- [`set_thread_lcore_port_queue`](#set_thread_lcore_port_queue) - Set thread queue configuration
+- [`show_thread_qconf`](#show_thread_qconf) - Display thread queue configuration
+
 ## Command Details
 
 ### set_thread_lcore_port_queue

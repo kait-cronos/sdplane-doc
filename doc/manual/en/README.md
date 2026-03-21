@@ -6,14 +6,22 @@
 
 sdplane-oss is a high-performance DPDK-based software router. This user guide describes all commands and features of sdplane.
 
+## Scenario Guides
+
+- [L2 Repeater Application](l2-repeater-application.md) - Simple L2 packet forwarding with MAC learning
+- [Enhanced Repeater Application](enhanced-repeater-application.md) - VLAN-aware switching with TAP interface
+- [Packet Generator Application](packet-generator-application.md) - High-performance traffic generation and testing
+- [Using as a Switch](scenario-switch.md) - Configure VLAN-based L2 switching
+- [Setting Up a Router: Static Routes Only](scenario-static-router.md) - Configure an IP router with static routes
+
 ## Configuration Guides
 
-1. [Port Management & Statistics](port-management.md) (11 commands) - DPDK port management and statistics
-2. [Worker & lcore Management & Thread Information](worker-lcore-thread-management.md) (6 commands) - Worker threads, lcore, and thread information management
+1. [Port Management & Statistics](port-management.md) (13 commands) - DPDK port management and statistics
+2. [Worker & lcore Management & Thread Information](worker-lcore-thread-management.md) (7 commands) - Worker threads, lcore, and thread information management
 
 3. [Debug & Logging](debug-logging.md) (2 commands) - Debug and logging functions
 4. [VTY & Shell Management](vty-shell.md) (4 commands) - VTY and shell management
-5. [System Information & Monitoring](system-monitoring.md) (10 commands) - System information and monitoring
+5. [System Information & Monitoring](system-monitoring.md) (9 commands) - System information and monitoring
 
 6. [Virtual Switch (vswitch)](vswitch.md) (16 commands) - Virtual switch configuration and management
 7. [Neighbor Table (ARP/ND)](neighbor.md) (1 command) - Neighbor table display
@@ -25,8 +33,9 @@ sdplane-oss is a high-performance DPDK-based software router. This user guide de
 12. [Packet Generation](packet-generation.md) (3 commands) - Packet generation using PKTGEN
 
 13. [TAP Interface](tap-interface.md) (2 commands) - TAP interface management
-14. [lthread Management](lthread-management.md) (3 commands) - lthread management
+14. [lthread Management](lthread-management.md) (6 commands) - lthread management
 15. [Device Management](device-management.md) (2 commands) - Device and driver management
+16. [rte-flow](rte-flow.md) (5 commands) - Hardware flow classification configuration
 
 ## Basic Usage
 
@@ -58,6 +67,10 @@ sdplane# set ?
 - `show port` - Display port information
 - `show worker` - Display worker information
 - `exit` - Exit from CLI
+
+## Command List
+
+- [All Commands Alphabetical Index](command-list.md) - Index of all 120 commands
 
 ## License
 

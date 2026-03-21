@@ -8,6 +8,13 @@ Commands for managing VTY (Virtual Terminal) and shell.
 
 ## Command List
 
+- [`clear_cmd`](#clear_cmd) - Clear screen
+- [`vty_exit_cmd`](#vty_exit_cmd) - Exit VTY
+- [`shutdown_cmd`](#shutdown_cmd) - System shutdown
+- [`exit_cmd`](#exit_cmd) - Exit console
+
+## Command Details
+
 ### clear_cmd
 
 Clear Screen

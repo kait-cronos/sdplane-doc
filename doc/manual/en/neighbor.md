@@ -93,3 +93,4 @@ These commands are defined in:
 - [Virtual Switch (vswitch)](vswitch.md) - Virtual switch configuration and management
 - [FDB (Forwarding Database)](fdb.md) - MAC address learning table
 - [lthread Management](lthread-management.md) - lthread management including neigh-manager
+- [Configuring a Router: Static Routes Only](scenario-static-router.md) - Static route router scenario guide

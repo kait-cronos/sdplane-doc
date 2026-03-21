@@ -6,13 +6,28 @@
 
 Commands for managing and monitoring DPDK worker threads, lcores, and thread information.
 
+## Command List
+
+- [`set_worker`](#set_worker) - Worker type configuration
+- [`reset_worker`](#reset_worker) - Worker reset
+- [`start_worker`](#start_worker) - Start worker
+- [`stop_worker`](#stop_worker) - Stop worker
+- [`restart_worker`](#restart_worker) - Restart worker
+- [`show_worker`](#show_worker) - Display worker information
+- [`show_thread`](#show_thread) - Display thread information
+- [`show_thread_counter`](#show_thread_counter) - Display thread counter
+- [`set_mempool`](#set_mempool) - Configure memory pool
+- [`set_rte_eal_argv`](#set_rte_eal_argv) - Configure RTE EAL command line arguments
+- [`rte_eal_init`](#rte_eal_init) - RTE EAL initialization
+- [`rte_eal_init_argv_list`](#rte_eal_init_argv_list) - RTE EAL initialization using argv-list
+
 ## Worker Management Commands
 
 ### set_worker
 
 Worker Type Configuration
 ```
-set worker lcore <0-16> (|none|l2fwd|l3fwd|l3fwd-lpm|tap-handler|l2-repeater|enhanced-repeater|vlan-switch|pktgen|linkflap-generator)
+set worker lcore <0-16> (|none|l2fwd|l3fwd|l3fwd-lpm|tap-handler|l3-tap-handler|l2-repeater|vlan-switch|enhanced-repeater|l2-switch|router|srv6-router|nettlp-thread|pktgen|dhcp-server|rib-manager|netlink-thread)
 ```
 
 Sets the worker type for the specified lcore.
@@ -23,11 +38,18 @@ Sets the worker type for the specified lcore.
 - `l3fwd` - Layer 3 forwarding
 - `l3fwd-lpm` - Layer 3 forwarding (LPM)
 - `tap-handler` - TAP interface handler
+- `l3-tap-handler` - L3 TAP interface handler (packet processing via router interface)
 - `l2-repeater` - Layer 2 repeater
-- `enhanced-repeater` - Enhanced repeater with VLAN switching and TAP interface
 - `vlan-switch` - VLAN switch
+- `enhanced-repeater` - Enhanced repeater with VLAN switching and TAP interface
+- `l2-switch` - Layer 2 switch
+- `router` - Virtual switch (vswitch) based L3 router
+- `srv6-router` - SRv6 router
+- `nettlp-thread` - NetTLP thread
 - `pktgen` - Packet generator
-- `linkflap-generator` - Link flap generator
+- `dhcp-server` - DHCP server
+- `rib-manager` - RIB manager
+- `netlink-thread` - Netlink thread
 
 **Examples:**
 ```bash
@@ -36,6 +58,10 @@ set worker lcore 1 l2fwd
 
 # Set enhanced repeater worker to lcore 1
 set worker lcore 1 enhanced-repeater
+
+# Set router worker to lcore 1, L3 TAP handler to lcore 2
+set worker lcore 1 router
+set worker lcore 2 l3-tap-handler
 
 # Set no worker to lcore 2
 set worker lcore 2 none
@@ -164,7 +190,23 @@ RTE EAL Initialization
 rte_eal_init
 ```
 
-Initializes RTE EAL (Environment Abstraction Layer).
+Initializes RTE EAL (Environment Abstraction Layer). Uses the arguments configured with `set rte_eal argv` for initialization.
+
+### rte_eal_init_argv_list
+
+RTE EAL Initialization Using argv-list
+```
+rte_eal_init argv-list <0-7>
+```
+
+Initializes RTE EAL using the arguments stored in the specified argv-list. The arguments must be configured in advance using the `set argv-list` command.
+
+**Examples:**
+```bash
+# Configure arguments in argv-list 0, then initialize
+set argv-list 0 "-c 0x7 -n 4"
+rte_eal_init argv-list 0
+```
 
 ## Worker Types and Thread Architecture
 
@@ -179,13 +221,27 @@ Worker that performs packet forwarding at Layer 3 level. Routes packets based on
 #### TAP Handler (tap-handler)
 Worker that performs packet transfer between TAP interfaces and DPDK ports.
 
+#### L3 TAP Handler (l3-tap-handler)
+Worker that processes packet sending and receiving via router interfaces (TAP interfaces). Exchanges packets with the Linux kernel stack.
+
 #### Enhanced Repeater (enhanced-repeater)
 High-functionality repeater worker with VLAN switching and TAP interface capabilities.
+
+#### L2 Switch (l2-switch)
+Worker that performs Layer 2 switching. Forwards packets based on MAC address learning and FDB.
+
+#### Router (router)
+Worker that performs L3 routing based on virtual switch (vswitch). Forwards IP packets using RIB and FIB.
+
+#### SRv6 Router (srv6-router)
+Worker that performs routing using SRv6 (Segment Routing over IPv6).
 
 #### Packet Generator (pktgen)
 Worker that generates packets for testing purposes.
 
 ### sdplane Thread Architecture
+
+![sdplane Thread Architecture](images/thread-architecture.png)
 
 sdplane operates with the following thread types in a cooperative multithreading model:
 
@@ -263,7 +319,6 @@ show thread counter
 ```bash
 # Performance-related information
 show thread counter
-show loop-count l2fwd pps
 ```
 
 #### Troubleshooting Procedures

@@ -8,6 +8,15 @@ Commands for managing lthread (lightweight threads).
 
 ## Command List
 
+- [`set_worker_lthread_stat_collector`](#set_worker_lthread_stat_collector) - Set lthread Statistics Collector
+- [`set_worker_lthread_rib_manager`](#set_worker_lthread_rib_manager) - Set lthread RIB Manager
+- [`set_worker_lthread_netlink_thread`](#set_worker_lthread_netlink_thread) - Set lthread Netlink Thread
+- [`set_worker_lthread_neigh_manager`](#set_worker_lthread_neigh_manager) - Set lthread Neighbor Manager
+- [`set_worker_lthread_l3_tap_handler`](#set_worker_lthread_l3_tap_handler) - Set lthread L3 TAP Handler
+- [`set_worker_lthread_dhcp_server`](#set_worker_lthread_dhcp_server) - Set lthread DHCP Server
+
+## Command List
+
 ### set_worker_lthread_stat_collector
 
 Set lthread Statistics Collector
@@ -48,6 +57,48 @@ Configure lthread worker that processes Netlink communication.
 **Examples:**
 ```bash
 set worker lthread netlink-thread
+```
+
+### set_worker_lthread_neigh_manager
+
+Set lthread Neighbor Manager
+```
+set worker lthread neigh-manager
+```
+
+Configure lthread worker that manages the neighbor table (ARP/ND table).
+
+**Examples:**
+```bash
+set worker lthread neigh-manager
+```
+
+### set_worker_lthread_l3_tap_handler
+
+Set lthread L3 TAP Handler
+```
+set worker lthread l3-tap-handler
+```
+
+Configure lthread worker that processes packets on L3 TAP interfaces. Handles packet transmission and reception via router interfaces.
+
+**Examples:**
+```bash
+set worker lthread l3-tap-handler
+```
+
+### set_worker_lthread_dhcp_server
+
+Set lthread DHCP Server
+```
+set worker lthread dhcp-server
+```
+
+Configure lthread worker that provides DHCP server functionality.
+
+**Examples:**
+```bash
+set worker lthread dhcp-server
 ```
 
 ## lthread Overview
@@ -124,6 +175,51 @@ show port
 show vswitch
 ```
 
+### Neighbor Manager (neigh-manager)
+Worker that manages the neighbor table (ARP/ND table).
+
+**Functions:**
+- ARP table (IPv4) management
+- ND table (IPv6) management
+- Neighbor entry addition, deletion, and updates
+- Neighbor state transition processing
+
+**Examples:**
+```bash
+# Configure neighbor manager
+set worker lthread neigh-manager
+
+# Check neighbor table
+show neighbor
+show neighbor ipv4
+```
+
+### L3 TAP Handler (l3-tap-handler)
+Worker that processes packets on L3 TAP interfaces.
+
+**Functions:**
+- Packet transmission and reception via router interfaces
+- Packet exchange with the Linux kernel stack
+- TAP interface ring buffer management
+
+**Examples:**
+```bash
+# Configure L3 TAP handler
+set worker lthread l3-tap-handler
+
+# Check router interfaces
+show rib router-if
+```
+
+### DHCP Server (dhcp-server)
+Worker that provides DHCP (Dynamic Host Configuration Protocol) server functionality.
+
+**Examples:**
+```bash
+# Configure DHCP server
+set worker lthread dhcp-server
+```
+
 ## lthread Configuration
 
 ### Basic Configuration Steps
@@ -155,6 +251,13 @@ For general use, the following combination is recommended:
 set worker lthread stat-collector
 set worker lthread rib-manager
 set worker lthread netlink-thread
+```
+
+When using routing functionality, add the following as well:
+```bash
+# Routing lthread worker configuration
+set worker lthread neigh-manager
+set worker lthread l3-tap-handler
 ```
 
 ## Usage Examples
@@ -202,7 +305,6 @@ show thread
 
 # Check specific statistics
 show thread counter
-show loop-count console pps
 ```
 
 ### Performance Monitoring

@@ -28,6 +28,12 @@ L2 Repeater is a straightforward Layer 2 forwarding application that:
 - **Low latency**: Minimal processing overhead for fast forwarding
 - **Multi-core support**: Can run on dedicated lcores for scaling
 
+## Architecture Diagram
+
+![L2 Repeater Architecture Diagram](../ja/images/l2-repeater.png)
+
+![L2 Repeater Architecture Diagram with Configuration](../ja/images/l2-repeater-config.png)
+
 ## Configuration
 
 ### Basic Setup

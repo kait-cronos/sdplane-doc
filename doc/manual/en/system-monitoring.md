@@ -8,6 +8,19 @@ Commands for providing system information and monitoring functions in sdplane.
 
 ## Command List
 
+- [`show_version`](#show_version) - Display Version
+- [`set_locale`](#set_locale) - Set Locale
+- [`set_argv_list_1`](#set_argv_list_1) - Set argv-list
+- [`show argv-list`](#show-argv-list)
+- [`show argv-list <0-7>`](#show-argv-list-0-7)
+- [`show_rcu`](#show_rcu) - Display RCU Information
+- [`show_fdb`](#show_fdb) - Display FDB Information
+- [`show_vswitch`](#show_vswitch) - Display vswitch Information
+- [`sleep_cmd`](#sleep_cmd) - Sleep Command
+- [`show_mempool`](#show_mempool) - Display Memory Pool Information
+
+## Command List
+
 ### show_version
 
 Display Version
@@ -91,33 +104,6 @@ show argv-list 0
 
 # Display argv-list index 3
 show argv-list 3
-```
-
-### show_loop_count
-
-Display Loop Counter
-```
-show loop-count (console|vty-shell|l2fwd) (pps|total)
-```
-
-Display loop counters for each component.
-
-**Components:**
-- `console` - Console
-- `vty-shell` - VTY shell
-- `l2fwd` - L2 forwarding
-
-**Statistics Types:**
-- `pps` - Loops per second
-- `total` - Total loop count
-
-**Examples:**
-```bash
-# Display console PPS
-show loop-count console pps
-
-# Display L2 forwarding total loop count
-show loop-count l2fwd total
 ```
 
 ### show_rcu
@@ -204,15 +190,21 @@ show mempool
 - Build information
 - Dependent library versions
 
-### Loop Counter
-- Processing loop count for each component
-- Used for performance monitoring
-- Used for PPS (Packets Per Second) calculation
-
 ### RCU Information
+
+![RCU Usage Example: sdplane](../ja/images/rcu-sdplane.png)
+
+![rcu-qsbr Timeline](../ja/images/rcu-qsbr.png)
+
 - Read-Copy-Update mechanism status
 - Synchronization processing status
 - Memory management status
+
+#### Port Configuration Conflict and Resolution via RCU
+
+![Port Configuration Conflict](../ja/images/port-config-conflict.png)
+
+![Port Configuration Conflict Resolution](../ja/images/port-config-conflict-resolution.png)
 
 ### FDB Information
 - MAC address table status
@@ -242,9 +234,8 @@ show rcu
 
 ### Performance Monitoring
 ```bash
-# Performance monitoring with loop counters
-show loop-count console pps
-show loop-count l2fwd pps
+# Performance monitoring with thread counters
+show thread counter
 ```
 
 ### Troubleshooting

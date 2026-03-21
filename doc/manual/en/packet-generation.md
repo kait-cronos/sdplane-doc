@@ -8,6 +8,13 @@ Commands for packet generation functions using PKTGEN (Packet Generator).
 
 ## Command List
 
+- [`show_pktgen`](#show_pktgen) - Display PKTGEN information
+- [`pktgen_init`](#pktgen_init) - PKTGEN initialization
+- [`pktgen_do_start`](#pktgen_do_start) - Start PKTGEN
+- [`pktgen_do_stop`](#pktgen_do_stop) - Stop PKTGEN
+
+## Command Details
+
 ### show_pktgen
 
 Display PKTGEN Information

@@ -94,4 +94,5 @@ These commands are defined in:
 - [Virtual Switch (vswitch)](vswitch.md) - Virtual switch configuration and management
 - [Neighbor Table](neighbor.md) - ARP/ND table management
 - [RIB & Routing](routing.md) - RIB and routing functions
+- [Using a Switch](scenario-switch.md) - L2 switching scenario guide
 - [System Information & Monitoring](system-monitoring.md) - FDB monitoring

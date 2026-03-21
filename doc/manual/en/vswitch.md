@@ -402,4 +402,6 @@ These commands are defined in:
 - [RIB & Routing](routing.md) - RIB and routing functions
 - [FDB (Forwarding Database)](fdb.md) - MAC address learning table
 - [Neighbor Table](neighbor.md) - ARP/ND table management
+- [Using a Switch](scenario-switch.md) - L2 switching scenario guide
+- [Configuring a Router: Static Routes Only](scenario-static-router.md) - Static route router scenario guide
 - [Enhanced Repeater Application](enhanced-repeater-application.md) - Enhanced repeater feature details

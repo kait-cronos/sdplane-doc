@@ -8,6 +8,11 @@ Commands for managing DPDK devices and drivers.
 
 ## Command List
 
+- [`show_devices`](#show_devices) - Display device information
+- [`set_device_driver`](#set_device_driver) - Set device driver
+
+## Command Details
+
 ### show_devices
 
 Display Device Information

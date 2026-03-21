@@ -8,6 +8,14 @@ Commands for controlling sdplane debug and logging functions.
 
 ## Command List
 
+- [`log_file`](#log_file) - Log file output configuration
+- [`log_stdout`](#log_stdout) - Standard output log configuration
+- [`debug`](#debug) - Debug configuration
+- [`no debug`](#no-debug) - Debug disable
+- [`show_debug_sdplane`](#show_debug_sdplane) - Display sdplane debug information
+
+## Command Details
+
 ### log_file
 
 Log File Output Configuration

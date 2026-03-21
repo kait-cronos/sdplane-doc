@@ -8,6 +8,13 @@ Commands for managing TAP interfaces.
 
 ## Command List
 
+- [`set_tap_capture_ifname`](#set_tap_capture_ifname) - Set TAP capture interface name
+- [`set_tap_capture_persistent`](#set_tap_capture_persistent) - Enable TAP capture persistence
+- [`no_tap_capture_persistent`](#no_tap_capture_persistent) - Disable TAP capture persistence
+- [`unset_tap_capture_persistent`](#unset_tap_capture_persistent) - Remove TAP capture persistence setting
+
+## Command Details
+
 ### set_tap_capture_ifname
 
 Set TAP Capture Interface Name
