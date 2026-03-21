@@ -204,10 +204,12 @@ Comprehensive user guides and command references are available:
 
 - [User Guide](doc/manual/en/README.md) - Complete overview and command classification
 
-**Application Guides:**
+**Scenario Guides:**
 - [L2 Repeater Application](doc/manual/en/l2-repeater-application.md) - Simple Layer 2 packet forwarding with MAC learning
 - [Enhanced Repeater Application](doc/manual/en/enhanced-repeater-application.md) - VLAN-aware switching with TAP interfaces
 - [Packet Generator Application](doc/manual/en/packet-generator-application.md) - High-performance traffic generation and testing
+- [Using a Switch](doc/manual/ja/scenario-switch.md) - Configure VLAN-based L2 switching
+- [Static Router Setup](doc/manual/ja/scenario-static-router.md) - Configure an IP router with static routes
 
 **Configuration Guides:**
 - [Port Management & Statistics](doc/manual/en/port-management.md) - DPDK port management and statistics
