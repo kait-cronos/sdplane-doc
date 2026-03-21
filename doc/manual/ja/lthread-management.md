@@ -1,4 +1,4 @@
-[ユーザーガイド](README.md) > コマンドリファレンス > lthread管理
+[ユーザーガイド](README.md) > 管理・設定ガイド > lthread管理
 
 # lthread管理
 
