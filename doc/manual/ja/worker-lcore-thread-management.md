@@ -6,6 +6,20 @@
 
 DPDKワーカースレッド、lcore、およびスレッド情報の管理・監視を行うコマンドです。
 
+## コマンド一覧
+
+- [`set_worker`](#set_worker-ワーカータイプ設定) - ワーカータイプ設定
+- [`reset_worker`](#reset_worker-ワーカーリセット) - ワーカーリセット
+- [`start_worker`](#start_worker-ワーカー開始) - ワーカー開始
+- [`stop_worker`](#stop_worker-ワーカー停止) - ワーカー停止
+- [`restart_worker`](#restart_worker-ワーカー再開始) - ワーカー再開始
+- [`show_worker`](#show_worker-ワーカー情報の表示) - ワーカー情報の表示
+- [`show_thread`](#show_thread-スレッド情報表示) - スレッド情報表示
+- [`show_thread_counter`](#show_thread_counter-スレッドカウンター表示) - スレッドカウンター表示
+- [`set_mempool`](#set_mempool-メモリプールの設定) - メモリプールの設定
+- [`set_rte_eal_argv`](#set_rte_eal_argv-rte-ealコマンドライン引数設定) - RTE EALコマンドライン引数設定
+- [`rte_eal_init`](#rte_eal_init-rte-eal初期化) - RTE EAL初期化
+
 ## ワーカー管理コマンド
 
 ### set_worker - ワーカータイプ設定

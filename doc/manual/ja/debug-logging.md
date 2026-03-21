@@ -8,6 +8,14 @@ sdplaneのデバッグとログ機能を制御するコマンドです。
 
 ## コマンド一覧
 
+- [`log_file`](#log_file-ログファイル出力設定) - ログファイル出力設定
+- [`log_stdout`](#log_stdout-標準出力ログ設定) - 標準出力ログ設定
+- [`debug`](#debug-デバッグ設定) - デバッグ設定
+- [`no debug`](#no-debug-デバッグ無効化) - デバッグ無効化
+- [`show_debug_sdplane`](#show_debug_sdplane-sdplaneデバッグ情報表示) - sdplaneデバッグ情報表示
+
+## コマンド一覧
+
 ### log_file - ログファイル出力設定
 ```
 log file <ファイルパス>

@@ -8,6 +8,47 @@ DPDKポートの管理と統計情報を扱うコマンドです。
 
 ## コマンド一覧
 
+- [`start port`](#start-port)
+- [`start port \<0-16\>`](#start-port-0-16)
+- [`start port all`](#start-port-all)
+- [`stop port`](#stop-port)
+- [`stop port \<0-16\>`](#stop-port-0-16)
+- [`stop port all`](#stop-port-all)
+- [`reset port`](#reset-port)
+- [`reset port \<0-16\>`](#reset-port-0-16)
+- [`reset port all`](#reset-port-all)
+- [`show port`](#show-port)
+- [`show port \<0-16\>`](#show-port-0-16)
+- [`show port all`](#show-port-all)
+- [`show port statistics`](#show-port-statistics)
+- [`show port statistics pps`](#show-port-statistics-pps)
+- [`show port statistics total`](#show-port-statistics-total)
+- [`show port statistics bps`](#show-port-statistics-bps)
+- [`show port statistics Bps`](#show-port-statistics-bps)
+- [`show port statistics total-bytes`](#show-port-statistics-total-bytes)
+- [`show port \<0-16\> promiscuous`](#show-port-0-16-promiscuous)
+- [`show port all promiscuous`](#show-port-all-promiscuous)
+- [`show port \<0-16\> flowcontrol`](#show-port-0-16-flowcontrol)
+- [`show port all flowcontrol`](#show-port-all-flowcontrol)
+- [`set port \<0-16\> promiscuous enable`](#set-port-0-16-promiscuous-enable)
+- [`set port \<0-16\> promiscuous disable`](#set-port-0-16-promiscuous-disable)
+- [`set port all promiscuous enable`](#set-port-all-promiscuous-enable)
+- [`set port all promiscuous disable`](#set-port-all-promiscuous-disable)
+- [`set port \<0-16\> flowcontrol (rx|tx|autoneg|send-xon|fwd-mac-ctrl) (on|off)`](#set-port-0-16-flowcontrol-rxtxautonegsend-xonfwd-mac-ctrl-onoff)
+- [`set port all flowcontrol (rx|tx|autoneg|send-xon|fwd-mac-ctrl) (on|off)`](#set-port-all-flowcontrol-rxtxautonegsend-xonfwd-mac-ctrl-onoff)
+- [`set port \<0-16\> dev-configure \<0-64\> \<0-64\>`](#set-port-0-16-dev-configure-0-64-0-64)
+- [`set port all dev-configure \<0-64\> \<0-64\>`](#set-port-all-dev-configure-0-64-0-64)
+- [`set port \<0-16\> nrxdesc \<0-16384\>`](#set-port-0-16-nrxdesc-0-16384)
+- [`set port all nrxdesc \<0-16384\>`](#set-port-all-nrxdesc-0-16384)
+- [`set port \<0-16\> ntxdesc \<0-16384\>`](#set-port-0-16-ntxdesc-0-16384)
+- [`set port all ntxdesc \<0-16384\>`](#set-port-all-ntxdesc-0-16384)
+- [`set port \<0-16\> link up`](#set-port-0-16-link-up)
+- [`set port \<0-16\> link down`](#set-port-0-16-link-down)
+- [`set port all link up`](#set-port-all-link-up)
+- [`set port all link down`](#set-port-all-link-down)
+
+## コマンド一覧
+
 ### **start port**
 
 DPDKポートを開始します（デフォルト動作）。

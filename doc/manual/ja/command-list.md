@@ -1,0 +1,122 @@
+[ユーザーガイド](README.md) > コマンド一覧
+
+# コマンド一覧
+
+**Language:** **日本語**
+
+sdplane-ossで利用可能な全112コマンドのアルファベット順一覧です。
+
+| コマンド | 説明 | ガイド |
+|---------|------|-------|
+| [`clear_cmd`](vty-shell.md#clear_cmd-画面クリア) | 画面クリア | [VTY・シェル管理](vty-shell.md) |
+| [`debug`](debug-logging.md#debug-デバッグ設定) | デバッグ設定 | [デバッグ・ログ](debug-logging.md) |
+| [`exit_cmd`](vty-shell.md#exit_cmd-コンソール終了) | コンソール終了 | [VTY・シェル管理](vty-shell.md) |
+| [`log_file`](debug-logging.md#log_file-ログファイル出力設定) | ログファイル出力設定 | [デバッグ・ログ](debug-logging.md) |
+| [`log_stdout`](debug-logging.md#log_stdout-標準出力ログ設定) | 標準出力ログ設定 | [デバッグ・ログ](debug-logging.md) |
+| [`no debug`](debug-logging.md#no-debug-デバッグ無効化) | デバッグ無効化 | [デバッグ・ログ](debug-logging.md) |
+| [`no_set_capture_if`](routing.md#no_set_capture_if-キャプチャインターフェース削除) | キャプチャインターフェース削除 | [RIB・ルーティング](routing.md) |
+| [`no_set_router_if`](routing.md#no_set_router_if-ルーターインターフェース削除) | ルーターインターフェース削除 | [RIB・ルーティング](routing.md) |
+| [`no_set_vswitch`](routing.md#no_set_vswitch-仮想スイッチ削除) | 仮想スイッチ削除 | [RIB・ルーティング](routing.md) |
+| [`no_set_vswitch_port`](routing.md#no_set_vswitch_port-仮想スイッチからポート削除) | 仮想スイッチからポート削除 | [RIB・ルーティング](routing.md) |
+| [`no_tap_capture_persistent`](tap-interface.md#no_tap_capture_persistent-tapキャプチャ永続化無効化) | TAPキャプチャ永続化無効化 | [TAPインターフェース](tap-interface.md) |
+| [`pktgen_do_start`](packet-generation.md#pktgen_do_start-pktgen開始) | PKTGEN開始 | [パケット生成](packet-generation.md) |
+| [`pktgen_do_stop`](packet-generation.md#pktgen_do_stop-pktgen停止) | PKTGEN停止 | [パケット生成](packet-generation.md) |
+| [`pktgen_init`](packet-generation.md#pktgen_init-pktgen初期化) | PKTGEN初期化 | [パケット生成](packet-generation.md) |
+| [`reset port`](port-management.md#reset-port) |  | [ポート管理・統計](port-management.md) |
+| [`reset port \<0-16\>`](port-management.md#reset-port-0-16) |  | [ポート管理・統計](port-management.md) |
+| [`reset port all`](port-management.md#reset-port-all) |  | [ポート管理・統計](port-management.md) |
+| [`reset_worker`](worker-lcore-thread-management.md#reset_worker-ワーカーリセット) | ワーカーリセット | [ワーカー・lcore管理](worker-lcore-thread-management.md) |
+| [`restart_worker`](worker-lcore-thread-management.md#restart_worker-ワーカー再開始) | ワーカー再開始 | [ワーカー・lcore管理](worker-lcore-thread-management.md) |
+| [`rte_eal_init`](worker-lcore-thread-management.md#rte_eal_init-rte-eal初期化) | RTE EAL初期化 | [ワーカー・lcore管理](worker-lcore-thread-management.md) |
+| [`set_argv_list_1`](system-monitoring.md#set_argv_list_1-argv-list設定) | argv-list設定 | [システム情報・監視](system-monitoring.md) |
+| [`set_capture_if`](routing.md#set_capture_if-キャプチャインターフェース作成) | キャプチャインターフェース作成 | [RIB・ルーティング](routing.md) |
+| [`set_device_driver`](device-management.md#set_device_driver-デバイスドライバー設定) | デバイスドライバー設定 | [デバイス管理](device-management.md) |
+| [`set_locale`](system-monitoring.md#set_locale-ロケール設定) | ロケール設定 | [システム情報・監視](system-monitoring.md) |
+| [`set_mempool`](worker-lcore-thread-management.md#set_mempool-メモリプールの設定) | メモリプールの設定 | [ワーカー・lcore管理](worker-lcore-thread-management.md) |
+| [`set_netlink_hook`](routing.md#set_netlink_hook-netlinkフック設定) | Netlinkフック設定 | [RIB・ルーティング](routing.md) |
+| [`set port \<0-16\> dev-configure \<0-64\> \<0-64\>`](port-management.md#set-port-0-16-dev-configure-0-64-0-64) |  | [ポート管理・統計](port-management.md) |
+| [`set port \<0-16\> flowcontrol (rx\|tx\|autoneg\|send-xon\|fwd-mac-ctrl) (on\|off)`](port-management.md#set-port-0-16-flowcontrol-rxtxautonegsend-xonfwd-mac-ctrl-onoff) |  | [ポート管理・統計](port-management.md) |
+| [`set port \<0-16\> link down`](port-management.md#set-port-0-16-link-down) |  | [ポート管理・統計](port-management.md) |
+| [`set port \<0-16\> link up`](port-management.md#set-port-0-16-link-up) |  | [ポート管理・統計](port-management.md) |
+| [`set port \<0-16\> nrxdesc \<0-16384\>`](port-management.md#set-port-0-16-nrxdesc-0-16384) |  | [ポート管理・統計](port-management.md) |
+| [`set port \<0-16\> ntxdesc \<0-16384\>`](port-management.md#set-port-0-16-ntxdesc-0-16384) |  | [ポート管理・統計](port-management.md) |
+| [`set port \<0-16\> promiscuous disable`](port-management.md#set-port-0-16-promiscuous-disable) |  | [ポート管理・統計](port-management.md) |
+| [`set port \<0-16\> promiscuous enable`](port-management.md#set-port-0-16-promiscuous-enable) |  | [ポート管理・統計](port-management.md) |
+| [`set port all dev-configure \<0-64\> \<0-64\>`](port-management.md#set-port-all-dev-configure-0-64-0-64) |  | [ポート管理・統計](port-management.md) |
+| [`set port all flowcontrol (rx\|tx\|autoneg\|send-xon\|fwd-mac-ctrl) (on\|off)`](port-management.md#set-port-all-flowcontrol-rxtxautonegsend-xonfwd-mac-ctrl-onoff) |  | [ポート管理・統計](port-management.md) |
+| [`set port all link down`](port-management.md#set-port-all-link-down) |  | [ポート管理・統計](port-management.md) |
+| [`set port all link up`](port-management.md#set-port-all-link-up) |  | [ポート管理・統計](port-management.md) |
+| [`set port all nrxdesc \<0-16384\>`](port-management.md#set-port-all-nrxdesc-0-16384) |  | [ポート管理・統計](port-management.md) |
+| [`set port all ntxdesc \<0-16384\>`](port-management.md#set-port-all-ntxdesc-0-16384) |  | [ポート管理・統計](port-management.md) |
+| [`set port all promiscuous disable`](port-management.md#set-port-all-promiscuous-disable) |  | [ポート管理・統計](port-management.md) |
+| [`set port all promiscuous enable`](port-management.md#set-port-all-promiscuous-enable) |  | [ポート管理・統計](port-management.md) |
+| [`set_router_if`](routing.md#set_router_if-ルーターインターフェース作成) | ルーターインターフェース作成 | [RIB・ルーティング](routing.md) |
+| [`set_router_if_hwaddr`](routing.md#set_router_if_hwaddr-ルーターインターフェースmacアドレス設定) | ルーターインターフェースMACアドレス設定 | [RIB・ルーティング](routing.md) |
+| [`set_router_if_vlan`](routing.md#set_router_if_vlan-ルーターインターフェースvlan設定) | ルーターインターフェースVLAN設定 | [RIB・ルーティング](routing.md) |
+| [`set_rte_eal_argv`](worker-lcore-thread-management.md#set_rte_eal_argv-rte-ealコマンドライン引数設定) | RTE EALコマンドライン引数設定 | [ワーカー・lcore管理](worker-lcore-thread-management.md) |
+| [`set_tap_capture_ifname`](tap-interface.md#set_tap_capture_ifname-tapキャプチャインターフェース名設定) | TAPキャプチャインターフェース名設定 | [TAPインターフェース](tap-interface.md) |
+| [`set_tap_capture_persistent`](tap-interface.md#set_tap_capture_persistent-tapキャプチャ永続化有効化) | TAPキャプチャ永続化有効化 | [TAPインターフェース](tap-interface.md) |
+| [`set_thread_lcore_port_queue`](queue-configuration.md#set_thread_lcore_port_queue-スレッドキュー設定) | スレッドキュー設定 | [キュー設定](queue-configuration.md) |
+| [`set_vswitch`](routing.md#set_vswitch-仮想スイッチ作成) | 仮想スイッチ作成 | [RIB・ルーティング](routing.md) |
+| [`set_vswitch_port`](routing.md#set_vswitch_port-仮想スイッチへポート追加) | 仮想スイッチへポート追加 | [RIB・ルーティング](routing.md) |
+| [`set_vswitch_port_tag_swap`](routing.md#set_vswitch_port_tag_swap-vlanタグ変換) | VLANタグ変換 | [RIB・ルーティング](routing.md) |
+| [`set_worker`](worker-lcore-thread-management.md#set_worker-ワーカータイプ設定) | ワーカータイプ設定 | [ワーカー・lcore管理](worker-lcore-thread-management.md) |
+| [`set_worker_lthread_dhcp_server`](lthread-management.md#set_worker_lthread_dhcp_server-lthread-dhcpサーバー設定) | lthread DHCPサーバー設定 | [lthread管理](lthread-management.md) |
+| [`set_worker_lthread_l3_tap_handler`](lthread-management.md#set_worker_lthread_l3_tap_handler-lthread-l3-tapハンドラー設定) | lthread L3 TAPハンドラー設定 | [lthread管理](lthread-management.md) |
+| [`set_worker_lthread_neigh_manager`](lthread-management.md#set_worker_lthread_neigh_manager-lthreadネイバーマネージャー設定) | lthreadネイバーマネージャー設定 | [lthread管理](lthread-management.md) |
+| [`set_worker_lthread_netlink_thread`](lthread-management.md#set_worker_lthread_netlink_thread-lthread-netlinkスレッド設定) | lthread netlinkスレッド設定 | [lthread管理](lthread-management.md) |
+| [`set_worker_lthread_rib_manager`](lthread-management.md#set_worker_lthread_rib_manager-lthread-ribマネージャー設定) | lthread RIBマネージャー設定 | [lthread管理](lthread-management.md) |
+| [`set_worker_lthread_stat_collector`](lthread-management.md#set_worker_lthread_stat_collector-lthread統計コレクター設定) | lthread統計コレクター設定 | [lthread管理](lthread-management.md) |
+| [`show argv-list`](system-monitoring.md#show-argv-list) |  | [システム情報・監視](system-monitoring.md) |
+| [`show argv-list \<0-7\>`](system-monitoring.md#show-argv-list-0-7) |  | [システム情報・監視](system-monitoring.md) |
+| [`show_debug_sdplane`](debug-logging.md#show_debug_sdplane-sdplaneデバッグ情報表示) | sdplaneデバッグ情報表示 | [デバッグ・ログ](debug-logging.md) |
+| [`show_devices`](device-management.md#show_devices-デバイス情報表示) | デバイス情報表示 | [デバイス管理](device-management.md) |
+| [`show_fdb`](system-monitoring.md#show_fdb-fdb情報表示) | FDB情報表示 | [システム情報・監視](system-monitoring.md) |
+| [`show_fdb`](routing.md#show_fdb-fdb（転送データベース）表示) | FDB（転送データベース）表示 | [RIB・ルーティング](routing.md) |
+| [`show_fib_route`](routing.md#show_fib_route-fibテーブル表示) | FIBテーブル表示 | [RIB・ルーティング](routing.md) |
+| [`show_loop_count`](system-monitoring.md#show_loop_count-ループカウンター表示) | ループカウンター表示 | [システム情報・監視](system-monitoring.md) |
+| [`show_mempool`](system-monitoring.md#show_mempool-メモリプール情報表示) | メモリプール情報表示 | [システム情報・監視](system-monitoring.md) |
+| [`show_neighbor`](routing.md#show_neighbor-ネイバーテーブル表示) | ネイバーテーブル表示 | [RIB・ルーティング](routing.md) |
+| [`show_netlink_hook`](routing.md#show_netlink_hook-netlinkフック表示) | Netlinkフック表示 | [RIB・ルーティング](routing.md) |
+| [`show_pktgen`](packet-generation.md#show_pktgen-pktgen情報表示) | PKTGEN情報表示 | [パケット生成](packet-generation.md) |
+| [`show port`](port-management.md#show-port) |  | [ポート管理・統計](port-management.md) |
+| [`show port \<0-16\>`](port-management.md#show-port-0-16) |  | [ポート管理・統計](port-management.md) |
+| [`show port \<0-16\> flowcontrol`](port-management.md#show-port-0-16-flowcontrol) |  | [ポート管理・統計](port-management.md) |
+| [`show port \<0-16\> promiscuous`](port-management.md#show-port-0-16-promiscuous) |  | [ポート管理・統計](port-management.md) |
+| [`show port all`](port-management.md#show-port-all) |  | [ポート管理・統計](port-management.md) |
+| [`show port all flowcontrol`](port-management.md#show-port-all-flowcontrol) |  | [ポート管理・統計](port-management.md) |
+| [`show port all promiscuous`](port-management.md#show-port-all-promiscuous) |  | [ポート管理・統計](port-management.md) |
+| [`show port statistics`](port-management.md#show-port-statistics) |  | [ポート管理・統計](port-management.md) |
+| [`show port statistics bps`](port-management.md#show-port-statistics-bps) |  | [ポート管理・統計](port-management.md) |
+| [`show port statistics Bps`](port-management.md#show-port-statistics-bps) |  | [ポート管理・統計](port-management.md) |
+| [`show port statistics pps`](port-management.md#show-port-statistics-pps) |  | [ポート管理・統計](port-management.md) |
+| [`show port statistics total`](port-management.md#show-port-statistics-total) |  | [ポート管理・統計](port-management.md) |
+| [`show port statistics total-bytes`](port-management.md#show-port-statistics-total-bytes) |  | [ポート管理・統計](port-management.md) |
+| [`show_rcu`](system-monitoring.md#show_rcu-rcu情報表示) | RCU情報表示 | [システム情報・監視](system-monitoring.md) |
+| [`show_rib`](routing.md#show_rib-rib情報表示) | RIB情報表示 | [RIB・ルーティング](routing.md) |
+| [`show_rib_capture_if`](routing.md#show_rib_capture_if-キャプチャインターフェース情報表示) | キャプチャインターフェース情報表示 | [RIB・ルーティング](routing.md) |
+| [`show_rib_nexthop_group`](routing.md#show_rib_nexthop_group-ネクストホップグループ表示) | ネクストホップグループ表示 | [RIB・ルーティング](routing.md) |
+| [`show_rib_nexthop_pool`](routing.md#show_rib_nexthop_pool-ネクストホップ情報プール表示) | ネクストホップ情報プール表示 | [RIB・ルーティング](routing.md) |
+| [`show_rib_route`](routing.md#show_rib_route-ルーティングテーブル表示) | ルーティングテーブル表示 | [RIB・ルーティング](routing.md) |
+| [`show_rib_router_if`](routing.md#show_rib_router_if-ルーターインターフェース情報表示) | ルーターインターフェース情報表示 | [RIB・ルーティング](routing.md) |
+| [`show_rib_vswitch`](routing.md#show_rib_vswitch-仮想スイッチ情報表示) | 仮想スイッチ情報表示 | [RIB・ルーティング](routing.md) |
+| [`show_rib_vswitch_link`](routing.md#show_rib_vswitch_link-仮想スイッチリンク情報表示) | 仮想スイッチリンク情報表示 | [RIB・ルーティング](routing.md) |
+| [`show_thread`](worker-lcore-thread-management.md#show_thread-スレッド情報表示) | スレッド情報表示 | [ワーカー・lcore管理](worker-lcore-thread-management.md) |
+| [`show_thread_counter`](worker-lcore-thread-management.md#show_thread_counter-スレッドカウンター表示) | スレッドカウンター表示 | [ワーカー・lcore管理](worker-lcore-thread-management.md) |
+| [`show_thread_qconf`](queue-configuration.md#show_thread_qconf-スレッドキュー設定表示) | スレッドキュー設定表示 | [キュー設定](queue-configuration.md) |
+| [`show_version`](system-monitoring.md#show_version-バージョン表示) | バージョン表示 | [システム情報・監視](system-monitoring.md) |
+| [`show_vswitch`](system-monitoring.md#show_vswitch-vswitch情報表示) | vswitch情報表示 | [システム情報・監視](system-monitoring.md) |
+| [`show_worker`](worker-lcore-thread-management.md#show_worker-ワーカー情報の表示) | ワーカー情報の表示 | [ワーカー・lcore管理](worker-lcore-thread-management.md) |
+| [`shutdown_cmd`](vty-shell.md#shutdown_cmd-システムシャットダウン) | システムシャットダウン | [VTY・シェル管理](vty-shell.md) |
+| [`sleep_cmd`](system-monitoring.md#sleep_cmd-スリープコマンド) | スリープコマンド | [システム情報・監視](system-monitoring.md) |
+| [`start port`](port-management.md#start-port) |  | [ポート管理・統計](port-management.md) |
+| [`start port \<0-16\>`](port-management.md#start-port-0-16) |  | [ポート管理・統計](port-management.md) |
+| [`start port all`](port-management.md#start-port-all) |  | [ポート管理・統計](port-management.md) |
+| [`start_worker`](worker-lcore-thread-management.md#start_worker-ワーカー開始) | ワーカー開始 | [ワーカー・lcore管理](worker-lcore-thread-management.md) |
+| [`stop port`](port-management.md#stop-port) |  | [ポート管理・統計](port-management.md) |
+| [`stop port \<0-16\>`](port-management.md#stop-port-0-16) |  | [ポート管理・統計](port-management.md) |
+| [`stop port all`](port-management.md#stop-port-all) |  | [ポート管理・統計](port-management.md) |
+| [`stop_worker`](worker-lcore-thread-management.md#stop_worker-ワーカー停止) | ワーカー停止 | [ワーカー・lcore管理](worker-lcore-thread-management.md) |
+| [`unset_tap_capture_persistent`](tap-interface.md#unset_tap_capture_persistent-tapキャプチャ永続化設定削除) | TAPキャプチャ永続化設定削除 | [TAPインターフェース](tap-interface.md) |
+| [`update_port_status`](queue-configuration.md#update_port_status-ポートステータス更新) | ポートステータス更新 | [キュー設定](queue-configuration.md) |
+| [`vty_exit_cmd`](vty-shell.md#vty_exit_cmd-vty終了) | VTY終了 | [VTY・シェル管理](vty-shell.md) |

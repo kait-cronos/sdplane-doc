@@ -8,6 +8,20 @@ sdplaneのシステム情報と監視機能を提供するコマンドです。
 
 ## コマンド一覧
 
+- [`show_version`](#show_version-バージョン表示) - バージョン表示
+- [`set_locale`](#set_locale-ロケール設定) - ロケール設定
+- [`set_argv_list_1`](#set_argv_list_1-argv-list設定) - argv-list設定
+- [`show argv-list`](#show-argv-list)
+- [`show argv-list \<0-7\>`](#show-argv-list-0-7)
+- [`show_loop_count`](#show_loop_count-ループカウンター表示) - ループカウンター表示
+- [`show_rcu`](#show_rcu-rcu情報表示) - RCU情報表示
+- [`show_fdb`](#show_fdb-fdb情報表示) - FDB情報表示
+- [`show_vswitch`](#show_vswitch-vswitch情報表示) - vswitch情報表示
+- [`sleep_cmd`](#sleep_cmd-スリープコマンド) - スリープコマンド
+- [`show_mempool`](#show_mempool-メモリプール情報表示) - メモリプール情報表示
+
+## コマンド一覧
+
 ### show_version - バージョン表示
 ```
 show version

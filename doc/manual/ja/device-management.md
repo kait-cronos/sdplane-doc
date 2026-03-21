@@ -8,6 +8,11 @@ DPDKデバイスとドライバーの管理を行うコマンドです。
 
 ## コマンド一覧
 
+- [`show_devices`](#show_devices-デバイス情報表示) - デバイス情報表示
+- [`set_device_driver`](#set_device_driver-デバイスドライバー設定) - デバイスドライバー設定
+
+## コマンド一覧
+
 ### show_devices - デバイス情報表示
 ```
 show devices

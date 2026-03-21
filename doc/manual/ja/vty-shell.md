@@ -8,6 +8,13 @@ VTY（Virtual Terminal）とシェルの管理を行うコマンドです。
 
 ## コマンド一覧
 
+- [`clear_cmd`](#clear_cmd-画面クリア) - 画面クリア
+- [`vty_exit_cmd`](#vty_exit_cmd-vty終了) - VTY終了
+- [`shutdown_cmd`](#shutdown_cmd-システムシャットダウン) - システムシャットダウン
+- [`exit_cmd`](#exit_cmd-コンソール終了) - コンソール終了
+
+## コマンド一覧
+
 ### clear_cmd - 画面クリア
 ```
 clear

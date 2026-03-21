@@ -8,6 +8,12 @@ DPDKキューの設定と管理を行うコマンドです。
 
 ## コマンド一覧
 
+- [`update_port_status`](#update_port_status-ポートステータス更新) - ポートステータス更新
+- [`set_thread_lcore_port_queue`](#set_thread_lcore_port_queue-スレッドキュー設定) - スレッドキュー設定
+- [`show_thread_qconf`](#show_thread_qconf-スレッドキュー設定表示) - スレッドキュー設定表示
+
+## コマンド一覧
+
 ### update_port_status - ポートステータス更新
 ```
 update port status
