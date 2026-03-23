@@ -15,6 +15,8 @@ A "DPDK-dock Development Environment" consisting of an interactive shell that ca
   Leverages DPDK for zero-copy, user-space packet processing
 - **Layer 2/3 Forwarding**:
   Integrated L2 and L3 forwarding with ACL, LPM, and FIB support
+- **SRv6 Support**
+  Segment Routing endpoint processing supporting SRv6 End behavior
 - **Packet Generation**:
   Built-in packet generator for testing and benchmarking
 - **Network Virtualization**:
@@ -130,4 +132,3 @@ Evaluation equipment with additional features and software modifications may be 
 **[https://www.rca.co.jp/sdplane/](https://www.rca.co.jp/sdplane/)**
 
 *Note: The sales page is currently available in Japanese only.*
-
