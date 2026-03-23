@@ -14,7 +14,7 @@ A "DPDK-dock Development Environment" consisting of an interactive shell that ca
 - **High-Performance Packet Processing**:
   Leverages DPDK for zero-copy, user-space packet processing
 - **Layer 2/3 Forwarding**:
-  Integrated L2 and L3 forwarding with ACL, LPM, and FIB support
+  Integrated L2 and L3 forwarding with LPM and FIB support
 - **SRv6 Support**
   Segment Routing endpoint processing supporting SRv6 End behavior
 - **Packet Generation**:
@@ -80,17 +80,20 @@ Comprehensive user guides and command references are available:
 - [Debug & Logging](manual/en/debug-logging.md) - Debug and logging functions
 - [VTY & Shell Management](manual/en/vty-shell.md) - VTY and shell management
 - [System Information & Monitoring](manual/en/system-monitoring.md) - System information and monitoring
+- [Virtual Switch (vswitch)](manual/en/vswitch.md) - Virtual switch configuration and management
+- [Neighbor Table (ARP/ND)](manual/en/neighbor.md) - Neighbor table display
+- [FDB (Forwarding Database)](manual/en/fdb.md) - FDB display
 - [RIB & Routing](manual/en/routing.md) - RIB and routing functions
+- [SRv6](manual/en/srv6.md) - SRv6 Local SID configuration and display
 - [Queue Configuration](manual/en/queue-configuration.md) - Queue configuration and management
 - [Packet Generation](manual/en/packet-generation.md) - Packet generation using PKTGEN
 - [TAP Interface](manual/en/tap-interface.md) - TAP interface management
 - [lthread Management](manual/en/lthread-management.md) - lthread management
 - [Device Management](manual/en/device-management.md) - Device and driver management
-- [Enhanced Repeater](manual/en/enhanced-repeater.md) - Virtual switching, VLAN processing, and TAP interfaces
-- [rte-flow](manual/ja/rte-flow.md) - Hardware flow classification (Japanese only)
+- [rte-flow](manual/en/rte-flow.md) - Hardware flow classification configuration
 
 **Command List:**
-- [All Commands (Alphabetical)](manual/ja/command-list.md) - Index of all 112 commands
+- [All Commands (Alphabetical)](manual/en/command-list.md) - Index of all 120 commands
 
 ## Developer's Guide
 
